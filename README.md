@@ -10,3 +10,4 @@ Die App läuft ohne Tracking, ohne Analytics und ohne externe Skripte. Alles lie
 
 1. Ordner `faelle/<id>/` anlegen: `fall.js` (und optional `fall.json`) plus Videos, Schema siehe `FORMAT.md`.
 2. Eintrag in `inhalte/faelle.js` und `inhalte/faelle.json` ergänzen (`gebiet`, `thema`, `titel`, `pfad`).
+3. In `index.html` das `fall.js` des neuen Falls als Script einbinden, damit „Starten“ auf der Startseite sofort mit Ton loslegen kann.

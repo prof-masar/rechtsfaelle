@@ -29,9 +29,7 @@
     const anzahl = f.stationen ? f.stationen + " Stationen" : "";
     const zeile = [meta, anzahl].filter(Boolean).join(" · ");
     return (
-      '<a class="card fall-karte" href="' +
-      escapeHtml(f.pfad) +
-      '">' +
+      '<article class="card fall-karte">' +
       (f.kennung
         ? '<span class="badge">' + escapeHtml(f.kennung) + "</span>"
         : "") +
@@ -42,8 +40,10 @@
       (f.kurzbeschreibung
         ? "<p>" + escapeHtml(f.kurzbeschreibung) + "</p>"
         : "") +
-      '<span class="btn primary block">Fall öffnen</span>' +
-      "</a>"
+      '<button type="button" class="btn primary block" data-start="' +
+      escapeHtml(f.id) +
+      '">Starten</button>' +
+      "</article>"
     );
   }
 
@@ -78,4 +78,25 @@
   const t = document.createElement("template");
   t.innerHTML = html.trim();
   app.replaceChildren(t.content);
+
+  app.addEventListener("click", function (e) {
+    const btn = e.target.closest("[data-start]");
+    if (!btn) return;
+    const id = btn.getAttribute("data-start");
+    const eintrag = faelle.find(function (f) {
+      return f.id === id;
+    });
+    const daten = window.FAELLE_DATEN && window.FAELLE_DATEN[id];
+    if (!eintrag || !daten || !window.Rechtsfaelle) {
+      if (eintrag && eintrag.pfad) location.href = eintrag.pfad;
+      return;
+    }
+    window.Rechtsfaelle.start({
+      fall: daten,
+      basis: eintrag.pfad,
+      url: eintrag.pfad,
+      backHref: "../../",
+      sofort: true
+    });
+  });
 })();

@@ -112,20 +112,20 @@
       "station": "Gewährleistung",
       "kurzname": "Gewährleistung",
       "video": "videos/station3_mangel.mp4",
-      "situationstext": "Am 20. Oktober 2026 – gut sieben Monate nach dem Kauf am 3. März 2026 – bekommt Lenas Bildschirm einen dauerhaften Farbfehler; Elektro Berger sagt, die Garantie sei nach sechs Monaten vorbei.",
+      "situationstext": "Am 20. Oktober 2026 – gut sieben Monate nach dem Kauf am 3. März 2026 – bekommt Lenas Bildschirm einen dauerhaften Farbfehler. Elektro Berger verweist auf eine Garantie von sechs Monaten und sagt, danach sei nichts mehr zu machen.",
       "buttons": [
         {
           "id": "s3-richtig",
-          "label": "Ja. Die gesetzliche Gewährleistung läuft zwei Jahre. Weil der Fehler im ersten Jahr auftritt, wird außerdem vermutet, dass er schon bei der Übergabe da war.",
+          "label": "Die sechs Monate sind nur eine freiwillige Garantie. Die gesetzliche Gewährleistung läuft zwei Jahre. Weil der Fehler im ersten Jahr auftritt, wird außerdem vermutet, dass er schon bei der Übergabe da war.",
           "bewertung": "richtig",
-          "konsequenz": "Die sechs Monate betreffen höchstens eine freiwillige Garantie; die gesetzliche Gewährleistung läuft zwei Jahre, und im ersten Jahr greift die Vermutung."
+          "konsequenz": "Genau: Garantie ist freiwillig und hier auf sechs Monate begrenzt. Die gesetzliche Gewährleistung läuft zwei Jahre (§ 933 ABGB, VGG), und im ersten Jahr greift die Vermutung."
         },
         {
           "id": "s3-falsch",
           "label": "Nein. Nach sechs Monaten ist jeder Anspruch erloschen.",
           "bewertung": "falsch",
-          "konsequenz": "Das vermischt Garantie und Gewährleistung: Die gesetzliche Gewährleistung endet nicht nach sechs Monaten.",
-          "theorie": "Eine Garantie ist ein freiwilliges Zusatzversprechen und kann kürzer sein. Die gesetzliche Gewährleistung gilt beim Verbraucherkauf über Waren zwei Jahre ab Übergabe (§ 10 VGG) und darf nicht zum Nachteil der Verbraucherin verkürzt werden. Tritt ein Mangel im ersten Jahr auf, wird vermutet, dass er schon bei der Übergabe vorlag (§ 11 VGG); dann muss das Geschäft das Gegenteil beweisen.",
+          "konsequenz": "Das vermischt Garantie und Gewährleistung: Die freiwillige Garantie endet nach sechs Monaten, die gesetzliche Gewährleistung aber nicht.",
+          "theorie": "Garantie und Gewährleistung darf man nicht verwechseln. Eine Garantie ist ein freiwilliges Zusatzversprechen und beträgt hier sechs Monate. Die gesetzliche Gewährleistung gilt zwei Jahre (§ 933 ABGB, beim Verbraucherkauf über Waren auch nach dem VGG) und darf nicht zum Nachteil der Verbraucherin verkürzt werden. Tritt ein Mangel im ersten Jahr auf, wird vermutet, dass er schon bei der Übergabe vorlag (§ 11 VGG); dann muss das Geschäft das Gegenteil beweisen.",
           "wiederholung": {
             "frage": "Wie lange hat Lena beim neuen Laptop gesetzliche Gewährleistung?",
             "buttons": [
@@ -133,63 +133,63 @@
                 "id": "s3-w-falsch",
                 "label": "Sechs Monate, danach nur noch eine allfällige Garantie.",
                 "richtig": false,
-                "konsequenz": "Noch nicht: Sechs Monate wären nur eine allfällige Garantie, die gesetzliche Gewährleistung läuft zwei Jahre."
+                "konsequenz": "Noch nicht: Sechs Monate sind hier nur die freiwillige Garantie; die gesetzliche Gewährleistung läuft zwei Jahre (§ 933 ABGB, VGG)."
               },
               {
                 "id": "s3-w-richtig",
                 "label": "Zwei Jahre ab Übergabe; im ersten Jahr wird der Mangel bei Übergabe vermutet.",
                 "richtig": true,
-                "konsequenz": "Genau: Zwei Jahre Gewährleistung, und im ersten Jahr trägt grundsätzlich das Geschäft die Beweislast."
+                "konsequenz": "Genau: Zwei Jahre gesetzliche Gewährleistung, und im ersten Jahr trägt grundsätzlich das Geschäft die Beweislast."
               }
             ]
           }
         },
         {
           "id": "s3-uebersehen",
-          "label": "Ja, Gewährleistung gilt zwei Jahre. Lena muss aber selbst beweisen, dass der Farbfehler schon beim Kauf da war.",
+          "label": "Ja, die gesetzliche Gewährleistung gilt zwei Jahre. Lena muss aber selbst beweisen, dass der Farbfehler schon beim Kauf da war.",
           "bewertung": "uebersehen",
           "konsequenz": "Die Frist hast du richtig erkannt, die Beweislast aber übersehen: Im ersten Jahr muss grundsätzlich das Geschäft beweisen, dass der Mangel bei der Übergabe noch nicht da war."
         }
       ],
       "dashboard_zeile": {
         "thema": "Gewährleistung oder nur Garantie?",
-        "richtig": "Zwei Jahre Gewährleistung, im ersten Jahr Beweislast beim Geschäft.",
+        "richtig": "Garantie ist freiwillig (hier sechs Monate). Gesetzliche Gewährleistung läuft zwei Jahre (§ 933 ABGB, VGG), im ersten Jahr Beweislast beim Geschäft.",
         "uebersehen": "Die Frist stimmt, die Vermutung und Beweislast im ersten Jahr fehlen.",
-        "falsch": "Die freiwillige Garantie ist nicht die gesetzliche Gewährleistung."
+        "falsch": "Die freiwillige Garantie von sechs Monaten ist nicht die gesetzliche Gewährleistung von zwei Jahren."
       }
     },
     {
       "station": "Gewährleistungsbehelfe",
       "kurzname": "Behelfe",
       "video": "videos/station4_behelfe.mp4",
-      "situationstext": "Elektro Berger bleibt dabei: Nach sechs Monaten werde nichts gemacht, Lena solle sich an den Hersteller wenden; den Laptop braucht sie zum Lernen.",
+      "situationstext": "Elektro Berger bleibt dabei: „Nach sechs Monaten machen wir nichts mehr.“ Lena solle sich an den Hersteller wenden. Den Laptop braucht sie zum Lernen.",
       "buttons": [
         {
           "id": "s4-richtig",
-          "label": "Lena kann vom Geschäft Verbesserung oder Austausch verlangen. Weil das Geschäft das verweigert, kann sie auch den Preis mindern oder den Vertrag auflösen.",
+          "label": "Der Satz des Geschäfts ist falsch. Lena kann von Elektro Berger Verbesserung (Reparatur) oder Austausch verlangen. Weil das Geschäft das verweigert, kann sie auch den Preis mindern oder den Vertrag auflösen.",
           "bewertung": "richtig",
-          "konsequenz": "Ansprechpartnerin ist die Verkäuferin; nach der Weigerung stehen Lena auch Preisminderung oder Vertragsauflösung zu."
+          "konsequenz": "Genau: „Nach sechs Monaten machen wir nichts mehr“ ist rechtlich falsch. Die gesetzliche Gewährleistung läuft zwei Jahre; Elektro Berger muss trotzdem verbessern oder austauschen. Nach der Weigerung stehen Lena auch Preisminderung oder Vertragsauflösung zu."
         },
         {
           "id": "s4-falsch",
-          "label": "Lena muss sich an den Hersteller wenden, das Geschäft ist nicht mehr zuständig.",
+          "label": "Elektro Berger hat recht: Nach sechs Monaten muss das Geschäft nichts mehr machen, Lena soll sich an den Hersteller wenden.",
           "bewertung": "falsch",
-          "konsequenz": "Das trifft nicht zu: Die gesetzliche Gewährleistung richtet sich gegen die Verkäuferin, nicht gegen den Hersteller.",
-          "theorie": "Die gesetzliche Gewährleistung ist eine Pflicht der Verkäuferin; der Hersteller ist nur zuständig, wenn er selbst eine Garantie gegeben hat. Lena kann zuerst zwischen Verbesserung und Austausch wählen (§ 12 Abs. 2 VGG). Verweigert das Geschäft beides, darf sie den Preis mindern oder den Vertrag auflösen (§ 12 Abs. 4 VGG) – außer der Mangel wäre nur geringfügig, was ein dauerhafter Bildschirmfehler nicht ist.",
+          "konsequenz": "Das trifft nicht zu: Der Satz des Geschäfts ist falsch. Die gesetzliche Gewährleistung läuft noch und richtet sich gegen die Verkäuferin, nicht gegen den Hersteller.",
+          "theorie": "Garantie und Gewährleistung darf man nicht verwechseln. Eine Garantie ist freiwillig und beträgt hier sechs Monate. Die gesetzliche Gewährleistung dauert zwei Jahre (§ 933 ABGB, VGG) und darf nicht zum Nachteil der Verbraucherin verkürzt werden. Deshalb ist der Satz „Nach sechs Monaten machen wir nichts mehr“ falsch: Elektro Berger muss den Laptop trotzdem verbessern (reparieren) oder austauschen. Ansprechpartnerin ist die Verkäuferin, nicht der Hersteller; der Hersteller haftet nur aus einer allfälligen eigenen Garantie. Lena kann zuerst zwischen Verbesserung und Austausch wählen. Verweigert das Geschäft beides, darf sie den Preis mindern oder den Vertrag auflösen – außer der Mangel wäre nur geringfügig, was ein dauerhafter Bildschirmfehler nicht ist.",
           "wiederholung": {
-            "frage": "Gegen wen richtet sich die gesetzliche Gewährleistung?",
+            "frage": "Muss Elektro Berger den Laptop trotz des Satzes „Nach sechs Monaten machen wir nichts mehr“ verbessern oder austauschen?",
             "buttons": [
               {
                 "id": "s4-w-falsch",
-                "label": "Nur gegen den Hersteller.",
+                "label": "Nein, nach sechs Monaten ist nur noch der Hersteller zuständig.",
                 "richtig": false,
-                "konsequenz": "Noch nicht: Gewährleistung richtet sich gegen die Verkäuferin, der Hersteller haftet nur aus einer allfälligen Garantie."
+                "konsequenz": "Noch nicht: Der Satz des Geschäfts ist falsch. Die gesetzliche Gewährleistung läuft zwei Jahre und richtet sich gegen die Verkäuferin."
               },
               {
                 "id": "s4-w-richtig",
-                "label": "Gegen die Verkäuferin; der Hersteller haftet nur aus einer allfälligen Garantie.",
+                "label": "Ja. Die gesetzliche Gewährleistung läuft zwei Jahre und richtet sich gegen die Verkäuferin.",
                 "richtig": true,
-                "konsequenz": "Genau: Zuständig ist Elektro Berger als Verkäuferin."
+                "konsequenz": "Genau: Elektro Berger muss trotzdem verbessern oder austauschen."
               }
             ]
           }
@@ -198,15 +198,16 @@
           "id": "s4-uebersehen",
           "label": "Lena kann nur eine Reparatur verlangen, mehr steht ihr nicht zu.",
           "bewertung": "uebersehen",
-          "konsequenz": "Die Gewährleistung hast du erkannt, zwei Punkte aber übersehen: Lena darf zwischen Verbesserung und Austausch wählen, und nach der Weigerung auch den Preis mindern oder den Vertrag auflösen."
+          "konsequenz": "Die Pflicht des Geschäfts hast du erkannt, zwei Punkte aber übersehen: Lena darf zwischen Verbesserung und Austausch wählen, und nach der Weigerung auch den Preis mindern oder den Vertrag auflösen. Der Satz „Nach sechs Monaten machen wir nichts mehr“ ist jedenfalls falsch."
         }
       ],
       "dashboard_zeile": {
         "thema": "Was kann Lena verlangen – und von wem?",
-        "richtig": "Ansprechpartnerin ist die Verkäuferin; nach der Weigerung auch Preisminderung oder Auflösung.",
-        "uebersehen": "Wahlrecht und sekundäre Behelfe nach der Weigerung fehlen.",
-        "falsch": "Gewährleistung richtet sich gegen das Geschäft, nicht gegen den Hersteller."
+        "richtig": "Der Satz des Geschäfts ist falsch. Elektro Berger muss verbessern oder austauschen; nach der Weigerung auch Preisminderung oder Auflösung.",
+        "uebersehen": "Wahlrecht und sekundäre Behelfe nach der Weigerung fehlen. Der Satz „Nach sechs Monaten machen wir nichts mehr“ ist falsch.",
+        "falsch": "Gewährleistung läuft zwei Jahre und richtet sich gegen das Geschäft. Der Satz „Nach sechs Monaten machen wir nichts mehr“ ist falsch."
       }
     }
-  ]
+  ],
+  "id": "laptop-farbfehler"
 }

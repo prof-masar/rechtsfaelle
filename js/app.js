@@ -1,8 +1,4 @@
 (function () {
-  const fall = window.RECHTSFALL;
-  const app = document.getElementById("app");
-  if (!fall || !app) return;
-
   const ICONS = {
     richtig:
       '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.6 14.2 3.8 10.4l1.4-1.4 2.4 2.4 7-7.2 1.4 1.4z"/></svg>',
@@ -16,6 +12,14 @@
     uebersehen: "Übersehen",
     falsch: "Falsch"
   };
+  const PLAY_ICON =
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  let fall = null;
+  let basisUrl = "";
+  let app = null;
+  let gebunden = false;
+  let popstateGebunden = false;
 
   const state = {
     view: "start",
@@ -39,6 +43,15 @@
       .replace(/"/g, "&quot;");
   }
 
+  function setBasis(rel) {
+    const raw = new URL(rel || "./", location.href).href;
+    basisUrl = raw.endsWith("/") ? raw : raw + "/";
+  }
+
+  function mediaUrl(rel) {
+    return new URL(rel, basisUrl || location.href).href;
+  }
+
   function stickyBtn(action, label) {
     return (
       '<div class="sticky"><div class="inner">' +
@@ -51,7 +64,6 @@
   }
 
   function timeline(current) {
-
     const n = fall.stationen.length;
     return (
       '<ol class="timeline" aria-label="Stationen">' +
@@ -87,13 +99,37 @@
     );
   }
 
-
   function startMeta() {
     const teile = [];
     if (fall.gebiet && fall.thema) teile.push(fall.gebiet + " › " + fall.thema);
     else if (fall.rechtsgebiet) teile.push(fall.rechtsgebiet);
     teile.push(fall.stationen.length + " Stationen");
     return teile.join(" · ");
+  }
+
+  function setKopf(backHref) {
+    const wrap = document.querySelector("header.top .wrap");
+    if (!wrap) return;
+    const back = backHref
+      ? '<a class="back" href="' + escapeHtml(backHref) + '">← Übersicht</a>'
+      : "";
+    wrap.innerHTML =
+      "<div>" +
+      back +
+      "<h1>Rechtsfälle</h1>" +
+      '<p class="sub">profmasar.at</p></div>' +
+      '<span class="badge" id="kennzeichen">' +
+      escapeHtml(fall.kennung || "Fall") +
+      "</span>";
+    document.title = (fall.titel || "Rechtsfälle") + " – Rechtsfälle";
+  }
+
+  function resetState() {
+    state.view = "station";
+    state.i = 0;
+    state.wahl = null;
+    state.wwahl = null;
+    state.antworten = [];
   }
 
   function renderStart() {
@@ -113,7 +149,7 @@
           "<p>" +
           escapeHtml(fall.kurzbeschreibung) +
           "</p>" +
-          '<button type="button" class="btn primary block" data-action="start">Fall starten</button>' +
+          '<button type="button" class="btn primary block" data-action="start">Starten</button>' +
           "</section>"
       )
     );
@@ -125,29 +161,82 @@
 
   function videoBlock(s) {
     if (!s.video) return "";
-    const src = escapeHtml(s.video);
-    const poster = escapeHtml(posterPfad(s.video));
+    const src = escapeHtml(mediaUrl(s.video));
+    const poster = escapeHtml(mediaUrl(posterPfad(s.video)));
     return (
       '<div class="station-video">' +
-      '<video class="station-player" playsinline muted controls preload="metadata" autoplay' +
+      '<video class="station-player" playsinline webkit-playsinline controls preload="metadata"' +
       ' poster="' +
       poster +
       '" src="' +
       src +
-      '" aria-label="Kurzvideo zur Situation"></video></div>'
+      '" aria-label="Kurzvideo zur Situation"></video>' +
+      '<button type="button" class="video-play" hidden aria-label="Video abspielen">' +
+      '<span class="video-play-icon">' +
+      PLAY_ICON +
+      "</span></button></div>"
     );
+  }
+
+  function entsperreTon() {
+    if (!fall || !fall.stationen) return;
+    fall.stationen.forEach(function (s) {
+      if (!s.video) return;
+      const v = document.createElement("video");
+      v.playsInline = true;
+      v.setAttribute("playsinline", "");
+      v.setAttribute("webkit-playsinline", "");
+      v.preload = "auto";
+      v.muted = false;
+      v.src = mediaUrl(s.video);
+      const p = v.play();
+      if (p && typeof p.then === "function") {
+        p.then(function () {
+          try {
+            v.pause();
+            v.currentTime = 0;
+          } catch (err) {}
+        }).catch(function () {});
+      }
+    });
+  }
+
+  function playTaste(verstecken) {
+    const btn = app.querySelector(".video-play");
+    if (!btn) return;
+    btn.hidden = !!verstecken;
   }
 
   function playStationVideo() {
     const v = app.querySelector("video.station-player");
     if (!v) return;
-    v.muted = true;
-    const tryPlay = function () {
-      const p = v.play();
-      if (p && typeof p.catch === "function") p.catch(function () {});
-    };
-    if (v.readyState >= 2) tryPlay();
-    else v.addEventListener("loadeddata", tryPlay, { once: true });
+    v.muted = false;
+    v.loop = false;
+    v.playsInline = true;
+    v.setAttribute("playsinline", "");
+    v.setAttribute("webkit-playsinline", "");
+
+    function hidePlay() {
+      playTaste(true);
+    }
+    v.addEventListener("playing", hidePlay);
+    v.addEventListener("play", hidePlay);
+
+    function tryPlay() {
+      try {
+        const p = v.play();
+        if (p && typeof p.then === "function") {
+          p.then(hidePlay).catch(function () {
+            v.muted = false;
+            playTaste(false);
+          });
+        }
+      } catch (err) {
+        v.muted = false;
+        playTaste(false);
+      }
+    }
+    tryPlay();
   }
 
   function renderStation() {
@@ -301,7 +390,7 @@
     });
     const pills =
       '<div class="dash-sum" aria-label="Auswertung">' +
-      ['richtig', 'uebersehen', 'falsch']
+      ["richtig", "uebersehen", "falsch"]
         .map(
           (k) =>
             '<div class="dash-pill ' +
@@ -363,6 +452,12 @@
     window.scrollTo(0, 0);
   }
 
+  function starteStationen() {
+    entsperreTon();
+    resetState();
+    render();
+  }
+
   function waehle(id) {
     const s = fall.stationen[state.i];
     const w = s.buttons.find((b) => b.id === id);
@@ -389,47 +484,96 @@
     render();
   }
 
-  app.addEventListener("click", (e) => {
-    const startBtn = e.target.closest("[data-action]");
-    if (startBtn) {
-      const a = startBtn.getAttribute("data-action");
-      if (a === "start") {
-        state.view = "station";
-        state.i = 0;
-        state.wahl = null;
-        state.wwahl = null;
-        state.antworten = [];
-        render();
-      } else if (a === "zur-wiederholung") {
-        state.wwahl = null;
-        state.view = "wiederholung";
-        render();
-      } else if (a === "weiter") {
-        weiter();
-      } else if (a === "dashboard") {
-        state.view = "dashboard";
-        render();
-      } else if (a === "neu") {
-        state.view = "start";
-        state.i = 0;
-        state.wahl = null;
-        state.wwahl = null;
-        state.antworten = [];
-        render();
+  function bindEvents() {
+    if (gebunden || !app) return;
+    gebunden = true;
+    app.addEventListener("click", function (e) {
+      const playBtn = e.target.closest(".video-play");
+      if (playBtn) {
+        const v = app.querySelector("video.station-player");
+        if (v) {
+          v.muted = false;
+          const p = v.play();
+          if (p && typeof p.then === "function") {
+            p.then(function () {
+              playBtn.hidden = true;
+            }).catch(function () {
+              v.muted = false;
+              playBtn.hidden = false;
+            });
+          }
+        }
+        return;
       }
-      return;
-    }
-    const wahl = e.target.closest("button.wahl[data-id]");
-    if (wahl && state.view === "station") {
-      waehle(wahl.getAttribute("data-id"));
-      return;
-    }
-    const ww = e.target.closest("button.wahl[data-wid]");
-    if (ww && state.view === "wiederholung") {
-      waehleWiederholung(ww.getAttribute("data-wid"));
-    }
-  });
+      const startBtn = e.target.closest("[data-action]");
+      if (startBtn) {
+        const a = startBtn.getAttribute("data-action");
+        if (a === "start" || a === "neu") {
+          starteStationen();
+        } else if (a === "zur-wiederholung") {
+          state.wwahl = null;
+          state.view = "wiederholung";
+          render();
+        } else if (a === "weiter") {
+          weiter();
+        } else if (a === "dashboard") {
+          state.view = "dashboard";
+          render();
+        }
+        return;
+      }
+      const wahl = e.target.closest("button.wahl[data-id]");
+      if (wahl && state.view === "station") {
+        waehle(wahl.getAttribute("data-id"));
+        return;
+      }
+      const ww = e.target.closest("button.wahl[data-wid]");
+      if (ww && state.view === "wiederholung") {
+        waehleWiederholung(ww.getAttribute("data-wid"));
+      }
+    });
+  }
 
-  document.getElementById("kennzeichen").textContent = fall.kennung || "Beispielfall";
-  render();
+  function start(opts) {
+    opts = opts || {};
+    fall = opts.fall;
+    app = document.getElementById("app");
+    if (!fall || !app) return;
+    setBasis(opts.basis);
+    if (opts.url) {
+      const ziel = new URL(opts.url, location.href);
+      history.pushState({ seite: "fall" }, "", ziel);
+      if (!popstateGebunden) {
+        popstateGebunden = true;
+        window.addEventListener("popstate", function () {
+          location.reload();
+        });
+      }
+    }
+    if (opts.kopf !== false) {
+      setKopf(opts.backHref || "../../");
+    }
+    bindEvents();
+    if (opts.sofort) {
+      starteStationen();
+    } else {
+      state.view = "start";
+      render();
+    }
+  }
+
+  window.Rechtsfaelle = { start: start };
+
+  if (document.body && document.body.getAttribute("data-rolle") === "fall") {
+    start({
+      fall: window.RECHTSFALL,
+      basis: "./",
+      sofort: false,
+      kopf: false
+    });
+    const kenn = document.getElementById("kennzeichen");
+    if (kenn && window.RECHTSFALL) {
+      kenn.textContent = window.RECHTSFALL.kennung || "Beispielfall";
+    }
+  }
 })();
