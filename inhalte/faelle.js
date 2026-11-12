@@ -1,0 +1,12 @@
+window.FAELLE = [
+  {
+    "id": "laptop-farbfehler",
+    "gebiet": "Privatrecht",
+    "thema": "Kaufvertrag",
+    "titel": "Der Laptop mit dem Farbfehler",
+    "kennung": "Beispielfall",
+    "kurzbeschreibung": "Lena kauft im Geschäft einen Laptop. Monate später zeigt der Bildschirm einen Farbfehler. In vier Stationen entscheidest du, was rechtlich gilt.",
+    "stationen": 4,
+    "pfad": "faelle/laptop-farbfehler/"
+  }
+];
