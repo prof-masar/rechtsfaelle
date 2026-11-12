@@ -400,6 +400,8 @@ a.fall-karte h3 {
   margin: 8px 0 0;
 }
 a.fall-karte .btn {
+  display: block;
+  width: 100%;
   margin-top: 8px;
   pointer-events: none;
 }
