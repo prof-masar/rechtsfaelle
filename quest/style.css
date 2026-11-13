@@ -1,0 +1,248 @@
+/* Quest-App – Stil. Nur Systemschriften, keine externen Ressourcen. */
+:root {
+  --bg: #f6f4ef;
+  --card: #ffffff;
+  --ink: #1f2430;
+  --muted: #4f5666;
+  --line: #e3dfd6;
+  --accent: #3b5bb5;
+  --accent-ink: #ffffff;
+  --ok: #1d7a46;
+  --ok-bg: #e3f4ea;
+  --warn: #9a4a00;
+  --warn-bg: #fff0e0;
+  --gold: #c58a12;
+  --radius: 16px;
+  --shadow: 0 2px 10px rgba(30, 36, 48, .08);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--bg);
+}
+.app { max-width: 640px; margin: 0 auto; padding: 16px 16px 48px; }
+h1, h2, h3 { line-height: 1.25; margin: 0 0 8px; }
+h1 { font-size: 1.25rem; letter-spacing: .01em; }
+h2 { font-size: 1.15rem; }
+h3 { font-size: 1.05rem; }
+p { margin: 0 0 12px; }
+.muted { color: var(--muted); }
+.small { font-size: 1rem; }
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+button { font: inherit; cursor: pointer; }
+button:focus-visible, .card:focus-visible { outline: 3px solid #f2b705; outline-offset: 2px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 10px 18px; border-radius: 12px;
+  border: 2px solid var(--accent); background: var(--accent); color: var(--accent-ink);
+  font-weight: 600; font-size: 1.05rem;
+  transition: transform .15s ease, background-color .2s ease;
+}
+.btn:active { transform: scale(.98); }
+.btn.secondary { background: transparent; color: var(--accent); }
+.btn.ghost { background: transparent; border-color: transparent; color: var(--accent); padding: 8px 10px; min-height: 44px; }
+.btn.block { width: 100%; }
+.btn.danger { background: transparent; color: #a1281f; border-color: #a1281f; }
+
+/* Kopfzeile */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
+.top .logo { font-size: 1.6rem; }
+.levelbox { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 16px; margin-bottom: 16px; }
+.levelrow { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.leveltitle { font-weight: 700; font-size: 1.1rem; }
+.bar { height: 14px; background: #ebe7de; border-radius: 99px; overflow: hidden; margin-top: 8px; }
+.bar > span { display: block; height: 100%; width: 0; border-radius: 99px;
+  background: linear-gradient(90deg, #5b7fd6, #7a62c9); transition: width .8s ease; }
+
+/* Quest-Karten */
+.list { display: grid; gap: 12px; margin-bottom: 20px; }
+.card {
+  display: block; width: 100%; text-align: left; color: var(--ink);
+  background: var(--card); border: 2px solid transparent; border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 14px 16px;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.card:hover { border-color: #c9d3ee; }
+.card:active { transform: scale(.99); }
+.cardhead { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+.tag { display: inline-block; padding: 2px 10px; border-radius: 99px; font-size: .9rem; font-weight: 700; background: #eceef3; color: #333a48; }
+.tag.recht { background: #ece5fb; color: #4b2c94; }
+.tag.rw { background: #e1f3e8; color: #1c5c37; }
+.tag.bw { background: #e2ecfb; color: #1f4a8f; }
+.status { font-size: .9rem; font-weight: 600; padding: 2px 10px; border-radius: 99px; }
+.status.neu { background: #fff3d6; color: #7a5200; }
+.status.done { background: var(--ok-bg); color: var(--ok); }
+.cardtitle { font-size: 1.1rem; font-weight: 700; margin: 2px 0; }
+.cardmeta { display: flex; justify-content: space-between; gap: 8px; color: var(--muted); font-size: 1rem; flex-wrap: wrap; }
+
+/* Abzeichen-Regal */
+.shelf { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; background: var(--card);
+  border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px; margin-bottom: 20px; }
+.badge { text-align: center; font-size: .95rem; }
+.badge .em { display: grid; place-items: center; width: 60px; height: 60px; margin: 0 auto 4px; border-radius: 50%;
+  font-size: 2rem; background: radial-gradient(circle at 35% 30%, #fff6d8, #f2d27a); box-shadow: 0 0 0 3px #f6e3a8; }
+.badge.locked .em { background: #eeece6; box-shadow: 0 0 0 3px #e3dfd6; filter: grayscale(1); opacity: .55; }
+.badge.locked { color: var(--muted); }
+
+/* Spiel */
+.playhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.dots { display: flex; gap: 8px; justify-content: center; margin: 4px 0 14px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; background: #d9d4c8; transition: background-color .3s ease, transform .3s ease; }
+.dot.now { background: var(--accent); transform: scale(1.25); }
+.dot.ok { background: var(--ok); }
+/* Figur: Kopfzeile (Avatar + Name + Rolle), darunter Sprechblase in voller Breite */
+.figure { margin-bottom: 14px; }
+.figwho { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; min-width: 0; }
+.figtext { min-width: 0; overflow-wrap: anywhere; }
+.figrolle { font-size: 1rem; color: var(--muted); line-height: 1.3; }
+.avatar { flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 1.75rem;
+  background: #4a7bd0; box-shadow: var(--shadow); }
+.figname { font-weight: 700; font-size: 1.05rem; line-height: 1.3; }
+.bubble { position: relative; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 16px; }
+.bubble::before { content: ""; position: absolute; left: 20px; top: -8px; border: 8px solid transparent; border-top: 0; border-bottom-color: var(--card); }
+.options { display: grid; gap: 10px; margin: 14px 0; }
+.opt {
+  position: relative; width: 100%; min-height: 56px; text-align: left; padding: 12px 16px;
+  border-radius: 14px; border: 2px solid #cfd6e6; background: var(--card); color: var(--ink); font-size: 1.05rem;
+  transition: border-color .2s ease, background-color .2s ease, transform .15s ease;
+}
+.opt:hover:not(:disabled) { border-color: var(--accent); }
+.opt:active:not(:disabled) { transform: scale(.99); }
+.opt:disabled { cursor: default; }
+.opt.right { border-color: var(--ok); background: var(--ok-bg); }
+.opt.wrong { border-color: #e6a868; background: var(--warn-bg); color: #5b3a1a; }
+.opt .mark { font-weight: 700; margin-right: 6px; }
+.feedback { border-radius: 14px; padding: 12px 16px; margin: 0 0 12px; font-size: 1.02rem; }
+.feedback:empty { display: none; }
+.feedback.ok { background: var(--ok-bg); color: #13502f; border-left: 5px solid var(--ok); }
+.feedback.warn { background: var(--warn-bg); color: #5b3000; border-left: 5px solid #e08a2e; }
+.hint { background: #eef2fb; color: #26365f; border-radius: 14px; padding: 10px 14px; margin-bottom: 12px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+/* XP-Anzeige: eigene Pille neben „Weiter“ (im Textfluss, überdeckt nichts) + Zähler oben */
+.headright { display: inline-flex; align-items: center; gap: 8px; }
+.xpcount { font-size: .95rem; font-weight: 700; color: #4b3a00; background: #fff3d6; border-radius: 99px; padding: 2px 10px; white-space: nowrap; }
+.xpcount.bump { animation: bump .9s ease-out; }
+@keyframes bump { 0% { transform: scale(1); } 30% { transform: scale(1.18); background: #ffe39a; } 100% { transform: scale(1); } }
+.nextwrap { display: inline-flex; align-items: center; gap: 10px; margin-left: auto; }
+.xppill { font-weight: 800; color: var(--ok); background: var(--ok-bg); border: 2px solid #b9e2c9; border-radius: 99px; padding: 4px 12px; white-space: nowrap;
+  animation: pillpop .9s ease-out both; }
+@keyframes pillpop { 0% { opacity: 0; transform: scale(.7); } 35% { opacity: 1; transform: scale(1.08); } 100% { opacity: 1; transform: scale(1); } }
+
+/* Abschluss */
+.finish { text-align: center; }
+.reveal { width: 120px; height: 120px; margin: 10px auto 12px; border-radius: 50%; display: grid; place-items: center; font-size: 3.6rem;
+  background: radial-gradient(circle at 35% 30%, #fff6d8, #f2d27a); box-shadow: 0 0 0 5px #f6e3a8, 0 0 30px rgba(242, 190, 60, .55);
+  animation: reveal 1s cubic-bezier(.2, 1.4, .4, 1) both; }
+@keyframes reveal { 0% { transform: scale(.2) rotate(-25deg); opacity: 0; } 100% { transform: scale(1) rotate(0); opacity: 1; } }
+.xpgain { font-size: 1.4rem; font-weight: 800; color: var(--ok); margin: 6px 0 10px; }
+.panel { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px; margin-bottom: 14px; text-align: left; }
+.sources { font-size: 1rem; color: var(--muted); }
+
+/* Level-up Popup und Dialog */
+.overlay { position: fixed; inset: 0; background: rgba(20, 24, 34, .45); display: grid; place-items: center; padding: 20px; z-index: 10; }
+.pop { background: var(--card); border-radius: 20px; padding: 22px; max-width: 360px; width: 100%; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,.2);
+  animation: pop .45s cubic-bezier(.2, 1.5, .4, 1) both; }
+.pop .big { font-size: 3rem; }
+@keyframes pop { 0% { transform: scale(.6); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.fade { animation: fade .35s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.note { font-size: 1rem; color: var(--muted); background: #fbf8f0; border: 1px dashed var(--line); border-radius: 12px; padding: 8px 12px; margin-bottom: 12px; }
+footer { margin-top: 24px; text-align: center; }
+
+@media (min-width: 700px) {
+  .app { padding-top: 28px; }
+  body { font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+.btn { text-decoration: none; }
+
+/* Zusatz für Rechts-Quest Fall 1 */
+.notice {
+  background: #fff8e8;
+  border: 2px solid #e0c878;
+  border-radius: 14px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  font-weight: 600;
+  color: #4a3a10;
+}
+.abschnitt {
+  font-weight: 800;
+  font-size: 1.02rem;
+  color: #2f4f7f;
+  margin: 0 0 2px;
+  letter-spacing: .01em;
+}
+.theorie {
+  background: #eef2fb;
+  border-left: 5px solid #3b5bb5;
+  border-radius: 14px;
+  padding: 12px 16px;
+  margin: 0 0 12px;
+  text-align: left;
+}
+.theorie h3, .wiederholung h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.wiederholung {
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  text-align: left;
+}
+.spruch { font-weight: 800; font-size: 1.12rem; margin-bottom: 8px; }
+.strafe { font-weight: 600; margin-bottom: 10px; }
+.begruendung { margin: 0; padding-left: 1.2em; text-align: left; }
+.begruendung li { margin-bottom: 8px; }
+.rechtsvergleich {
+  background: #f3eefb;
+  border: 2px solid #c5b4e8;
+  border-radius: 14px;
+  padding: 12px 16px;
+  margin: 0 0 14px;
+  text-align: left;
+  font-weight: 600;
+  color: #3a2a62;
+}
+.reflexion-fragen { text-align: left; padding-left: 1.2em; }
+.reflexion-fragen li { margin-bottom: 12px; }
+.finish .actions { justify-content: center; }
+
+.quest-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin: 0 0 14px;
+}
+
+.quest-img.quest-img-strip {
+  aspect-ratio: 3 / 1;
+  height: auto;
+  max-height: 130px;
+  object-fit: cover;
+  object-position: center 35%;
+  margin: 0 0 10px;
+}
+.app.view-urteil { padding: 10px 16px 12px; }
+.app.view-urteil .playhead { margin-bottom: 2px; }
+.app.view-urteil h2 { margin-bottom: 6px; }
+.app.view-urteil .panel.urteil { padding: 10px 14px; margin-bottom: 8px; line-height: 1.4; }
+.app.view-urteil .spruch { margin-bottom: 4px; }
+.app.view-urteil .strafe { margin-bottom: 4px; }
+.app.view-urteil .begruendung li { margin-bottom: 4px; }
+.app.view-urteil .begruendung li:last-child { margin-bottom: 0; }
+.app.view-urteil .rechtsvergleich { padding: 8px 12px; margin: 0 0 8px; line-height: 1.4; }
+.app.view-urteil .actions { margin-top: 0; }
+.app.view-urteil .btn.block { min-height: 48px; }
