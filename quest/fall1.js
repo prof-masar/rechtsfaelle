@@ -257,3 +257,5 @@ window.FALL = {
     ]
   }
 };
+window.FAELLE = window.FAELLE || [];
+window.FAELLE.push(window.FALL);

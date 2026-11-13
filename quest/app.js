@@ -1,8 +1,11 @@
-/* Rechts-Quest Fall 1 – lokale Text-App. Keine Netzwerkzugriffe, kein Tracking. */
+/* Rechts-Quest – lokale Text-App (Fälle 1–3). Keine Netzwerkzugriffe, kein Tracking. */
 (function () {
   "use strict";
 
-  var q = window.FALL;
+  var faelle = (Array.isArray(window.FAELLE) ? window.FAELLE : []).filter(function (f) {
+    return f && f.id && Array.isArray(f.schritte) && f.schritte.length;
+  });
+  var q = null;
   var app = document.getElementById("app");
 
   function el(tag, attrs, children) {
@@ -47,17 +50,33 @@
     try { app.focus({ preventScroll: true }); } catch (e) { app.focus(); }
     window.scrollTo(0, 0);
   }
+  function overflowPx() {
+    return document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  }
 
   var run = null;
 
-  /* Bildzuordnung nur im Prototyp, nicht in der Fall-JSON. */
+  /* Bildzuordnung nur im Prototyp, nicht in den Fall-JSONs. */
   var BILDER = {
-    start: { src: "bilder/fall1_lokal.jpg", alt: "Ein wütender Gast sitzt in einem Wiener Lokal. Vor ihm stehen Saft, Kaffee und Bier. Ein Kellner mit Tablett schaut besorgt." },
-    verhandlung: { src: "bilder/fall1_verhandlung.jpg", alt: "Ein Gerichtssaal: Die Richterin sitzt in der Mitte, der Angeklagte steht am Pult, Anklage und Verteidigung sitzen seitlich, Geschworene auf der Bank." },
-    urteil: { src: "bilder/fall1_urteil_v2.jpg", alt: "Die Richterin steht hinter der Richterbank und liest das Urteil vor. Links und rechts sitzen Beisitzer, an der Wand ein Kreuz und der österreichische Adler.", cls: "quest-img quest-img-strip" }
+    "recht-fall1-getraenk": {
+      start: { src: "bilder/fall1_lokal.jpg", alt: "Ein wütender Gast sitzt in einem Wiener Lokal. Vor ihm stehen Saft, Kaffee und Bier. Ein Kellner mit Tablett schaut besorgt." },
+      verhandlung: { src: "bilder/fall1_verhandlung.jpg", alt: "Ein Gerichtssaal: Die Richterin sitzt in der Mitte, der Angeklagte steht am Pult, Anklage und Verteidigung sitzen seitlich, Geschworene auf der Bank." },
+      urteil: { src: "bilder/fall1_urteil_v2.jpg", alt: "Die Richterin steht hinter der Richterbank und liest das Urteil vor. Links und rechts sitzen Beisitzer, an der Wand ein Kreuz und der österreichische Adler.", cls: "quest-img quest-img-strip" }
+    },
+    "recht-fall2-fahrrad": {
+      start: { src: "bilder/fall2_szene.jpg", alt: "Im Park liegt ein Fahrrad ohne Schloss im Gras. Ein junger Mann steht daneben und schaut auf das Rad." },
+      verhandlung: { src: "bilder/fall2_verhandlung.jpg", alt: "Ein Gerichtssaal: Der Richter sitzt in der Mitte, der Angeklagte steht am Pult, eine Zeugin und ein Anwalt sitzen seitlich, im Hintergrund ein Fahrrad." },
+      urteil: { src: "bilder/fall2_urteil.jpg", alt: "Der Richter steht hinter der Richterbank und liest das Urteil vor. Links und rechts sitzen Beisitzer, an der Wand ein Kreuz und der österreichische Adler.", cls: "quest-img quest-img-strip" }
+    },
+    "recht-fall3-onlineshop": {
+      start: { src: "bilder/fall3_szene.jpg", alt: "Eine junge Frau sitzt zu Hause am Laptop und wartet auf eine Bestellung. Auf dem Bildschirm sind nur farbige Flächen, kein Text." },
+      verhandlung: { src: "bilder/fall3_verhandlung.jpg", alt: "Ein Gerichtssaal: Die Richterin sitzt in der Mitte, der Angeklagte sitzt links mit Unterlagen, rechts sitzen Anwalt und Käuferin, Geschworene auf der Bank." },
+      urteil: { src: "bilder/fall3_urteil.jpg", alt: "Die Richterin steht hinter der Richterbank und liest das Urteil vor. Links und rechts sitzen Beisitzer, an der Wand ein Kreuz und der österreichische Adler.", cls: "quest-img quest-img-strip" }
+    }
   };
+  function caseImages() { return (q && BILDER[q.id]) || {}; }
   function sceneImage(key) {
-    var b = BILDER[key];
+    var b = caseImages()[key];
     if (!b) return null;
     return el("img", { class: b.cls || "quest-img", src: b.src, alt: b.alt, loading: "lazy", width: "1280", height: b.cls && b.cls.indexOf("strip") >= 0 ? "427" : "720" });
   }
@@ -70,11 +89,10 @@
     return prev.indexOf("Teil 2") === -1 && prev.indexOf("Verhandlung") === -1;
   }
 
-
   function playHeader() {
     var step = run ? run.step : -1;
     var head = el("div", { class: "playhead" }, [
-      el("button", { class: "btn ghost", type: "button", text: "← Start", onclick: function () { renderStart(); focusTop(); } }),
+      el("button", { class: "btn ghost", type: "button", text: "← Übersicht", onclick: function () { renderAuswahl(); focusTop(); } }),
       el("span", { class: "headright" }, [
         el("span", { class: "xpcount", id: "xpcount", "aria-label": "XP in diesem Fall", text: "⭐ " + (run ? run.xp : 0) + " XP" }),
         el("span", { class: "tag recht", text: q.fach })
@@ -105,20 +123,62 @@
     ]);
   }
 
-  function renderStart() {
+  function renderAuswahl() {
+    q = null;
     run = null;
     clear(app);
+    app.classList.remove("view-urteil");
     app.appendChild(el("header", { class: "top" }, [
-      el("h1", {}, [el("span", { class: "logo", "aria-hidden": "true", text: "⚖️ " }), q.titel])
+      el("h1", {}, [el("span", { class: "logo", "aria-hidden": "true", text: "⚖️ " }), "Rechts-Quest"])
     ]));
+    app.appendChild(el("p", { class: "muted", text: "Wähle einen Lernfall. Es gilt österreichisches Recht." }));
+    var list = el("div", { class: "list" });
+    if (!faelle.length) list.appendChild(el("p", { class: "note", text: "Keine Fälle gefunden." }));
+    faelle.forEach(function (fall) {
+      var thumb = (BILDER[fall.id] || {}).start;
+      var badge = fall.belohnung && fall.belohnung.abzeichen;
+      list.appendChild(el("button", { class: "card fade", type: "button", onclick: function () { openFall(fall); },
+        "aria-label": fall.titel + ", " + fall.fach + ", " + fall.klasse }, [
+        thumb ? el("img", { class: "card-img", src: thumb.src, alt: "", "aria-hidden": "true", loading: "lazy", width: "1280", height: "720" }) : null,
+        el("div", { class: "cardhead" }, [
+          el("span", { class: "tag recht", text: fall.fach }),
+          el("span", { class: "muted small", text: fall.klasse })
+        ]),
+        el("div", { class: "cardtitle", text: fall.titel }),
+        el("div", { class: "cardmeta" }, [
+          el("span", { text: fall.schritte.length + " Schritte · " + ((fall.belohnung && fall.belohnung.xp) || 0) + " XP" }),
+          badge ? el("span", { text: badge.emoji + " " + badge.name }) : null
+        ])
+      ]));
+    });
+    app.appendChild(list);
+  }
+
+  function openFall(fall) {
+    q = fall;
+    run = { step: -1, xp: 0, stepXp: stepXpList(q), view: "start" };
+    renderStart();
+    focusTop();
+  }
+
+  function renderStart() {
+    clear(app);
+    app.classList.remove("view-urteil");
+    run.step = -1;
+    run.view = "start";
+    playHeader().forEach(function (n) { app.appendChild(n); });
     app.appendChild(el("p", { class: "muted small", text: q.fach + " · " + q.klasse + " · " + q.schritte.length + " Schritte" }));
-    app.appendChild(el("div", { class: "notice", role: "note" }, [
-      el("p", { style: "margin:0", text: q.vorab_hinweis })
-    ]));
-    app.appendChild(sceneImage("start"));
+    if (q.vorab_hinweis) {
+      app.appendChild(el("div", { class: "notice", role: "note" }, [
+        el("p", { style: "margin:0", text: q.vorab_hinweis })
+      ]));
+    }
+    var startImg = sceneImage("start");
+    if (startImg) app.appendChild(startImg);
     app.appendChild(figureBlock(q.einleitung));
     app.appendChild(el("button", { class: "btn block", type: "button", text: "Los geht's →", onclick: function () {
-      run = { step: 0, xp: 0, stepXp: stepXpList(q) };
+      run.step = 0;
+      run.view = "step";
       renderStep();
       focusTop();
     } }));
@@ -128,9 +188,14 @@
     var s = q.schritte[run.step];
     var tries = 0, solved = false, reviewDone = !s.wiederholung;
     clear(app);
+    app.classList.remove("view-urteil");
+    run.view = "step";
     playHeader().forEach(function (n) { app.appendChild(n); });
     if (s.abschnitt) app.appendChild(el("p", { class: "abschnitt", text: s.abschnitt }));
-    if (isFirstVerhandlung(run.step)) app.appendChild(sceneImage("verhandlung"));
+    if (isFirstVerhandlung(run.step)) {
+      var vImg = sceneImage("verhandlung");
+      if (vImg) app.appendChild(vImg);
+    }
     app.appendChild(el("p", { class: "muted small", style: "margin:0 0 6px", text: "Schritt " + (run.step + 1) + " von " + q.schritte.length }));
     app.appendChild(figureBlock(s.text));
 
@@ -247,6 +312,32 @@
     app.appendChild(el("div", { class: "actions" }, [hintBtn || el("span"), el("span", { class: "nextwrap" }, [xpPill, nextBtn])]));
   }
 
+  function fitUrteil() {
+    var strip = app.querySelector(".quest-img-strip");
+    var panel = app.querySelector(".panel.urteil");
+    var rv = app.querySelector(".rechtsvergleich");
+    var heights = [119, 100, 84, 68, 52];
+    var i;
+    if (strip) {
+      for (i = 0; i < heights.length && overflowPx() > 1; i++) {
+        strip.style.maxHeight = heights[i] + "px";
+        strip.style.aspectRatio = "3 / 1";
+      }
+    }
+    var fonts = ["0.98rem", "0.95rem", "0.92rem"];
+    for (i = 0; i < fonts.length && overflowPx() > 1; i++) {
+      if (panel) panel.style.fontSize = fonts[i];
+    }
+    if (rv && overflowPx() > 1 && rv.tagName !== "DETAILS") {
+      var raw = rv.textContent;
+      var details = el("details", { class: "rechtsvergleich" }, [
+        el("summary", { text: "Hinweis zum Rechtsvergleich" }),
+        el("p", { style: "margin:8px 0 0", text: raw })
+      ]);
+      rv.parentNode.replaceChild(details, rv);
+    }
+  }
+
   function renderUrteil() {
     var u = q.urteil || {};
     var reasons = el("ul", { class: "begruendung" });
@@ -258,6 +349,13 @@
     run.view = "urteil";
     playHeader().forEach(function (n) { app.appendChild(n); });
 
+    var rvBox = null;
+    if (q.hinweis_rechtsvergleich && String(q.hinweis_rechtsvergleich).trim()) {
+      rvBox = el("div", { class: "rechtsvergleich", role: "note" }, [
+        el("p", { style: "margin:0", text: q.hinweis_rechtsvergleich })
+      ]);
+    }
+
     app.appendChild(el("section", { class: "fade", "aria-labelledby": "urt-h" }, [
       el("h2", { id: "urt-h", text: "Urteil" }),
       sceneImage("urteil"),
@@ -266,13 +364,12 @@
         u.strafe ? el("p", { class: "strafe", text: u.strafe }) : null,
         reasons
       ]),
-      q.hinweis_rechtsvergleich ? el("div", { class: "rechtsvergleich", role: "note" }, [
-        el("p", { style: "margin:0", text: q.hinweis_rechtsvergleich })
-      ]) : null,
+      rvBox,
       el("div", { class: "actions" }, [
         el("button", { class: "btn block", type: "button", text: "Weiter zum Abschluss →", onclick: function () { renderAbschluss(); focusTop(); } })
       ])
     ]));
+    fitUrteil();
   }
 
   function renderAbschluss() {
@@ -282,6 +379,7 @@
     var hasRefl = q.reflexion && q.reflexion.optional;
 
     clear(app);
+    app.classList.remove("view-urteil");
     run.view = "abschluss";
     playHeader().forEach(function (n) { app.appendChild(n); });
 
@@ -296,7 +394,7 @@
       ]),
       el("div", { class: "actions" }, [
         hasRefl ? el("button", { class: "btn", type: "button", text: "Zur Reflexion →", onclick: function () { renderReflexion(); focusTop(); } }) : null,
-        hasRefl ? el("button", { class: "btn secondary", type: "button", text: "Überspringen", onclick: function () { renderStart(); focusTop(); } }) : el("button", { class: "btn", type: "button", text: "Zum Start", onclick: function () { renderStart(); focusTop(); } })
+        hasRefl ? el("button", { class: "btn secondary", type: "button", text: "Zur Übersicht", onclick: function () { renderAuswahl(); focusTop(); } }) : el("button", { class: "btn", type: "button", text: "Zur Übersicht", onclick: function () { renderAuswahl(); focusTop(); } })
       ])
     ]));
   }
@@ -314,15 +412,15 @@
       el("p", { class: "muted", text: "Freiwillig, ohne Bewertung und ohne XP. Zum Diskutieren." }),
       list,
       el("div", { class: "actions" }, [
-        el("button", { class: "btn secondary", type: "button", text: "Überspringen", onclick: function () { renderStart(); focusTop(); } }),
-        el("button", { class: "btn", type: "button", text: "Fertig", onclick: function () { renderStart(); focusTop(); } })
+        el("button", { class: "btn secondary", type: "button", text: "Überspringen", onclick: function () { renderAuswahl(); focusTop(); } }),
+        el("button", { class: "btn", type: "button", text: "Fertig", onclick: function () { renderAuswahl(); focusTop(); } })
       ])
     ]));
   }
 
-  if (!q || !Array.isArray(q.schritte)) {
+  if (!faelle.length) {
     app.appendChild(el("p", { class: "note", text: "Fall-Daten fehlen." }));
     return;
   }
-  renderStart();
+  renderAuswahl();
 })();

@@ -1,0 +1,254 @@
+{
+  "id": "recht-fall3-onlineshop",
+  "fach": "Recht",
+  "klasse": "HLW, Strafrecht",
+  "titel": "Die Konsole, die nicht kam",
+  "vorab_hinweis": "Fiktiver Lernfall. Personen und Geschehen sind erfunden. Es gilt österreichisches Recht.",
+  "einleitung": "Mira Ebner bestellt im Online-Shop von Ole Brandauer eine Spielkonsole um 480 Euro. Sie zahlt im Voraus. Nach fünf Wochen ist noch nichts da. Ole antwortet nicht auf ihre E-Mails. Mira zeigt ihn an. Du begleitest das Strafverfahren.",
+  "figur": {
+    "name": "Richterin Okonkwo",
+    "rolle": "Strafgericht",
+    "emoji": "⚖️",
+    "farbe": "#2f4f7f"
+  },
+  "stand": "2026-11-13",
+  "quellen": [
+    "§ 146 StGB (Betrug)",
+    "§ 147 Abs 2 StGB (schwerer Betrug)",
+    "§ 5 Abs 1 StGB (Vorsatz)",
+    "§ 7 Abs 1 StGB"
+  ],
+  "schritte": [
+    {
+      "abschnitt": "Teil 1 – Erste Einschätzung",
+      "text": "Mira sagt: „Ich habe bezahlt, aber nichts bekommen. Er hat mich reingelegt!“ Welche Straftat liegt nach diesem ersten Bild nahe?",
+      "optionen": [
+        {
+          "text": "Betrug (§ 146 StGB)",
+          "richtig": true,
+          "feedback": "Richtig. Der Verdacht: Ole hat Lieferung versprochen, kassiert und nie liefern wollen."
+        },
+        {
+          "text": "Diebstahl (§ 127 StGB)",
+          "richtig": false,
+          "feedback": "Nein. Ole hat Mira nichts weggenommen. Sie hat selbst gezahlt, weil sie ihm vertraut hat."
+        },
+        {
+          "text": "Sachbeschädigung (§ 125 StGB)",
+          "richtig": false,
+          "feedback": "Nein. Es wurde keine Sache beschädigt. Es geht um Geld, das Mira selbst überwiesen hat."
+        }
+      ],
+      "theorie": "Beim Diebstahl nimmt der Täter etwas weg. Beim Betrug gibt das Opfer selbst etwas her, weil es getäuscht wurde. Deshalb passt hier der Verdacht auf Betrug.",
+      "wiederholung": {
+        "frage": "Wer handelt beim Betrug selbst und schädigt dadurch sein Vermögen?",
+        "optionen": [
+          {
+            "text": "Das getäuschte Opfer",
+            "richtig": true
+          },
+          {
+            "text": "Nur der Täter",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 1 – Erste Einschätzung",
+      "text": "Für Betrug müssen mehrere Merkmale zusammenkommen. Welche Aufzählung ist richtig?",
+      "optionen": [
+        {
+          "text": "Täuschung über Tatsachen, Irrtum, Vermögensschaden, Bereicherungsvorsatz",
+          "richtig": true,
+          "feedback": "Richtig. Der Täter täuscht, das Opfer irrt, handelt und wird geschädigt. Der Täter will sich bereichern."
+        },
+        {
+          "text": "Es reicht, dass die Ware nicht kommt.",
+          "richtig": false,
+          "feedback": "Nein. Dass etwas nicht geliefert wird, ist allein noch kein Betrug. Es braucht eine Täuschung und Vorsatz."
+        },
+        {
+          "text": "Gewalt, Drohung und Schaden",
+          "richtig": false,
+          "feedback": "Nein. Gewalt und Drohung gehören zu anderen Delikten. Betrug funktioniert über Täuschung."
+        }
+      ],
+      "theorie": "§ 146 StGB: Der Täter verleitet jemanden durch Täuschung über Tatsachen zu einer Handlung, die dessen Vermögen schädigt. Er handelt mit dem Vorsatz, sich dadurch unrechtmäßig zu bereichern.",
+      "wiederholung": {
+        "frage": "Ist eine nicht gelieferte Ware allein schon Betrug?",
+        "optionen": [
+          {
+            "text": "Nein",
+            "richtig": true
+          },
+          {
+            "text": "Ja",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 1 – Erste Einschätzung",
+      "text": "Angenommen, es ist Betrug. Der Schaden beträgt 480 Euro. Welcher Strafrahmen gilt?",
+      "optionen": [
+        {
+          "text": "Freiheitsstrafe bis zu 6 Monaten oder Geldstrafe bis zu 360 Tagessätzen",
+          "richtig": true,
+          "feedback": "Richtig. Das ist der Strafrahmen des § 146 StGB."
+        },
+        {
+          "text": "Freiheitsstrafe bis zu 3 Jahren",
+          "richtig": false,
+          "feedback": "Nein. Das gilt beim schweren Betrug, zB bei einem Schaden über 5.000 Euro (§ 147 Abs 2 StGB)."
+        },
+        {
+          "text": "Gar keine Strafe, weil der Betrag klein ist",
+          "richtig": false,
+          "feedback": "Nein. Auch ein kleiner Schaden kann Betrug sein."
+        }
+      ],
+      "theorie": "Der Grundstrafrahmen für Betrug ist bis 6 Monate oder Geldstrafe. Bei einem Schaden über 5.000 Euro wird es schwerer Betrug mit bis zu 3 Jahren (§ 147 Abs 2 StGB).",
+      "wiederholung": {
+        "frage": "Ab welchem Schaden ist es schwerer Betrug (§ 147 Abs 2)?",
+        "optionen": [
+          {
+            "text": "Über 5.000 Euro",
+            "richtig": true
+          },
+          {
+            "text": "Über 480 Euro",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 2 – Die Verhandlung",
+      "text": "In der Verhandlung legt Ole Belege vor: Er hat die Konsolen beim Großhändler bestellt und bezahlt. Der Großhändler hat zu spät geliefert. Ole war zwei Wochen im Spital und hat keine E-Mails gelesen. In Woche 7 hat er an alle geliefert, auch an Mira. Was fehlt jetzt für Betrug?",
+      "hinweis": "Wollte Ole bei der Bestellung Mira wirklich reinlegen?",
+      "optionen": [
+        {
+          "text": "Die Täuschung mit Vorsatz: Ole wollte liefern und niemanden reinlegen.",
+          "richtig": true,
+          "feedback": "Richtig. Er hatte bei der Bestellung vor zu liefern. Er wollte sich nicht unrechtmäßig bereichern."
+        },
+        {
+          "text": "Nichts. Fünf Wochen Warten sind Betrug.",
+          "richtig": false,
+          "feedback": "Nein. Zu spät liefern ist allein keine Täuschung. Ole hatte die Ware bestellt und wollte liefern."
+        }
+      ],
+      "theorie": "Betrug ist ein Vorsatzdelikt. Der Täter muss bei der Bestellung schon täuschen und sich bereichern wollen. Wer liefern will, aber zu spät liefert, täuscht nicht.",
+      "wiederholung": {
+        "frage": "Ein Händler will liefern, schafft es aber erst später. Täuscht er?",
+        "optionen": [
+          {
+            "text": "Nein",
+            "richtig": true
+          },
+          {
+            "text": "Ja",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 2 – Die Verhandlung",
+      "text": "Ole hat schlecht kommuniziert und zu spät geliefert. Was ist das rechtlich?",
+      "optionen": [
+        {
+          "text": "Ein Vertragsproblem: verspätete Lieferung, das klärt man im Zivilrecht",
+          "richtig": true,
+          "feedback": "Richtig. Mira kann ihre Ansprüche aus dem Kaufvertrag geltend machen. Eine Straftat ist das nicht."
+        },
+        {
+          "text": "Fahrlässiger Betrug",
+          "richtig": false,
+          "feedback": "Den gibt es nicht. Strafbar ist nur vorsätzliches Handeln, wenn das Gesetz nichts anderes bestimmt (§ 7 Abs 1 StGB)."
+        },
+        {
+          "text": "Trotzdem Betrug, weil Mira sich geärgert hat",
+          "richtig": false,
+          "feedback": "Nein. Ärger ist kein Vermögensschaden durch Täuschung. Es fehlt der Vorsatz."
+        }
+      ],
+      "theorie": "§ 7 Abs 1 StGB: Wenn das Gesetz nichts anderes bestimmt, ist nur vorsätzliches Handeln strafbar. Einen fahrlässigen Betrug kennt das StGB nicht. Unpünktliche Lieferung ist eine Frage des Vertrags.",
+      "wiederholung": {
+        "frage": "Gibt es im StGB einen fahrlässigen Betrug?",
+        "optionen": [
+          {
+            "text": "Nein",
+            "richtig": true
+          },
+          {
+            "text": "Ja",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Urteil",
+      "text": "Das Gericht entscheidet. Welches Urteil passt?",
+      "optionen": [
+        {
+          "text": "Freispruch",
+          "richtig": true,
+          "feedback": "Richtig. Ole hat nicht getäuscht und wollte sich nicht bereichern. Ohne Vorsatz kein Betrug."
+        },
+        {
+          "text": "Schuldig des Betrugs (§ 146 StGB)",
+          "richtig": false,
+          "feedback": "Nein. Die Belege zeigen: Ole wollte liefern. Es fehlt die vorsätzliche Täuschung."
+        },
+        {
+          "text": "Schuldig des schweren Betrugs (§ 147 StGB)",
+          "richtig": false,
+          "feedback": "Nein. Es ist schon kein Betrug, und der Betrag liegt weit unter 5.000 Euro."
+        }
+      ],
+      "theorie": "Das Strafrecht greift nur, wenn alle Merkmale einer Straftat vorliegen. Hier fehlt der Vorsatz. Also Freispruch, auch wenn Mira zu Recht verärgert war.",
+      "wiederholung": {
+        "frage": "Was führt hier zum Freispruch?",
+        "optionen": [
+          {
+            "text": "Der fehlende Vorsatz",
+            "richtig": true
+          },
+          {
+            "text": "Der kleine Betrag",
+            "richtig": false
+          }
+        ]
+      }
+    }
+  ],
+  "urteil": {
+    "spruch": "Ole Brandauer wird vom Vorwurf des Betrugs freigesprochen.",
+    "strafe": "Keine Strafe (Freispruch).",
+    "begruendung": [
+      "Ole hatte die Ware bestellt und bezahlt und wollte liefern. Er hat Mira nicht über Tatsachen getäuscht.",
+      "Ihm fehlte der Vorsatz, sich unrechtmäßig zu bereichern.",
+      "Die verspätete Lieferung ist eine Frage des Kaufvertrags, nicht des Strafrechts."
+    ]
+  },
+  "reflexion": {
+    "optional": true,
+    "titel": "Reflexion (optional, zum Diskutieren)",
+    "fragen": [
+      "Mira musste sieben Wochen warten und bekam keine Antwort. Ist ein Freispruch trotzdem richtig?",
+      "Warum bestraft das Strafrecht nur vorsätzliches Täuschen und überlässt eine verspätete Lieferung dem Zivilrecht?"
+    ]
+  },
+  "belohnung": {
+    "xp": 60,
+    "abzeichen": {
+      "name": "Betrugs-Prüferin",
+      "emoji": "📦"
+    }
+  },
+  "abschluss": "Gut gemacht! Nicht jede ausgebliebene Lieferung ist Betrug. Es braucht eine vorsätzliche Täuschung. Sonst ist es ein Fall für das Zivilrecht."
+}

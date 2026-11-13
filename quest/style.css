@@ -246,3 +246,18 @@ footer { margin-top: 24px; text-align: center; }
 .app.view-urteil .rechtsvergleich { padding: 8px 12px; margin: 0 0 8px; line-height: 1.4; }
 .app.view-urteil .actions { margin-top: 0; }
 .app.view-urteil .btn.block { min-height: 48px; }
+
+.card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 0 10px;
+}
+.rechtsvergleich summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+.rechtsvergleich summary:focus-visible { outline: 3px solid #f2b705; outline-offset: 2px; }
