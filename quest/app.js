@@ -3,7 +3,10 @@
   "use strict";
 
   var faelle = (Array.isArray(window.FAELLE) ? window.FAELLE : []).filter(function (f) {
-    return f && f.id && Array.isArray(f.schritte) && f.schritte.length;
+    return f && f.id && Array.isArray(f.schritte) && f.schritte.length && f.typ !== "ergaenzungskarte";
+  });
+  var bausteine = (Array.isArray(window.BAUSTEINE) ? window.BAUSTEINE : []).filter(function (f) {
+    return f && f.id && f.typ === "ergaenzungskarte" && Array.isArray(f.schritte) && f.schritte.length;
   });
   var q = null;
   var app = document.getElementById("app");
@@ -54,6 +57,76 @@
     return document.documentElement.scrollHeight - document.documentElement.clientHeight;
   }
 
+  var STORE_KEY = "rechtsquest_v1";
+  var XP_PER_LEVEL = 100;
+  var LEVEL_TITLES = ["Neuling", "Spürnase", "Detektiv:in", "Expert:in", "Profi", "Meister:in", "Legende"];
+  var progressMem = null;
+  var storageOk = (function () {
+    try {
+      var k = "__rechtsquest_test__";
+      window.localStorage.setItem(k, "1");
+      window.localStorage.removeItem(k);
+      return true;
+    } catch (e) { return false; }
+  })();
+  function emptyProgress() { return { v: 1, items: {} }; }
+  function loadProgress() {
+    if (!storageOk) return progressMem || (progressMem = emptyProgress());
+    try {
+      var raw = window.localStorage.getItem(STORE_KEY);
+      if (!raw) return emptyProgress();
+      var s = JSON.parse(raw);
+      if (!s || typeof s !== "object" || !s.items || typeof s.items !== "object") return emptyProgress();
+      return s;
+    } catch (e) { return emptyProgress(); }
+  }
+  function saveProgress(s) {
+    if (!storageOk) { progressMem = s; return; }
+    try { window.localStorage.setItem(STORE_KEY, JSON.stringify(s)); }
+    catch (e) { storageOk = false; progressMem = s; }
+  }
+  function resetProgress() {
+    progressMem = emptyProgress();
+    if (storageOk) { try { window.localStorage.removeItem(STORE_KEY); } catch (e) {} }
+  }
+  function recordProgress(item, xp) {
+    var s = loadProgress();
+    var prev = s.items[item.id] || {};
+    var best = Math.max(Number(prev.bestXp) || 0, xp);
+    s.items[item.id] = { done: true, bestXp: best, lastXp: xp };
+    saveProgress(s);
+    return s;
+  }
+  function itemState(id) { return loadProgress().items[id] || {}; }
+  function totalXp() {
+    var s = loadProgress(), sum = 0;
+    Object.keys(s.items).forEach(function (id) { sum += Number(s.items[id].bestXp) || 0; });
+    return sum;
+  }
+  function levelInfo(xp) {
+    var level = Math.floor(xp / XP_PER_LEVEL) + 1;
+    var title = LEVEL_TITLES[Math.min(level - 1, LEVEL_TITLES.length - 1)];
+    return { level: level, title: title, inLevel: xp % XP_PER_LEVEL, xp: xp };
+  }
+  function allOrdenItems() {
+    return faelle.concat(bausteine);
+  }
+  function bausteinForFall(fall) {
+    if (!fall) return null;
+    var i;
+    for (i = 0; i < bausteine.length; i++) {
+      var b = bausteine[i];
+      var bez = String(b.bezug_fall || "");
+      if (bez && (bez === fall.id || fall.id.indexOf(bez.replace(/_/g, "-")) === 0 || bez.replace(/_/g, "-") === fall.id)) return b;
+      if (bez === "recht_fall1" && fall.id === "recht-fall1-getraenk") return b;
+    }
+    return null;
+  }
+  function isBaustein(fall) {
+    fall = fall || q;
+    return !!(fall && fall.typ === "ergaenzungskarte");
+  }
+
   var run = null;
 
   /* Bildzuordnung nur im Prototyp, nicht in den Fall-JSONs. */
@@ -83,6 +156,9 @@
       verhandlung: { src: "bilder/fall5_verfahren.jpg", alt: "Ein kleiner Verhandlungsraum am Bezirksgericht: Die Richterin spricht ruhig mit einem Jugendlichen und seinen Eltern." },
       verfahren: { src: "bilder/fall5_verfahren.jpg", alt: "Ein kleiner Verhandlungsraum am Bezirksgericht: Die Richterin spricht ruhig mit einem Jugendlichen und seinen Eltern." },
       ergebnis: { src: "bilder/fall5_ergebnis.jpg", alt: "Die Richterin steht hinter der Richterbank und liest die Einigung vor. Links und rechts sitzen Beisitzer, an der Wand ein Kreuz und der österreichische Adler.", cls: "quest-img quest-img-strip" }
+    },
+    "recht-baustein-21-unterbringung": {
+      start: { src: "bilder/baustein21_streifen.jpg", alt: "Die Richterin steht hinter der Richterbank. Links und rechts sitzen Beisitzer, an der Wand ein Kreuz und der österreichische Adler.", cls: "quest-img quest-img-strip" }
     }
   };
   function caseImages() { return (q && BILDER[q.id]) || {}; }
@@ -105,12 +181,19 @@
     return prev.indexOf("Teil 2") === -1 && prev.indexOf("Verhandlung") === -1;
   }
 
+  function headerXpLabel() {
+    if (isBaustein(q)) {
+      return "⭐ " + (totalXp() + (run ? run.xp : 0)) + " XP gesamt";
+    }
+    return "⭐ " + (run ? run.xp : 0) + " XP";
+  }
+
   function playHeader() {
     var step = run ? run.step : -1;
     var head = el("div", { class: "playhead" }, [
       el("button", { class: "btn ghost", type: "button", text: "← Übersicht", onclick: function () { renderAuswahl(); focusTop(); } }),
       el("span", { class: "headright" }, [
-        el("span", { class: "xpcount", id: "xpcount", "aria-label": "XP in diesem Fall", text: "⭐ " + (run ? run.xp : 0) + " XP" }),
+        el("span", { class: "xpcount", id: "xpcount", "aria-label": isBaustein(q) ? "XP gesamt" : "XP in diesem Fall", text: headerXpLabel() }),
         el("span", { class: "tag recht", text: q.fach })
       ])
     ]);
@@ -148,6 +231,19 @@
     app.appendChild(el("header", { class: "top" }, [
       el("h1", {}, [el("span", { class: "logo", "aria-hidden": "true", text: "⚖️ " }), "Rechts-Quest"])
     ]));
+    var xpNow = totalXp();
+    var ordenItems = allOrdenItems();
+    var ordenGot = 0;
+    ordenItems.forEach(function (it) { if (itemState(it.id).done && it.belohnung && it.belohnung.abzeichen) ordenGot++; });
+    var ordenMax = 0;
+    ordenItems.forEach(function (it) { if (it.belohnung && it.belohnung.abzeichen) ordenMax++; });
+    app.appendChild(el("button", { class: "progress-chip", type: "button",
+      "aria-label": "Mein Fortschritt: " + xpNow + " Erfahrungspunkte, " + ordenGot + " von " + ordenMax + " Orden",
+      onclick: function () { renderFortschritt(); focusTop(); } }, [
+      el("span", { text: "⭐ " + xpNow + " XP gesamt" }),
+      el("span", { class: "chip-dot", "aria-hidden": "true", text: "·" }),
+      el("span", { text: "🏅 Orden " + ordenGot + "/" + ordenMax })
+    ]));
     app.appendChild(el("p", { class: "muted", text: "Wähle einen Lernfall. Es gilt österreichisches Recht." }));
     var list = el("div", { class: "list" });
     if (!faelle.length) list.appendChild(el("p", { class: "note", text: "Keine Fälle gefunden." }));
@@ -169,6 +265,80 @@
       ]));
     });
     app.appendChild(list);
+  }
+
+  function renderFortschritt() {
+    var xp = totalXp();
+    var info = levelInfo(xp);
+    var pct = Math.round(info.inLevel / XP_PER_LEVEL * 100);
+    var ordenItems = allOrdenItems();
+    clear(app);
+    app.classList.remove("view-urteil");
+    app.classList.remove("view-ergebnis");
+    app.appendChild(el("div", { class: "playhead" }, [
+      el("button", { class: "btn ghost", type: "button", text: "← Übersicht", onclick: function () { renderAuswahl(); focusTop(); } })
+    ]));
+    app.appendChild(el("h1", { text: "Mein Fortschritt" }));
+    app.appendChild(el("section", { class: "levelbox fade", "aria-label": "Deine Erfahrungspunkte" }, [
+      el("div", { class: "levelrow" }, [
+        el("span", { class: "leveltitle", text: "Stufe " + info.level + " · " + info.title }),
+        el("span", { class: "muted small", text: info.xp + " XP gesamt" })
+      ]),
+      el("div", { class: "bar", role: "progressbar", "aria-valuemin": "0", "aria-valuemax": String(XP_PER_LEVEL),
+        "aria-valuenow": String(info.inLevel), "aria-label": "Fortschritt bis zur nächsten Stufe" },
+        [el("span", { style: "width:" + pct + "%" })]),
+      el("p", { class: "muted small", style: "margin:6px 0 0", text: "Noch " + (XP_PER_LEVEL - info.inLevel) + " XP bis Stufe " + (info.level + 1) + "." })
+    ]));
+    if (!storageOk) app.appendChild(el("p", { class: "note", text: "Hinweis: Dein Fortschritt kann hier nicht gespeichert werden. Er bleibt nur, solange die Seite offen ist." }));
+
+    app.appendChild(el("h2", { text: "Deine Fälle" }));
+    var list = el("div", { class: "list fortschritt-liste" });
+    faelle.concat(bausteine).forEach(function (fall) {
+      var st = itemState(fall.id);
+      var done = !!st.done;
+      var art = isBaustein(fall) ? "Ergänzung" : "Fall";
+      list.appendChild(el("div", { class: "card fortschritt-card" }, [
+        el("div", { class: "cardhead" }, [
+          el("span", { class: "tag recht", text: art }),
+          el("span", { class: "status " + (done ? "done" : "neu"), text: done ? "✓ geschafft" : "offen" })
+        ]),
+        el("div", { class: "cardtitle", text: fall.titel }),
+        el("div", { class: "cardmeta" }, [
+          el("span", { text: done ? ("Bestes Ergebnis: " + (st.bestXp || 0) + " XP") : "Noch nicht gespielt" })
+        ])
+      ]));
+    });
+    app.appendChild(list);
+
+    app.appendChild(el("h2", { text: "Deine Orden" }));
+    var shelf = el("div", { class: "shelf", role: "list" });
+    allOrdenItems().forEach(function (fall) {
+      var b = fall.belohnung && fall.belohnung.abzeichen;
+      if (!b) return;
+      var got = !!itemState(fall.id).done;
+      shelf.appendChild(el("div", { class: "badge" + (got ? "" : " locked"), role: "listitem",
+        "aria-label": got ? ("Orden " + b.name + ", erhalten") : ("Orden " + b.name + ", noch nicht erhalten, in: " + fall.titel) }, [
+        el("div", { class: "em", "aria-hidden": "true", text: got ? b.emoji : "?" }),
+        el("div", { text: b.name }),
+        got ? null : el("div", { class: "muted small", text: "In: " + fall.titel })
+      ]));
+    });
+    app.appendChild(shelf);
+
+    var confirmBox = el("div", { class: "panel", hidden: true, role: "alertdialog", "aria-labelledby": "rs-t" }, [
+      el("p", { id: "rs-t", text: "Willst du deinen Fortschritt wirklich löschen? Alle XP und Orden sind dann weg." }),
+      el("div", { class: "actions" }, [
+        el("button", { class: "btn secondary", type: "button", text: "Abbrechen", onclick: function () { confirmBox.hidden = true; resetBtn.hidden = false; resetBtn.focus(); } }),
+        el("button", { class: "btn danger", type: "button", text: "Ja, löschen", onclick: function () { resetProgress(); renderFortschritt(); focusTop(); } })
+      ])
+    ]);
+    var resetBtn = el("button", { class: "btn ghost", type: "button", text: "Fortschritt zurücksetzen",
+      onclick: function () { resetBtn.hidden = true; confirmBox.hidden = false; confirmBox.querySelector("button").focus(); } });
+    app.appendChild(el("footer", {}, [
+      resetBtn,
+      confirmBox,
+      el("p", { class: "muted small", text: "Dein Fortschritt bleibt nur auf diesem Gerät. Es gibt kein Konto und keine Rangliste." })
+    ]));
   }
 
   function openFall(fall) {
@@ -221,10 +391,11 @@
     var options = el("div", { class: "options", role: "group", "aria-label": "Antworten" });
     var theoryWrap = el("div", { hidden: true });
     var nextBtn = el("button", { class: "btn", type: "button", hidden: true,
-      text: run.step + 1 < q.schritte.length ? "Weiter →" : (isZivilfall(q) ? "Zum Ergebnis →" : "Zum Urteil →"),
+      text: run.step + 1 < q.schritte.length ? "Weiter →" : (isBaustein(q) ? "Zum Abschluss →" : (isZivilfall(q) ? "Zum Ergebnis →" : "Zum Urteil →")),
       onclick: function () {
         run.step++;
         if (run.step < q.schritte.length) renderStep();
+        else if (isBaustein(q)) renderAbschluss();
         else renderEndkarte();
         focusTop();
       } });
@@ -303,7 +474,7 @@
           xpPill.textContent = "+" + gained + " XP";
           xpPill.hidden = false;
           var cnt = document.getElementById("xpcount");
-          if (cnt) cnt.textContent = "⭐ " + run.xp + " XP";
+          if (cnt) cnt.textContent = headerXpLabel();
           setMainDisabled(true);
           feedback.className = "feedback ok";
           feedback.textContent = "✓ " + (opt.feedback || "Richtig!") + " (+" + gained + " XP)";
@@ -369,6 +540,7 @@
     app.classList.add("view-urteil");
     app.classList.remove("view-ergebnis");
     run.step = q.schritte.length;
+    if (run && q) recordProgress(q, run.xp);
     run.view = "urteil";
     playHeader().forEach(function (n) { app.appendChild(n); });
 
@@ -388,9 +560,15 @@
         reasons
       ]),
       rvBox,
-      el("div", { class: "actions" }, [
-        el("button", { class: "btn block", type: "button", text: "Weiter zum Abschluss →", onclick: function () { renderAbschluss(); focusTop(); } })
-      ])
+      el("div", { class: "actions end-actions" }, (function () {
+        var buttons = [];
+        var b21 = bausteinForFall(q);
+        if (b21) {
+          buttons.push(el("button", { class: "btn secondary block", type: "button", text: "Was wäre, wenn …?", onclick: function () { openFall(b21); } }));
+        }
+        buttons.push(el("button", { class: "btn block", type: "button", text: "Weiter zum Abschluss →", onclick: function () { renderAbschluss(); focusTop(); } }));
+        return buttons;
+      })())
     ]));
     fitUrteil();
   }
@@ -404,6 +582,7 @@
     app.classList.add("view-urteil");
     app.classList.add("view-ergebnis");
     run.step = q.schritte.length;
+    if (run && q) recordProgress(q, run.xp);
     run.view = "ergebnis";
     playHeader().forEach(function (n) { app.appendChild(n); });
 
@@ -428,8 +607,10 @@
     var stand = q.stand ? " Stand: " + formatDate(q.stand) + "." : "";
     var hasRefl = q.reflexion && q.reflexion.optional;
 
+    if (run && q) recordProgress(q, run.xp);
     clear(app);
     app.classList.remove("view-urteil");
+    app.classList.remove("view-ergebnis");
     run.view = "abschluss";
     playHeader().forEach(function (n) { app.appendChild(n); });
 

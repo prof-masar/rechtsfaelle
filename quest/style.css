@@ -271,3 +271,17 @@ footer { margin-top: 24px; text-align: center; }
   font-weight: 600;
   margin: 0 0 6px;
 }
+
+.progress-chip {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px;
+  width: 100%; min-height: 48px; margin: 0 0 12px; padding: 8px 12px;
+  border: 2px solid #d9d4c8; border-radius: 14px; background: var(--card);
+  color: var(--ink); font-weight: 700; box-shadow: var(--shadow);
+}
+.progress-chip:hover { border-color: var(--accent); }
+.progress-chip .chip-dot { color: var(--muted); font-weight: 400; }
+.app.view-urteil .end-actions { display: grid; gap: 8px; width: 100%; }
+.app.view-urteil .end-actions .btn { width: 100%; }
+.fortschritt-card { cursor: default; }
+.fortschritt-card:hover { border-color: transparent; }
+.fortschritt-card:active { transform: none; }
