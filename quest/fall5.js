@@ -2,7 +2,7 @@
 window.FALL5 = {
   "id": "recht-fall5-kontaktrecht",
   "fach": "Recht",
-  "klasse": "HLW, Familienrecht",
+  "klasse": "Familienrecht",
   "titel": "Sonntag bei Papa?",
   "verfahrensart": "zivilrecht-ausserstreit",
   "vorab_hinweis": "Fiktiver Lernfall. Personen und Geschehen sind erfunden. Es gilt österreichisches Recht.",

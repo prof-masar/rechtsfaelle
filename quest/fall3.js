@@ -2,7 +2,7 @@
 window.FALL3 = {
   "id": "recht-fall3-onlineshop",
   "fach": "Recht",
-  "klasse": "HLW, Strafrecht",
+  "klasse": "Strafrecht",
   "titel": "Die Konsole, die nicht kam",
   "vorab_hinweis": "Fiktiver Lernfall. Personen und Geschehen sind erfunden. Es gilt österreichisches Recht.",
   "einleitung": "Mira Ebner bestellt im Online-Shop von Ole Brandauer eine Spielkonsole um 480 Euro. Sie zahlt im Voraus. Nach fünf Wochen ist noch nichts da. Ole antwortet nicht auf ihre E-Mails. Mira zeigt ihn an. Du begleitest das Strafverfahren.",
