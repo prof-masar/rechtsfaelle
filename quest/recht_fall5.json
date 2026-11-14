@@ -1,0 +1,267 @@
+{
+  "id": "recht-fall5-kontaktrecht",
+  "fach": "Recht",
+  "klasse": "HLW, Familienrecht",
+  "titel": "Sonntag bei Papa?",
+  "verfahrensart": "zivilrecht-ausserstreit",
+  "vorab_hinweis": "Fiktiver Lernfall. Personen und Geschehen sind erfunden. Es gilt österreichisches Recht.",
+  "einleitung": "Joris ist 14. Seine Eltern, Saskia und Arvid Lindtner, haben sich getrennt. Joris wohnt bei seiner Mutter. Sein Vater möchte ihn jedes zweite Wochenende von Freitag bis Sonntag sehen. Die Mutter ist dagegen, weil Joris am Samstag Fußballtraining hat. Die Eltern einigen sich nicht.",
+  "figur": {
+    "name": "Richterin Kerschbaum",
+    "rolle": "Bezirksgericht, Pflegschaft",
+    "emoji": "⚖️",
+    "farbe": "#2f4f7f"
+  },
+  "stand": "2026-11-14",
+  "quellen": [
+    "§ 21 Abs 2 ABGB",
+    "§ 138 ABGB (Kindeswohl)",
+    "§ 159 ABGB (Wohlverhaltensgebot)",
+    "§ 187 ABGB (persönliche Kontakte)",
+    "§ 104 AußStrG",
+    "§ 105 AußStrG",
+    "§ 106a AußStrG",
+    "§ 108 AußStrG",
+    "§ 109 AußStrG",
+    "§ 104a JN",
+    "§ 109 JN"
+  ],
+  "schritte": [
+    {
+      "abschnitt": "Teil 1 – Erste Einschätzung",
+      "text": "Die Mutter sagt: „Joris wohnt bei mir. Also bestimme ich, wann er seinen Vater sieht.“ Wer hat nach dem Gesetz ein Recht auf persönliche Kontakte?",
+      "optionen": [
+        {
+          "text": "Das Kind und jeder Elternteil",
+          "richtig": true,
+          "feedback": "Richtig. § 187 Abs 1 ABGB: Das Kind und jeder Elternteil haben das Recht auf regelmäßige persönliche Kontakte."
+        },
+        {
+          "text": "Nur der Elternteil, bei dem das Kind wohnt",
+          "richtig": false,
+          "feedback": "Nein. Auch der Vater, bei dem Joris nicht wohnt, hat ein Recht auf Kontakte. Und Joris selbst auch."
+        },
+        {
+          "text": "Nur der Vater, aber nur wenn die Mutter zustimmt",
+          "richtig": false,
+          "feedback": "Nein. Das Recht hängt nicht von der Zustimmung der Mutter ab. Es steht im Gesetz."
+        }
+      ],
+      "theorie": "§ 187 Abs 1 ABGB: Das Kind und jeder Elternteil haben das Recht auf regelmäßige und den Bedürfnissen des Kindes entsprechende persönliche Kontakte. Das ist auch ein Recht des Kindes, nicht nur der Eltern.",
+      "wiederholung": {
+        "frage": "Hat auch Joris selbst ein Recht auf Kontakt zu seinem Vater?",
+        "optionen": [
+          {
+            "text": "Ja",
+            "richtig": true
+          },
+          {
+            "text": "Nein",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 1 – Erste Einschätzung",
+      "text": "Am besten regeln Kind und Eltern die Kontakte gemeinsam. Das klappt hier nicht. Was kann der Vater tun?",
+      "optionen": [
+        {
+          "text": "Einen Antrag beim Bezirksgericht stellen",
+          "richtig": true,
+          "feedback": "Richtig. Das Bezirksgericht als Pflegschaftsgericht regelt die Kontakte auf Antrag, wenn es keine Einigung gibt."
+        },
+        {
+          "text": "Die Mutter bei der Polizei anzeigen",
+          "richtig": false,
+          "feedback": "Nein. Ein Streit über Besuchszeiten ist keine Straftat. Zuständig ist das Gericht in einem eigenen Verfahren."
+        },
+        {
+          "text": "Gar nichts. Ohne Einigung gibt es keine Kontakte.",
+          "richtig": false,
+          "feedback": "Nein. Gibt es keine Einigung, regelt das Gericht die Kontakte auf Antrag (§ 187 Abs 1 ABGB)."
+        }
+      ],
+      "theorie": "Einigen sich Kind und Eltern nicht, regelt das Gericht die Kontakte auf Antrag des Kindes oder eines Elternteils (§ 187 Abs 1 ABGB). Das ist ein Außerstreitverfahren beim Bezirksgericht als Pflegschaftsgericht, dort, wo das Kind gewöhnlich lebt (§ 104a, § 109 JN).",
+      "wiederholung": {
+        "frage": "Wer darf den Antrag auf Regelung der Kontakte stellen?",
+        "optionen": [
+          {
+            "text": "Das Kind oder ein Elternteil",
+            "richtig": true
+          },
+          {
+            "text": "Nur die Polizei",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 1 – Erste Einschätzung",
+      "text": "Vater und Mutter streiten: Wer hat recht? Worauf schaut das Gericht vor allem?",
+      "hinweis": "Um wen geht es bei den Kontakten eigentlich?",
+      "optionen": [
+        {
+          "text": "Auf das Wohl des Kindes",
+          "richtig": true,
+          "feedback": "Richtig. Das Kindeswohl ist der leitende Gesichtspunkt (§ 138 ABGB). Es geht nicht darum, welcher Elternteil gewinnt."
+        },
+        {
+          "text": "Darauf, wer von den Eltern mehr verdient",
+          "richtig": false,
+          "feedback": "Nein. Das Einkommen entscheidet nicht über die Kontakte. Entscheidend ist das Kindeswohl."
+        },
+        {
+          "text": "Darauf, wer die Trennung wollte",
+          "richtig": false,
+          "feedback": "Nein. Wer die Trennung wollte, spielt dafür keine Rolle. Es zählt das Wohl des Kindes."
+        }
+      ],
+      "theorie": "§ 138 ABGB: In allen Angelegenheiten des Kindes ist das Kindeswohl der leitende Gesichtspunkt. Dazu gehören zB verlässliche Kontakte zu beiden Eltern und die Meinung des Kindes, je nach seinem Verständnis.",
+      "wiederholung": {
+        "frage": "Was ist der leitende Gesichtspunkt bei den Kontakten?",
+        "optionen": [
+          {
+            "text": "Das Kindeswohl",
+            "richtig": true
+          },
+          {
+            "text": "Der Wunsch des Vaters",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 2 – Das Verfahren",
+      "text": "Die Richterin spricht mit Joris persönlich. Joris sagt: „Ich will Papa sehen. Aber Samstag habe ich Training. Lieber den ganzen Sonntag und einmal unter der Woche nach der Schule.“ Wie zählt seine Meinung?",
+      "optionen": [
+        {
+          "text": "Sie ist besonders zu berücksichtigen. Mit 14 kann Joris auch selbst Anträge stellen.",
+          "richtig": true,
+          "feedback": "Richtig. Seine Wünsche sind besonders zu berücksichtigen (§ 187 Abs 1 ABGB). Ab 14 kann er selbst vor Gericht handeln (§ 104 Abs 1 AußStrG)."
+        },
+        {
+          "text": "Gar nicht. Das entscheiden nur die Eltern.",
+          "richtig": false,
+          "feedback": "Nein. Das Gericht muss Joris hören (§ 105 AußStrG) und seine Wünsche besonders berücksichtigen."
+        },
+        {
+          "text": "Joris bestimmt allein jede Einzelheit.",
+          "richtig": false,
+          "feedback": "Nicht ganz. Seine Wünsche zählen stark. Das Gericht wägt sie aber mit dem Kindeswohl ab."
+        }
+      ],
+      "theorie": "Das Gericht hört Minderjährige in Kontaktverfahren persönlich (§ 105 Abs 1 AußStrG). Alter, Bedürfnisse und Wünsche des Kindes sind besonders zu berücksichtigen (§ 187 Abs 1 ABGB). Ab 14 kann ein Kind in diesen Verfahren selbständig vor Gericht handeln (§ 104 Abs 1 AußStrG).",
+      "wiederholung": {
+        "frage": "Ab welchem Alter kann ein Kind im Kontaktverfahren selbst vor Gericht handeln?",
+        "optionen": [
+          {
+            "text": "Ab 14 Jahren",
+            "richtig": true
+          },
+          {
+            "text": "Erst ab 18 Jahren",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 2 – Das Verfahren",
+      "text": "Eine Mitschülerin fragt: „Und wenn Joris gar keinen Kontakt wollte? Muss er dann trotzdem hin?“ Was sagt das Gesetz für Kinder ab 14?",
+      "optionen": [
+        {
+          "text": "Lehnt er ausdrücklich ab und hilft auch eine Einigung nicht, weist das Gericht den Antrag ab.",
+          "richtig": true,
+          "feedback": "Richtig. Das regelt § 108 AußStrG für Kinder ab 14. Vorher wird er aber belehrt, und man versucht eine Einigung."
+        },
+        {
+          "text": "Das Gericht zwingt ihn trotzdem zu jedem Besuch.",
+          "richtig": false,
+          "feedback": "Nein. Bei Kindern ab 14 ist eine ausdrückliche Ablehnung nach § 108 AußStrG entscheidend."
+        },
+        {
+          "text": "Sein Nein zählt erst mit 18.",
+          "richtig": false,
+          "feedback": "Nein. Schon ab 14 hat sein ausdrückliches Nein nach § 108 AußStrG diese Wirkung."
+        }
+      ],
+      "theorie": "§ 108 AußStrG: Lehnt ein Kind ab 14 ausdrücklich die Kontakte ab, wird es über die Rechtslage belehrt und darüber, dass Kontakt zu beiden Eltern grundsätzlich seinem Wohl entspricht. Bleibt auch der Einigungsversuch erfolglos, ist der Antrag abzuweisen.",
+      "wiederholung": {
+        "frage": "Was passiert vor einer Abweisung nach § 108 AußStrG?",
+        "optionen": [
+          {
+            "text": "Belehrung und Einigungsversuch",
+            "richtig": true
+          },
+          {
+            "text": "Gar nichts",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Ergebnis",
+      "text": "Die Familiengerichtshilfe spricht mit allen. Am Ende einigen sich Joris und seine Eltern: Joris ist jeden zweiten Sonntag ganztags und jeden Mittwoch nach der Schule beim Vater. Wie endet das Verfahren?",
+      "optionen": [
+        {
+          "text": "Das Gericht nimmt die Einigung in eine Niederschrift auf. Damit ist das Verfahren beendet.",
+          "richtig": true,
+          "feedback": "Richtig. § 109 Abs 1 AußStrG: Ist die Frage durch die Vereinbarung erledigt, ist das Verfahren ohne weiteres beendet."
+        },
+        {
+          "text": "Mit einem Strafurteil gegen die Mutter",
+          "richtig": false,
+          "feedback": "Nein. Das ist kein Strafverfahren. Es gibt keine Anklage und keine Strafe."
+        },
+        {
+          "text": "Der Vater muss auf seine Kontakte verzichten.",
+          "richtig": false,
+          "feedback": "Nein. Die Einigung sichert dem Vater regelmäßige Kontakte, nur zu anderen Zeiten."
+        }
+      ],
+      "theorie": "Die Familiengerichtshilfe unterstützt das Gericht, auch dabei, eine gütliche Einigung anzubahnen (§ 106a Abs 1 AußStrG). Einigen sich alle, nimmt das Gericht eine Niederschrift auf. Ist die Frage damit erledigt, endet das Verfahren (§ 109 Abs 1 AußStrG).",
+      "wiederholung": {
+        "frage": "Gibt es im Kontaktverfahren eine Strafe für einen Elternteil?",
+        "optionen": [
+          {
+            "text": "Nein, es ist ein Zivilverfahren",
+            "richtig": true
+          },
+          {
+            "text": "Ja, immer",
+            "richtig": false
+          }
+        ]
+      }
+    }
+  ],
+  "ergebnis": {
+    "art": "Einigung, vom Gericht als Niederschrift aufgenommen (§ 109 Abs 1 AußStrG)",
+    "inhalt": "Joris ist jeden zweiten Sonntag ganztags und jeden Mittwoch nach der Schule beim Vater.",
+    "begruendung": [
+      "Joris und beide Eltern haben ein Recht auf regelmäßige Kontakte (§ 187 Abs 1 ABGB).",
+      "Leitend ist das Kindeswohl (§ 138 ABGB). Die Wünsche des 14-jährigen Joris sind besonders zu berücksichtigen.",
+      "Beide Eltern müssen alles unterlassen, was das Verhältnis von Joris zum anderen Elternteil beeinträchtigt (§ 159 ABGB)."
+    ]
+  },
+  "reflexion": {
+    "optional": true,
+    "titel": "Reflexion (optional, zum Diskutieren)",
+    "fragen": [
+      "Ab 14 zählt die Meinung des Kindes besonders stark. Ist das ein gutes Alter dafür, oder sollte es früher oder später sein?",
+      "Warum ist eine Einigung oft besser als ein Beschluss des Gerichts?"
+    ]
+  },
+  "belohnung": {
+    "xp": 60,
+    "abzeichen": {
+      "name": "Kindeswohl-Kenner",
+      "emoji": "🤝"
+    }
+  },
+  "abschluss": "Gut gemacht! Kontaktrecht ist ein Recht des Kindes und beider Eltern. Leitend ist das Kindeswohl, und ab 14 hat das Kind eine starke eigene Stimme."
+}

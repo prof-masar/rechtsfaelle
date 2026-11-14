@@ -72,6 +72,17 @@
       start: { src: "bilder/fall3_szene.jpg", alt: "Eine junge Frau sitzt zu Hause am Laptop und wartet auf eine Bestellung. Auf dem Bildschirm sind nur farbige Flächen, kein Text." },
       verhandlung: { src: "bilder/fall3_verhandlung.jpg", alt: "Ein Gerichtssaal: Die Richterin sitzt in der Mitte, der Angeklagte sitzt links mit Unterlagen, rechts sitzen Anwalt und Käuferin, Geschworene auf der Bank." },
       urteil: { src: "bilder/fall3_urteil.jpg", alt: "Die Richterin steht hinter der Richterbank und liest das Urteil vor. Links und rechts sitzen Beisitzer, an der Wand ein Kreuz und der österreichische Adler.", cls: "quest-img quest-img-strip" }
+    },
+    "recht-fall4-auto": {
+      start: { src: "bilder/fall4_szene.jpg", alt: "In einer Tiefgarage steht ein Mann neben einem blauen Auto mit Kratzern. An der Wand hängt eine Überwachungskamera." },
+      verhandlung: { src: "bilder/fall4_verhandlung.jpg", alt: "Ein Gerichtssaal: Der Richter sitzt in der Mitte, der Angeklagte steht am Pult, eine Zeugin und ein Anwalt sitzen seitlich, Geschworene auf der Bank." },
+      urteil: { src: "bilder/fall4_urteil.jpg", alt: "Der Richter steht hinter der Richterbank und liest das Urteil vor. Links und rechts sitzen Beisitzer, an der Wand ein Kreuz und der österreichische Adler.", cls: "quest-img quest-img-strip" }
+    },
+    "recht-fall5-kontaktrecht": {
+      start: { src: "bilder/fall5_szene.jpg", alt: "Ein Jugendlicher steht friedlich zwischen Mutter und Vater vor einem Haus, ein Fußball liegt am Boden." },
+      verhandlung: { src: "bilder/fall5_verfahren.jpg", alt: "Ein kleiner Verhandlungsraum am Bezirksgericht: Die Richterin spricht ruhig mit einem Jugendlichen und seinen Eltern." },
+      verfahren: { src: "bilder/fall5_verfahren.jpg", alt: "Ein kleiner Verhandlungsraum am Bezirksgericht: Die Richterin spricht ruhig mit einem Jugendlichen und seinen Eltern." },
+      ergebnis: { src: "bilder/fall5_ergebnis.jpg", alt: "Die Richterin steht hinter der Richterbank und liest die Einigung vor. Links und rechts sitzen Beisitzer, an der Wand ein Kreuz und der österreichische Adler.", cls: "quest-img quest-img-strip" }
     }
   };
   function caseImages() { return (q && BILDER[q.id]) || {}; }
@@ -80,6 +91,11 @@
     if (!b) return null;
     return el("img", { class: b.cls || "quest-img", src: b.src, alt: b.alt, loading: "lazy", width: "1280", height: b.cls && b.cls.indexOf("strip") >= 0 ? "427" : "720" });
   }
+  function isZivilfall(fall) {
+    fall = fall || q;
+    return !!(fall && fall.ergebnis && !fall.urteil);
+  }
+
   function isFirstVerhandlung(i) {
     var s = q.schritte[i];
     if (!s || !s.abschnitt) return false;
@@ -99,12 +115,13 @@
       ])
     ]);
     var view = run && run.view;
-    var label = view === "abschluss" || view === "reflexion" ? "Abschluss" : view === "urteil" || step >= q.schritte.length ? "Urteil" : step < 0 ? "Start" : "Schritt " + (step + 1) + " von " + q.schritte.length;
+    var endLabel = isZivilfall(q) ? "Ergebnis" : "Urteil";
+    var label = view === "abschluss" || view === "reflexion" ? "Abschluss" : view === "urteil" || view === "ergebnis" || step >= q.schritte.length ? endLabel : step < 0 ? "Start" : "Schritt " + (step + 1) + " von " + q.schritte.length;
     var dots = el("div", { class: "dots", role: "img", "aria-label": label });
     q.schritte.forEach(function (_, i) {
       dots.appendChild(el("span", { class: "dot" + (step > i || step >= q.schritte.length ? " ok" : step === i ? " now" : "") }));
     });
-    if (view === "urteil") return [head];
+    if (view === "urteil" || view === "ergebnis") return [head];
     return [head, el("h2", { text: q.titel }), dots];
   }
 
@@ -193,7 +210,7 @@
     playHeader().forEach(function (n) { app.appendChild(n); });
     if (s.abschnitt) app.appendChild(el("p", { class: "abschnitt", text: s.abschnitt }));
     if (isFirstVerhandlung(run.step)) {
-      var vImg = sceneImage("verhandlung");
+      var vImg = sceneImage("verfahren") || sceneImage("verhandlung");
       if (vImg) app.appendChild(vImg);
     }
     app.appendChild(el("p", { class: "muted small", style: "margin:0 0 6px", text: "Schritt " + (run.step + 1) + " von " + q.schritte.length }));
@@ -204,11 +221,11 @@
     var options = el("div", { class: "options", role: "group", "aria-label": "Antworten" });
     var theoryWrap = el("div", { hidden: true });
     var nextBtn = el("button", { class: "btn", type: "button", hidden: true,
-      text: run.step + 1 < q.schritte.length ? "Weiter →" : "Zum Urteil →",
+      text: run.step + 1 < q.schritte.length ? "Weiter →" : (isZivilfall(q) ? "Zum Ergebnis →" : "Zum Urteil →"),
       onclick: function () {
         run.step++;
         if (run.step < q.schritte.length) renderStep();
-        else renderUrteil();
+        else renderEndkarte();
         focusTop();
       } });
     var xpPill = el("span", { class: "xppill", "aria-hidden": "true", hidden: true });
@@ -338,6 +355,11 @@
     }
   }
 
+  function renderEndkarte() {
+    if (isZivilfall(q)) renderErgebnis();
+    else renderUrteil();
+  }
+
   function renderUrteil() {
     var u = q.urteil || {};
     var reasons = el("ul", { class: "begruendung" });
@@ -345,6 +367,7 @@
 
     clear(app);
     app.classList.add("view-urteil");
+    app.classList.remove("view-ergebnis");
     run.step = q.schritte.length;
     run.view = "urteil";
     playHeader().forEach(function (n) { app.appendChild(n); });
@@ -365,6 +388,33 @@
         reasons
       ]),
       rvBox,
+      el("div", { class: "actions" }, [
+        el("button", { class: "btn block", type: "button", text: "Weiter zum Abschluss →", onclick: function () { renderAbschluss(); focusTop(); } })
+      ])
+    ]));
+    fitUrteil();
+  }
+
+  function renderErgebnis() {
+    var e = q.ergebnis || {};
+    var reasons = el("ul", { class: "begruendung" });
+    (e.begruendung || []).forEach(function (t) { reasons.appendChild(el("li", { text: t })); });
+
+    clear(app);
+    app.classList.add("view-urteil");
+    app.classList.add("view-ergebnis");
+    run.step = q.schritte.length;
+    run.view = "ergebnis";
+    playHeader().forEach(function (n) { app.appendChild(n); });
+
+    var titel = "Ergebnis" + (e.art ? ": " + e.art : "");
+    app.appendChild(el("section", { class: "fade", "aria-labelledby": "erg-h" }, [
+      el("h2", { id: "erg-h", class: "ergebnis-titel", text: titel }),
+      sceneImage("ergebnis") || sceneImage("urteil"),
+      el("div", { class: "panel urteil" }, [
+        e.inhalt ? el("p", { class: "ergebnis-inhalt", text: e.inhalt }) : null,
+        reasons
+      ]),
       el("div", { class: "actions" }, [
         el("button", { class: "btn block", type: "button", text: "Weiter zum Abschluss →", onclick: function () { renderAbschluss(); focusTop(); } })
       ])
