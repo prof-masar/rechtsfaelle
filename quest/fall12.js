@@ -1,13 +1,13 @@
-/* Fall 12 unverändert aus recht_fall12.json (Inhalt nach JUSTIZIA Akte 07 „Leyla macht auf“) */
+/* Fall 12 unverändert aus recht_fall12.json (Inhalt nach JUSTIZIA Akte 07 (Gewerbe und Rechtsformen)) */
 window.FALL12 = {
  "id": "recht-fall12-gewerbe",
  "fach": "Recht",
  "gebiet": "Arbeit und Unternehmen",
  "klasse": "Gewerberecht · Rechtsformen",
- "titel": "Leyla macht auf",
- "quelle_justizia": "Akte 07 „Leyla macht auf“",
+ "titel": "Mirella macht auf",
+ "quelle_justizia": "Akte 07 (Gewerbe und Rechtsformen)",
  "vorab_hinweis": "Fiktiver Lernfall. Personen und Geschehen sind erfunden. Es gilt österreichisches Recht.",
- "einleitung": "Leyla ist 22. Sie will Kunstnägel modellieren und dazu Nagellack online verkaufen. Sie hat 2.400 Euro gespart und einen kleinen Raum gemietet. Ihre Cousine sagt: „Gründe eine GmbH, sonst haftest du mit allem.“",
+ "einleitung": "Mirella ist 22. Sie will Kunstnägel modellieren und dazu Nagellack online verkaufen. Sie hat 2.400 Euro gespart und einen kleinen Raum gemietet. Ihre Cousine sagt: „Gründe eine GmbH, sonst haftest du mit allem.“",
  "figur": {
   "name": "Justizia",
   "rolle": "Rechtsberatung",
@@ -41,7 +41,7 @@ window.FALL12 = {
  "schritte": [
   {
    "abschnitt": "Teil 1 – Der Fall",
-   "text": "Darf Leyla einfach loslegen, sobald die ersten Kundinnen buchen?",
+   "text": "Darf Mirella einfach loslegen, sobald die ersten Kundinnen buchen?",
    "optionen": [
     {
      "text": "Nein. Sie muss zuerst ein Gewerbe anmelden.",
@@ -76,7 +76,7 @@ window.FALL12 = {
   },
   {
    "abschnitt": "Teil 1 – Der Fall",
-   "text": "Leyla hat keine Ausbildung zur Kosmetikerin. Sie will nur Kunstnägel modellieren. Braucht sie dafür einen Befähigungsnachweis?",
+   "text": "Mirella hat keine Ausbildung zur Kosmetikerin. Sie will nur Kunstnägel modellieren. Braucht sie dafür einen Befähigungsnachweis?",
    "hinweis": "Kosmetik und Kunstnägel sind nicht dasselbe Gewerbe.",
    "optionen": [
     {
@@ -112,12 +112,12 @@ window.FALL12 = {
   },
   {
    "abschnitt": "Teil 2 – Weiterdenken",
-   "text": "Leyla startet allein, mit wenig Risiko und 2.400 Euro. Welche Rechtsform passt für den Start am besten?",
+   "text": "Mirella startet allein, mit wenig Risiko und 2.400 Euro. Welche Rechtsform passt für den Start am besten?",
    "optionen": [
     {
      "text": "Einzelunternehmen",
      "richtig": true,
-     "feedback": "Richtig. Das Einzelunternehmen ist einfach und billig zu gründen. Leyla haftet aber mit ihrem ganzen Vermögen."
+     "feedback": "Richtig. Das Einzelunternehmen ist einfach und billig zu gründen. Mirella haftet aber mit ihrem ganzen Vermögen."
     },
     {
      "text": "GmbH",
@@ -127,7 +127,7 @@ window.FALL12 = {
     {
      "text": "Offene Gesellschaft (OG)",
      "richtig": false,
-     "feedback": "Nein. Eine OG braucht mindestens zwei Gesellschafter. Leyla startet allein."
+     "feedback": "Nein. Eine OG braucht mindestens zwei Gesellschafter. Mirella startet allein."
     }
    ],
    "theorie": "Einzelunternehmen: eine Person, sie haftet unbeschränkt mit ihrem ganzen Vermögen. OG: mindestens zwei Gesellschafter, alle haften unbeschränkt (§ 105, § 128 UGB). KG: Komplementäre haften unbeschränkt, Kommanditisten nur bis zu ihrer Haftsumme (§ 161, § 171 Abs 1 UGB). GmbH: eigene juristische Person, die Gesellschafter haften grundsätzlich nicht persönlich. Sie braucht einen Notariatsakt, die Eintragung ins Firmenbuch und mindestens 10.000 Euro Stammkapital (§ 6 GmbHG).",
@@ -147,12 +147,12 @@ window.FALL12 = {
   },
   {
    "abschnitt": "Teil 2 – Weiterdenken",
-   "text": "Das Studio läuft gut. Leyla will mit ihrer Freundin Jana weitermachen. Jana soll nur Geld einbringen und nicht unbeschränkt haften. Welche Personengesellschaft passt?",
+   "text": "Das Studio läuft gut. Mirella will mit ihrer Freundin Jana weitermachen. Jana soll nur Geld einbringen und nicht unbeschränkt haften. Welche Personengesellschaft passt?",
    "optionen": [
     {
      "text": "Eine KG mit Jana als Kommanditistin",
      "richtig": true,
-     "feedback": "Richtig. Als Kommanditistin haftet Jana nur bis zu ihrer Haftsumme (§ 171 Abs 1 UGB). Leyla haftet als Komplementärin unbeschränkt."
+     "feedback": "Richtig. Als Kommanditistin haftet Jana nur bis zu ihrer Haftsumme (§ 171 Abs 1 UGB). Mirella haftet als Komplementärin unbeschränkt."
     },
     {
      "text": "Eine OG",
@@ -182,7 +182,7 @@ window.FALL12 = {
   },
   {
    "abschnitt": "Teil 2 – Weiterdenken",
-   "text": "Leyla verkauft Nagellack auch über ihren Online-Shop an Privatkundinnen. Was muss sie beachten?",
+   "text": "Mirella verkauft Nagellack auch über ihren Online-Shop an Privatkundinnen. Was muss sie beachten?",
    "optionen": [
     {
      "text": "Sie braucht ein Impressum, und ihre Kundinnen haben 14 Tage Rücktrittsrecht.",
@@ -200,7 +200,7 @@ window.FALL12 = {
      "feedback": "Nein. Die Informationspflichten nach § 5 ECG gelten unabhängig vom Umsatz."
     }
    ],
-   "theorie": "Wer online Waren oder Dienstleistungen anbietet, muss leicht auffindbar Name, Anschrift und E-Mail angeben, dazu falls vorhanden Firmenbuchnummer, UID-Nummer, Kammer und Aufsichtsbehörde (§ 5 ECG). Verkauft Leyla an Verbraucher, gelten zusätzlich das KSchG, das FAGG (zum Beispiel 14 Tage Rücktrittsrecht) und das VGG (Gewährleistung). Kundendaten muss sie nach der DSGVO schützen.",
+   "theorie": "Wer online Waren oder Dienstleistungen anbietet, muss leicht auffindbar Name, Anschrift und E-Mail angeben, dazu falls vorhanden Firmenbuchnummer, UID-Nummer, Kammer und Aufsichtsbehörde (§ 5 ECG). Verkauft Mirella an Verbraucher, gelten zusätzlich das KSchG, das FAGG (zum Beispiel 14 Tage Rücktrittsrecht) und das VGG (Gewährleistung). Kundendaten muss sie nach der DSGVO schützen.",
    "wiederholung": {
     "frage": "Gilt die Impressumspflicht schon für kleine Online-Shops?",
     "optionen": [
@@ -218,7 +218,7 @@ window.FALL12 = {
  ],
  "ergebnis": {
   "art": "Start als Einzelunternehmerin",
-  "inhalt": "Leyla meldet zwei freie Gewerbe an: Nagelstudio und Handel. Sie startet als Einzelunternehmerin und prüft später eine KG oder GmbH.",
+  "inhalt": "Mirella meldet zwei freie Gewerbe an: Nagelstudio und Handel. Sie startet als Einzelunternehmerin und prüft später eine KG oder GmbH.",
   "begruendung": [
    "Für das Nagelstudio und den Handel reicht die Anmeldung freier Gewerbe (§ 5, § 339 GewO).",
    "Eine GmbH scheitert am Start am Mindeststammkapital von 10.000 Euro (§ 6 GmbHG).",
