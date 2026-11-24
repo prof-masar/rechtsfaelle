@@ -137,7 +137,7 @@
     return fall.gebiet || GEBIET_AUS_KLASSE[fall.klasse] || fall.klasse || "Weitere Fälle";
   }
 
-  /* Bildzuordnung nur im Prototyp, nicht in den Fall-JSONs. */
+  /* Bildzuordnung nur im Prototyp, nicht in den Fall-JSONs. Fälle 6–14: Szenenbilder im Stil der Fälle 1–5. */
   var BILDER = {
     "recht-fall1-getraenk": {
       start: { src: "bilder/fall1_lokal.jpg", alt: "Ein wütender Gast sitzt in einem Wiener Lokal. Vor ihm stehen Saft, Kaffee und Bier. Ein Kellner mit Tablett schaut besorgt." },
@@ -164,6 +164,33 @@
       verhandlung: { src: "bilder/fall5_verfahren.jpg", alt: "Ein kleiner Verhandlungsraum am Bezirksgericht: Die Richterin spricht ruhig mit einem Jugendlichen und seinen Eltern." },
       verfahren: { src: "bilder/fall5_verfahren.jpg", alt: "Ein kleiner Verhandlungsraum am Bezirksgericht: Die Richterin spricht ruhig mit einem Jugendlichen und seinen Eltern." },
       ergebnis: { src: "bilder/fall5_ergebnis.jpg", alt: "Die Richterin steht hinter der Richterbank und liest die Einigung vor. Links und rechts sitzen Beisitzer, an der Wand ein Kreuz und der österreichische Adler.", cls: "quest-img quest-img-strip" }
+    },
+    "recht-fall6-volljaehrig": {
+      start: { src: "bilder/fall6_szene.jpg", alt: "In einer hellen Küche stehen drei Geschwister: Die ältere Schwester lächelt vor einer Geburtstagstorte mit Kerzen, die jüngere hält eine neue Handy-Schachtel, der kleine Bruder isst ein Eis." }
+    },
+    "recht-fall7-verfassung": {
+      start: { src: "bilder/fall7_szene.jpg", alt: "In einem Wahllokal in einem Turnsaal wirft ein Jugendlicher stolz seinen Stimmzettel in die Wahlurne. Daneben stehen eine Wahlkabine und die rot-weiß-rote Fahne, hinten sitzen zwei Wahlbeisitzer." }
+    },
+    "recht-fall8-onlinekauf": {
+      start: { src: "bilder/fall8_szene.jpg", alt: "Ein junger Mann sitzt am Schreibtisch und schaut verärgert auf einen runden Lautsprecher in seiner Hand. Daneben stehen ein offenes Paket und ein Laptop." }
+    },
+    "recht-fall9-kaution": {
+      start: { src: "bilder/fall9_szene.jpg", alt: "In einer Wiener Altbauwohnung steht eine junge Frau mit Kaffeetasse überrascht in der Küche. Hinter ihr kommt der ältere Vermieter mit seinem Schlüssel unangemeldet durch die Wohnungstür." }
+    },
+    "recht-fall10-arbeit": {
+      start: { src: "bilder/fall10_szene.jpg", alt: "Spätabends in einem Wiener Café: Eine junge Kellnerin trägt ein Tablett mit Tassen. Hinter der Theke reicht ihr der Chef ein Kuvert, die Stühle stehen schon auf den Tischen." }
+    },
+    "recht-fall11-moped": {
+      start: { src: "bilder/fall11_szene.jpg", alt: "Auf einer Straße in der Abenddämmerung steht ein Jugendlicher mit Helm in der Hand neben seinem Moped. Erschrocken schaut er auf den gesprungenen Außenspiegel eines geparkten blauen Autos." }
+    },
+    "recht-fall12-gewerbe": {
+      start: { src: "bilder/fall12_szene.jpg", alt: "In einem kleinen Nagelstudio modelliert eine junge Frau einer Kundin Kunstnägel. Im Regal stehen bunte Nagellackflaschen, in der Ecke Pakete für den Online-Versand." }
+    },
+    "recht-fall13-erbe": {
+      start: { src: "bilder/fall13_szene.jpg", alt: "Vor einem Einfamilienhaus im Herbst: Ein Mann mit Rechen zeigt auf das Haus, in der Mitte steht die ältere Witwe, daneben die jugendliche Enkelin mit Rucksack." }
+    },
+    "recht-fall14-eu": {
+      start: { src: "bilder/fall14_szene.jpg", alt: "Ein junger Mann mit Rucksack und Koffer telefoniert lächelnd an einem Hafen in den Niederlanden. Im Hintergrund sind Giebelhäuser, eine Brücke und Kräne, daneben eine Bar und die Europafahne." }
     },
     "recht-baustein-21-unterbringung": {
       start: { src: "bilder/baustein21_streifen.jpg", alt: "Die Richterin steht hinter der Richterbank. Links und rechts sitzen Beisitzer, an der Wand ein Kreuz und der österreichische Adler.", cls: "quest-img quest-img-strip" }
