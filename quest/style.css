@@ -37,7 +37,8 @@ p { margin: 0 0 12px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 button { font: inherit; cursor: pointer; }
-button:focus-visible, .card:focus-visible { outline: 3px solid #f2b705; outline-offset: 2px; }
+/* Fokus (WCAG AA): dunkler Außenrahmen, gelber Innenring wie bisher */
+button:focus-visible, .card:focus-visible { outline: 3px solid #1f2430; outline-offset: 2px; box-shadow: 0 0 0 2px #f2b705; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   min-height: 48px; padding: 10px 18px; border-radius: 12px;
@@ -260,7 +261,7 @@ footer { margin-top: 24px; text-align: center; }
   cursor: pointer;
   font-weight: 700;
 }
-.rechtsvergleich summary:focus-visible { outline: 3px solid #f2b705; outline-offset: 2px; }
+.rechtsvergleich summary:focus-visible { outline: 3px solid #1f2430; outline-offset: 2px; box-shadow: 0 0 0 2px #f2b705; }
 
 .app.view-ergebnis .ergebnis-titel {
   font-size: 1.02rem;
