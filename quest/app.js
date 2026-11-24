@@ -1,4 +1,4 @@
-/* Rechts-Quest – lokale Text-App (Fälle 1–3). Keine Netzwerkzugriffe, kein Tracking. */
+/* Rechts-Quest – lokale Text-App (Fälle 1–14). Keine Netzwerkzugriffe, kein Tracking. */
 (function () {
   "use strict";
 
@@ -117,7 +117,8 @@
     for (i = 0; i < bausteine.length; i++) {
       var b = bausteine[i];
       var bez = String(b.bezug_fall || "");
-      if (bez && (bez === fall.id || fall.id.indexOf(bez.replace(/_/g, "-")) === 0 || bez.replace(/_/g, "-") === fall.id)) return b;
+      var bezId = bez.replace(/_/g, "-");
+      if (bez && (bez === fall.id || bezId === fall.id || fall.id.indexOf(bezId + "-") === 0)) return b;
       if (bez === "recht_fall1" && fall.id === "recht-fall1-getraenk") return b;
     }
     return null;
@@ -128,6 +129,13 @@
   }
 
   var run = null;
+
+  /* Übersicht nach Rechtsgebieten. Neue Fälle tragen "gebiet", Fälle 1–5 werden über "klasse" zugeordnet. */
+  var GEBIETE = ["Rechtsordnung und Staat", "Privatrecht im Alltag", "Arbeit und Unternehmen", "Familie und Erbe", "Strafrecht"];
+  var GEBIET_AUS_KLASSE = { "Strafrecht": "Strafrecht", "Familienrecht": "Familie und Erbe" };
+  function gebietVon(fall) {
+    return fall.gebiet || GEBIET_AUS_KLASSE[fall.klasse] || fall.klasse || "Weitere Fälle";
+  }
 
   /* Bildzuordnung nur im Prototyp, nicht in den Fall-JSONs. */
   var BILDER = {
@@ -245,26 +253,38 @@
       el("span", { text: "🏅 Orden " + ordenGot + "/" + ordenMax })
     ]));
     app.appendChild(el("p", { class: "muted", text: "Wähle einen Lernfall. Es gilt österreichisches Recht." }));
-    var list = el("div", { class: "list" });
-    if (!faelle.length) list.appendChild(el("p", { class: "note", text: "Keine Fälle gefunden." }));
-    faelle.forEach(function (fall) {
-      var thumb = (BILDER[fall.id] || {}).start;
-      var badge = fall.belohnung && fall.belohnung.abzeichen;
-      list.appendChild(el("button", { class: "card fade", type: "button", onclick: function () { openFall(fall); },
-        "aria-label": fall.titel + ", " + fall.fach + ", " + fall.klasse }, [
-        thumb ? el("img", { class: "card-img", src: thumb.src, alt: "", "aria-hidden": "true", loading: "lazy", width: "1280", height: "720" }) : null,
-        el("div", { class: "cardhead" }, [
-          el("span", { class: "tag recht", text: fall.fach }),
-          el("span", { class: "muted small", text: fall.klasse })
-        ]),
-        el("div", { class: "cardtitle", text: fall.titel }),
-        el("div", { class: "cardmeta" }, [
-          el("span", { text: fall.schritte.length + " Schritte · " + ((fall.belohnung && fall.belohnung.xp) || 0) + " XP" }),
-          badge ? el("span", { text: badge.emoji + " " + badge.name }) : null
-        ])
+    if (!faelle.length) app.appendChild(el("p", { class: "note", text: "Keine Fälle gefunden." }));
+    var namen = GEBIETE.slice();
+    faelle.forEach(function (f) { var g = gebietVon(f); if (namen.indexOf(g) === -1) namen.push(g); });
+    namen.forEach(function (name, gi) {
+      var inGebiet = faelle.filter(function (f) { return gebietVon(f) === name; });
+      if (!inGebiet.length) return;
+      var hid = "gebiet-" + gi;
+      var list = el("div", { class: "list" });
+      inGebiet.forEach(function (fall) { list.appendChild(fallKarte(fall)); });
+      app.appendChild(el("section", { class: "gebiet", "aria-labelledby": hid }, [
+        el("h2", { class: "gebiet-titel", id: hid, text: name + " (" + inGebiet.length + (inGebiet.length === 1 ? " Fall)" : " Fälle)") }),
+        list
       ]));
     });
-    app.appendChild(list);
+  }
+
+  function fallKarte(fall) {
+    var thumb = (BILDER[fall.id] || {}).start;
+    var badge = fall.belohnung && fall.belohnung.abzeichen;
+    return el("button", { class: "card fade", type: "button", onclick: function () { openFall(fall); },
+      "aria-label": fall.titel + ", " + fall.fach + ", " + fall.klasse }, [
+      thumb ? el("img", { class: "card-img", src: thumb.src, alt: "", "aria-hidden": "true", loading: "lazy", width: "1280", height: "720" }) : null,
+      el("div", { class: "cardhead" }, [
+        el("span", { class: "tag recht", text: fall.fach }),
+        el("span", { class: "muted small", text: fall.klasse })
+      ]),
+      el("div", { class: "cardtitle", text: fall.titel }),
+      el("div", { class: "cardmeta" }, [
+        el("span", { text: fall.schritte.length + " Schritte · " + ((fall.belohnung && fall.belohnung.xp) || 0) + " XP" }),
+        badge ? el("span", { text: badge.emoji + " " + badge.name }) : null
+      ])
+    ]);
   }
 
   function renderFortschritt() {
@@ -355,6 +375,13 @@
     run.view = "start";
     playHeader().forEach(function (n) { app.appendChild(n); });
     app.appendChild(el("p", { class: "muted small", text: q.fach + " · " + q.klasse + " · " + q.schritte.length + " Schritte" }));
+    if (q.rechtsstand || (Array.isArray(q.hauptnormen) && q.hauptnormen.length)) {
+      app.appendChild(el("p", { class: "muted small rechtsstand" }, [
+        q.rechtsstand ? "Rechtsstand: " + q.rechtsstand : null,
+        q.rechtsstand && q.hauptnormen && q.hauptnormen.length ? " · " : null,
+        q.hauptnormen && q.hauptnormen.length ? "Hauptnormen: " + q.hauptnormen.join(", ") : null
+      ]));
+    }
     if (q.vorab_hinweis) {
       app.appendChild(el("div", { class: "notice", role: "note" }, [
         el("p", { style: "margin:0", text: q.vorab_hinweis })
@@ -604,7 +631,7 @@
   function renderAbschluss() {
     var badge = q.belohnung && q.belohnung.abzeichen;
     var quellen = Array.isArray(q.quellen) && q.quellen.length ? "Quellen: " + q.quellen.join("; ") + "." : "";
-    var stand = q.stand ? " Stand: " + formatDate(q.stand) + "." : "";
+    var stand = q.rechtsstand ? " Rechtsstand: " + q.rechtsstand + "." : (q.stand ? " Stand: " + formatDate(q.stand) + "." : "");
     var hasRefl = q.reflexion && q.reflexion.optional;
 
     if (run && q) recordProgress(q, run.xp);

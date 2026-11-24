@@ -1,0 +1,241 @@
+/* Fall 9 unverändert aus recht_fall9.json (Inhalt nach JUSTIZIA Akte 04 „Herr Gruber und die Kaution“) */
+window.FALL9 = {
+ "id": "recht-fall9-kaution",
+ "fach": "Recht",
+ "gebiet": "Privatrecht im Alltag",
+ "klasse": "Mietrecht",
+ "titel": "Herr Gruber und die Kaution",
+ "quelle_justizia": "Akte 04 „Herr Gruber und die Kaution“",
+ "vorab_hinweis": "Fiktiver Lernfall. Personen und Geschehen sind erfunden. Es gilt österreichisches Recht.",
+ "einleitung": "Leyla hat eine Altbauwohnung in Wien gemietet. Das Mietrechtsgesetz gilt voll. Der Vermieter, Herr Gruber, kommt am Sonntag ohne Ankündigung mit seinem Schlüssel in die Wohnung. Nach einem Jahr zieht Leyla aus. Herr Gruber will die Kaution behalten, weil die Wände „nicht mehr ganz weiß“ sind.",
+ "figur": {
+  "name": "Justizia",
+  "rolle": "Rechtsberatung",
+  "emoji": "⚖️",
+  "farbe": "#2f4f7f"
+ },
+ "stand": "2026-11-24",
+ "rechtsstand": "November 2026",
+ "hauptnormen": [
+  "§ 8 Abs 2 MRG",
+  "§ 16b MRG",
+  "§ 1109 ABGB",
+  "§ 339 ABGB"
+ ],
+ "quellen": [
+  "§ 19 ABGB (keine eigenmächtige Selbsthilfe)",
+  "§ 339 ABGB (Besitzschutz)",
+  "§ 354 ABGB (Eigentum)",
+  "§ 431 ABGB (Eintragung im Grundbuch)",
+  "§ 1090 ABGB (Bestandvertrag)",
+  "§ 1109 ABGB (Rückstellung, gewöhnliche Abnützung)",
+  "§ 8 Abs 2 MRG (Betreten der Wohnung)",
+  "§ 16b MRG (Kaution)",
+  "§ 37 MRG (wohnrechtliches Verfahren)"
+ ],
+ "schritte": [
+  {
+   "abschnitt": "Teil 1 – Der Fall",
+   "text": "Leyla fragt: „Gehört die Wohnung jetzt mir, solange ich hier wohne?“ Was stimmt?",
+   "optionen": [
+    {
+     "text": "Nein. Herr Gruber bleibt Eigentümer. Leyla darf die Wohnung als Mieterin benutzen.",
+     "richtig": true,
+     "feedback": "Richtig. Eigentum und Miete sind verschieden. Aus dem Mietvertrag hat Leyla das Recht, die Wohnung zu benutzen (§ 1090 ABGB)."
+    },
+    {
+     "text": "Ja. Wer drin wohnt, ist Eigentümerin.",
+     "richtig": false,
+     "feedback": "Nein. Wohnen macht nicht zur Eigentümerin. Wer eine Wohnung oder ein Haus besitzt, steht im Grundbuch."
+    },
+    {
+     "text": "Ja, nach einem Jahr Miete.",
+     "richtig": false,
+     "feedback": "Nein. Miete macht nie zur Eigentümerin. Dafür braucht es zum Beispiel einen Kauf und die Eintragung im Grundbuch."
+    }
+   ],
+   "theorie": "Eigentum ist das Recht, mit einer Sache nach Belieben zu verfahren (§ 354 ABGB). Bei Wohnungen und Häusern erwirbt man Eigentum erst mit der Eintragung im Grundbuch (§ 431 ABGB). Wer mietet, bekommt das Recht, die Sache gegen Mietzins zu benutzen (§ 1090 ABGB). Diese Nutzung ist rechtlich geschützt, auch gegen den Eigentümer.",
+   "wiederholung": {
+    "frage": "Wer steht im Grundbuch als Eigentümer?",
+    "optionen": [
+     {
+      "text": "Herr Gruber",
+      "richtig": true
+     },
+     {
+      "text": "Leyla",
+      "richtig": false
+     }
+    ]
+   }
+  },
+  {
+   "abschnitt": "Teil 1 – Der Fall",
+   "text": "Sonntag, 9 Uhr: Herr Gruber steht in Leylas Küche. Er will „nur kontrollieren“. Es gibt keinen Notfall. Darf er das?",
+   "hinweis": "Ist eine Kontrolle ohne Anlass ein wichtiger Grund?",
+   "optionen": [
+    {
+     "text": "Nein. Er darf nur aus wichtigem Grund und nach Ankündigung in die Wohnung.",
+     "richtig": true,
+     "feedback": "Richtig. Die Mieterin muss das Betreten nur aus wichtigen Gründen dulden, zum Beispiel für nötige Arbeiten (§ 8 Abs 2 MRG)."
+    },
+    {
+     "text": "Ja. Er ist ja der Eigentümer.",
+     "richtig": false,
+     "feedback": "Nein. Wer vermietet, überlässt die Wohnung zur Nutzung. Eigentum erlaubt kein Betreten nach Lust und Laune."
+    },
+    {
+     "text": "Ja, aber nur am Wochenende.",
+     "richtig": false,
+     "feedback": "Nein. Der Wochentag spielt keine Rolle. Es braucht einen wichtigen Grund und eine Ankündigung."
+    }
+   ],
+   "theorie": "Nach § 8 Abs 2 MRG muss die Mieterin das Betreten der Wohnung nur aus wichtigen Gründen erlauben, etwa für notwendige Arbeiten oder um die Wohnung Kauf- oder Mietinteressierten zu zeigen. Der Besuch muss vorher angekündigt werden. Gegen eigenmächtige Eingriffe schützt der Besitzschutz (§ 339 ABGB), zum Beispiel mit einer Besitzstörungsklage.",
+   "wiederholung": {
+    "frage": "Wann darf der Vermieter in die Wohnung?",
+    "optionen": [
+     {
+      "text": "Aus wichtigem Grund und nach Ankündigung",
+      "richtig": true
+     },
+     {
+      "text": "Wann immer er will",
+      "richtig": false
+     }
+    ]
+   }
+  },
+  {
+   "abschnitt": "Teil 2 – Weiterdenken",
+   "text": "Beim Einzug hat Leyla drei Monatsmieten Kaution bezahlt. Jetzt zieht sie aus. Was muss Herr Gruber mit der Kaution machen?",
+   "optionen": [
+    {
+     "text": "Er muss sie samt Zinsen zurückzahlen, abzüglich berechtigter Forderungen.",
+     "richtig": true,
+     "feedback": "Richtig. Die Kaution ist verzinst anzulegen und nach dem Ende samt Zinsen zurückzuzahlen (§ 16b MRG)."
+    },
+    {
+     "text": "Er darf sie behalten. Das ist seine Sicherheit für immer.",
+     "richtig": false,
+     "feedback": "Nein. Die Kaution sichert nur echte Forderungen aus dem Mietverhältnis. Sonst muss er sie zurückzahlen."
+    },
+    {
+     "text": "Er muss nur die Hälfte zurückgeben.",
+     "richtig": false,
+     "feedback": "Nein. Eine solche Regel gibt es nicht. Abziehen darf er nur, was er wirklich fordern kann."
+    }
+   ],
+   "theorie": "Die Kaution sichert offene Forderungen des Vermieters, zum Beispiel fehlende Miete oder echte Schäden. Der Vermieter muss sie getrennt und verzinst anlegen. Nach dem Ende der Miete muss er sie unverzüglich samt Zinsen zurückzahlen, soweit er keine berechtigten Forderungen hat (§ 16b MRG). Die Höhe steht nicht im Gesetz. Üblich sind drei Monatsmieten, mehr als sechs sehen die Gerichte meist als zu hoch an.",
+   "wiederholung": {
+    "frage": "Was bekommt Leyla zur Kaution dazu zurück?",
+    "optionen": [
+     {
+      "text": "Die Zinsen",
+      "richtig": true
+     },
+     {
+      "text": "Nichts",
+      "richtig": false
+     }
+    ]
+   }
+  },
+  {
+   "abschnitt": "Teil 2 – Weiterdenken",
+   "text": "Herr Gruber sagt: „Die Wände sind nicht mehr ganz weiß. Ich behalte die Kaution.“ Leyla hat ganz normal gewohnt, ohne Schäden. Darf er dafür etwas abziehen?",
+   "optionen": [
+    {
+     "text": "Nein. Normale Abnützung durch Wohnen muss Leyla nicht ersetzen.",
+     "richtig": true,
+     "feedback": "Richtig. Die Wohnung ist so zurückzugeben, wie sie übernommen wurde, abgesehen von der gewöhnlichen Abnützung (§ 1109 ABGB)."
+    },
+    {
+     "text": "Ja. Die Wohnung muss wie neu sein.",
+     "richtig": false,
+     "feedback": "Nein. Wohnen hinterlässt Spuren. Gewöhnliche Abnützung ist mit der Miete schon abgegolten."
+    },
+    {
+     "text": "Ja, sogar die ganze Kaution.",
+     "richtig": false,
+     "feedback": "Nein. Für normale Abnützung darf er gar nichts abziehen, schon gar nicht die ganze Kaution."
+    }
+   ],
+   "theorie": "§ 1109 ABGB: Die Mieterin gibt die Wohnung in dem Zustand zurück, in dem sie sie übernommen hat. Gewöhnliche Abnützung, zum Beispiel leicht vergilbte Wände oder Gebrauchsspuren am Boden, ist kein Schaden. Ersetzen muss sie nur Schäden, die über den normalen Gebrauch hinausgehen. Ein Übergabeprotokoll mit Fotos hilft beim Beweis.",
+   "wiederholung": {
+    "frage": "Muss Leyla gewöhnliche Abnützung ersetzen?",
+    "optionen": [
+     {
+      "text": "Nein",
+      "richtig": true
+     },
+     {
+      "text": "Ja",
+      "richtig": false
+     }
+    ]
+   }
+  },
+  {
+   "abschnitt": "Teil 2 – Weiterdenken",
+   "text": "Herr Gruber zahlt trotzdem nicht. Was kann Leyla tun?",
+   "optionen": [
+    {
+     "text": "Die Rückzahlung bei der Schlichtungsstelle oder beim Bezirksgericht verlangen",
+     "richtig": true,
+     "feedback": "Richtig. Über die Kaution kann sie die Schlichtungsstelle (in Wien gibt es eine) oder das Bezirksgericht entscheiden lassen."
+    },
+    {
+     "text": "Selbst Möbel von Herrn Gruber mitnehmen, bis er zahlt",
+     "richtig": false,
+     "feedback": "Nein. Eigenmächtige Selbsthilfe ist verboten (§ 19 ABGB). Rechte setzt man über Behörden und Gerichte durch."
+    },
+    {
+     "text": "Nichts. Gegen Vermieter kann man nichts machen.",
+     "richtig": false,
+     "feedback": "Nein. Auch Vermieter müssen sich an das Gesetz halten. Leyla kann ihr Geld einfordern."
+    }
+   ],
+   "theorie": "Wer sich im Recht fühlt, muss sich an Behörden oder Gerichte wenden. Eigenmächtige Selbsthilfe ist grundsätzlich verboten (§ 19 ABGB). Streit über die Kaution wird im wohnrechtlichen Verfahren geklärt: in Gemeinden mit Schlichtungsstelle zuerst dort, sonst beim Bezirksgericht (§ 37 MRG). Beraten können zum Beispiel Mieterorganisationen oder die Arbeiterkammer.",
+   "wiederholung": {
+    "frage": "Darf sich Leyla ihr Geld selbst holen?",
+    "optionen": [
+     {
+      "text": "Nein, sie muss zu Schlichtungsstelle oder Gericht",
+      "richtig": true
+     },
+     {
+      "text": "Ja, das ist erlaubt",
+      "richtig": false
+     }
+    ]
+   }
+  }
+ ],
+ "ergebnis": {
+  "art": "Kaution samt Zinsen zurück",
+  "inhalt": "Herr Gruber muss Leyla die drei Monatsmieten samt Zinsen zurückzahlen. Für normale Abnützung darf er nichts abziehen.",
+  "begruendung": [
+   "Herr Gruber ist Eigentümer, Leyla war berechtigte Mieterin (§ 354, § 1090 ABGB).",
+   "Ohne wichtigen Grund und Ankündigung durfte er die Wohnung nicht betreten (§ 8 Abs 2 MRG).",
+   "Die Kaution ist samt Zinsen zurückzuzahlen, gewöhnliche Abnützung ist kein Schaden (§ 16b MRG, § 1109 ABGB)."
+  ]
+ },
+ "reflexion": {
+  "optional": true,
+  "titel": "Reflexion (optional, zum Diskutieren)",
+  "fragen": [
+   "Was würdest du beim Einzug in deine erste Wohnung dokumentieren, damit es beim Auszug keinen Streit gibt?",
+   "Warum verbietet das Recht die eigenmächtige Selbsthilfe, auch wenn man im Recht ist?"
+  ]
+ },
+ "belohnung": {
+  "xp": 50,
+  "abzeichen": {
+   "name": "Mietrecht-Profi",
+   "emoji": "🔑"
+  }
+ },
+ "abschluss": "Sehr gut! Der Vermieter bleibt Eigentümer, aber die Wohnung ist dein geschützter Bereich. Und die Kaution kommt samt Zinsen zurück, wenn du normal gewohnt hast."
+};
+window.FAELLE = window.FAELLE || [];
+window.FAELLE.push(window.FALL9);

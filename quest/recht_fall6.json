@@ -1,0 +1,237 @@
+{
+  "id": "recht-fall6-volljaehrig",
+  "fach": "Recht",
+  "gebiet": "Rechtsordnung und Staat",
+  "klasse": "Geschäftsfähigkeit · Stufenbau",
+  "titel": "Du wirst 18",
+  "quelle_justizia": "Akte 01 „Du wirst 18“",
+  "vorab_hinweis": "Fiktiver Lernfall. Personen und Geschehen sind erfunden. Es gilt österreichisches Recht.",
+  "einleitung": "Lena wird morgen 18. Ihre Schwester Mia ist 16, ihr Bruder Ben ist 9. Alle drei wollen etwas kaufen. Justizia erklärt, was in welchem Alter gilt und wie die Rechtsordnung aufgebaut ist.",
+  "figur": {
+    "name": "Justizia",
+    "rolle": "Rechtsberatung",
+    "emoji": "⚖️",
+    "farbe": "#2f4f7f"
+  },
+  "stand": "2026-11-24",
+  "rechtsstand": "November 2026",
+  "hauptnormen": [
+    "§ 16 ABGB",
+    "§ 21 ABGB",
+    "§ 170 ABGB",
+    "§ 865 ABGB",
+    "Art 18 B-VG"
+  ],
+  "quellen": [
+    "§ 16 ABGB (Rechtsfähigkeit)",
+    "§ 21 Abs 2 ABGB (Volljährigkeit)",
+    "§ 170 ABGB (Rechtsgeschäfte Minderjähriger)",
+    "§ 865 ABGB (Geschäftsfähigkeit, schwebende Unwirksamkeit)",
+    "Art 18 B-VG (Bindung an die Gesetze)",
+    "Art 49 B-VG (Kundmachung)",
+    "Art 139 B-VG (Prüfung von Verordnungen)"
+  ],
+  "schritte": [
+    {
+      "abschnitt": "Teil 1 – Der Fall",
+      "text": "Lena fragt: „Habe ich erst ab 18 Rechte?“ Was stimmt?",
+      "optionen": [
+        {
+          "text": "Rechte hat man ab der Geburt. Ab 18 kann man Verträge voll selbst schließen.",
+          "richtig": true,
+          "feedback": "Richtig. Rechtsfähig ist jeder Mensch ab der Geburt. Voll geschäftsfähig ist man ab 18."
+        },
+        {
+          "text": "Rechte hat man erst ab 18.",
+          "richtig": false,
+          "feedback": "Nein. Auch ein Baby kann zum Beispiel erben oder Eigentum haben. Das ist die Rechtsfähigkeit."
+        },
+        {
+          "text": "Rechte hat man ab 14.",
+          "richtig": false,
+          "feedback": "Nein. Mit 14 ist man mündig minderjährig. Rechte hat man aber schon ab der Geburt."
+        }
+      ],
+      "theorie": "Rechtsfähigkeit heißt: Man kann Rechte und Pflichten haben. Jeder Mensch hat sie ab der Geburt (§ 16 ABGB). Geschäftsfähigkeit heißt: Man kann selbst wirksam Verträge schließen. Voll geschäftsfähig ist man ab 18, mit der Volljährigkeit (§ 21 Abs 2 ABGB).",
+      "wiederholung": {
+        "frage": "Kann ein Baby Eigentümer eines Hauses sein?",
+        "optionen": [
+          {
+            "text": "Ja, es ist rechtsfähig",
+            "richtig": true
+          },
+          {
+            "text": "Nein, erst ab 18",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 1 – Der Fall",
+      "text": "Mia (16) will ein Handy um 1.200 Euro in 24 Raten kaufen. Sie hat nur Taschengeld und kein eigenes Einkommen. Die Eltern wissen nichts davon. Was gilt?",
+      "hinweis": "Reicht ihr Taschengeld für 24 Raten?",
+      "optionen": [
+        {
+          "text": "Der Vertrag gilt erst, wenn die Eltern zustimmen.",
+          "richtig": true,
+          "feedback": "Richtig. Ohne Zustimmung der Eltern ist der Vertrag schwebend unwirksam (§ 865 Abs 3 ABGB)."
+        },
+        {
+          "text": "Der Vertrag gilt, sie hat ja Taschengeld.",
+          "richtig": false,
+          "feedback": "Nein. 24 Raten gehen weit über ihr Taschengeld hinaus. Dafür braucht sie die Zustimmung der Eltern."
+        },
+        {
+          "text": "Mit 16 kann sie gar keinen Vertrag schließen.",
+          "richtig": false,
+          "feedback": "Zu streng. Mit 16 kann sie über ihr Taschengeld selbst verfügen und kleine Alltagsgeschäfte machen."
+        }
+      ],
+      "theorie": "Minderjährige brauchen für Verträge grundsätzlich die Zustimmung der Eltern als gesetzliche Vertreter (§ 170 Abs 1 ABGB). Ab 14 dürfen sie über Taschengeld und eigenes Einkommen selbst verfügen, solange ihr Lebensunterhalt nicht gefährdet ist (§ 170 Abs 2 ABGB). Fehlt die Zustimmung, ist der Vertrag schwebend unwirksam: Er gilt erst, wenn die Eltern zustimmen (§ 865 Abs 3 ABGB).",
+      "wiederholung": {
+        "frage": "Was heißt „schwebend unwirksam“?",
+        "optionen": [
+          {
+            "text": "Der Vertrag gilt erst mit Zustimmung der Eltern",
+            "richtig": true
+          },
+          {
+            "text": "Der Vertrag gilt sofort",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 1 – Der Fall",
+      "text": "Ben (9) kauft mit seinem Taschengeld eine Kugel Eis um 2 Euro und zahlt sofort. Ist der Kauf wirksam?",
+      "optionen": [
+        {
+          "text": "Ja. Das ist ein kleines Alltagsgeschäft, und er hat schon bezahlt.",
+          "richtig": true,
+          "feedback": "Richtig. Ein kleines Alltagsgeschäft wird wirksam, sobald das Kind bezahlt hat (§ 170 Abs 3 ABGB)."
+        },
+        {
+          "text": "Nein. Unter 14 ist jeder Vertrag unwirksam.",
+          "richtig": false,
+          "feedback": "Nein. Für kleine Alltagsgeschäfte, wie sie Kinder in seinem Alter üblich machen, gibt es eine Ausnahme."
+        },
+        {
+          "text": "Nur wenn ein Elternteil daneben steht.",
+          "richtig": false,
+          "feedback": "Nein. Bei einem kleinen Alltagsgeschäft müssen die Eltern nicht dabei sein. Es zählt, dass Ben bezahlt hat."
+        }
+      ],
+      "theorie": "Bei Kindern zählt das Alter: unter 7, von 7 bis 14 (unmündig) und von 14 bis 18 (mündig). Für alle Minderjährigen gilt: Ein kleines Geschäft des täglichen Lebens, wie es Kinder in diesem Alter üblich schließen, wird mit dem Bezahlen wirksam (§ 170 Abs 3 ABGB).",
+      "wiederholung": {
+        "frage": "Wann wird ein kleines Alltagsgeschäft eines Kindes wirksam?",
+        "optionen": [
+          {
+            "text": "Sobald das Kind bezahlt hat",
+            "richtig": true
+          },
+          {
+            "text": "Erst wenn es 18 ist",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 2 – Weiterdenken",
+      "text": "Lena bekommt zwei Briefe: einen Kaufvertrag für ihr neues Fahrrad und eine Strafverfügung der Behörde, weil sie bei Rot gefahren ist. Welcher Brief gehört zum öffentlichen Recht?",
+      "optionen": [
+        {
+          "text": "Die Strafverfügung. Hier tritt der Staat mit Befehlsgewalt auf.",
+          "richtig": true,
+          "feedback": "Richtig. Strafen, Steuern und Bescheide sind öffentliches Recht. Der Staat steht über der Bürgerin."
+        },
+        {
+          "text": "Der Kaufvertrag, weil er schriftlich ist.",
+          "richtig": false,
+          "feedback": "Nein. Ob schriftlich oder nicht, ist egal. Beim Kauf stehen sich zwei Gleichgestellte gegenüber: Privatrecht."
+        },
+        {
+          "text": "Beide, weil es Briefe sind.",
+          "richtig": false,
+          "feedback": "Nein. Entscheidend ist, wer wem gegenübersteht. Beim Kauf sind das zwei Gleichgestellte."
+        }
+      ],
+      "theorie": "Öffentliches Recht regelt das Verhältnis zwischen Staat und Menschen, wenn der Staat mit Befehl und Zwang handelt, zum Beispiel bei Strafen, Steuern oder Bescheiden. Privatrecht regelt Beziehungen zwischen Gleichgestellten, zum Beispiel Kauf, Miete oder Arbeitsvertrag.",
+      "wiederholung": {
+        "frage": "Eine Wohnung mieten: Welches Recht ist das?",
+        "optionen": [
+          {
+            "text": "Privatrecht",
+            "richtig": true
+          },
+          {
+            "text": "Öffentliches Recht",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 2 – Weiterdenken",
+      "text": "Lena liest: Eine Verordnung einer Ministerin widerspricht einem Gesetz. Was gilt nach dem Stufenbau der Rechtsordnung?",
+      "optionen": [
+        {
+          "text": "Das Gesetz geht vor. Die Verordnung ist gesetzwidrig.",
+          "richtig": true,
+          "feedback": "Richtig. Verordnungen dürfen nur auf Grund der Gesetze erlassen werden (Art 18 Abs 2 B-VG)."
+        },
+        {
+          "text": "Die Verordnung geht vor, weil sie neuer ist.",
+          "richtig": false,
+          "feedback": "Nein. Im Stufenbau zählt der Rang, nicht das Datum. Die Verordnung steht unter dem Gesetz."
+        },
+        {
+          "text": "Beide gelten gleich stark.",
+          "richtig": false,
+          "feedback": "Nein. Die Rechtsordnung hat Stufen. Das Gesetz steht über der Verordnung."
+        }
+      ],
+      "theorie": "Stufenbau der Rechtsordnung: oben die Bundesverfassung, darunter die Gesetze (zum Beispiel ABGB, StGB), dann die Verordnungen, unten Bescheide und Urteile im Einzelfall. Jede Stufe muss zur höheren passen. Ob eine Verordnung gesetzwidrig ist, prüft der Verfassungsgerichtshof (Art 139 B-VG). Den geltenden Text der Bundesgesetze findet man kostenlos im RIS, dem Rechtsinformationssystem des Bundes.",
+      "wiederholung": {
+        "frage": "Was steht im Stufenbau über der Verordnung?",
+        "optionen": [
+          {
+            "text": "Das Gesetz",
+            "richtig": true
+          },
+          {
+            "text": "Der Bescheid",
+            "richtig": false
+          }
+        ]
+      }
+    }
+  ],
+  "ergebnis": {
+    "art": "Mias Ratenkauf braucht die Zustimmung der Eltern",
+    "inhalt": "Lena ist ab 18 voll geschäftsfähig. Mias Ratenkauf gilt erst, wenn die Eltern zustimmen. Bens Eis ist gültig gekauft.",
+    "begruendung": [
+      "Rechtsfähig ist jeder Mensch ab der Geburt, voll geschäftsfähig ab 18 (§ 16, § 21 Abs 2 ABGB).",
+      "Ohne Zustimmung der Eltern ist Mias Ratenkauf schwebend unwirksam (§ 170 Abs 1, § 865 Abs 3 ABGB).",
+      "Kleine Alltagsgeschäfte werden mit dem Bezahlen wirksam (§ 170 Abs 3 ABGB)."
+    ]
+  },
+  "reflexion": {
+    "optional": true,
+    "titel": "Reflexion (optional, zum Diskutieren)",
+    "fragen": [
+      "Recht, Moral und Sitte: Nenne etwas, das erlaubt ist, aber trotzdem unfair sein kann.",
+      "Ist 18 ein gutes Alter für die volle Geschäftsfähigkeit? Warum?"
+    ]
+  },
+  "belohnung": {
+    "xp": 50,
+    "abzeichen": {
+      "name": "Volljährig-Profi",
+      "emoji": "🎂"
+    }
+  },
+  "abschluss": "Gut gemacht! Rechte hat man ab der Geburt. Verträge voll allein schließen kann man ab 18. Und in der Rechtsordnung gilt: Die höhere Stufe geht vor."
+}

@@ -1,0 +1,239 @@
+{
+  "id": "recht-fall14-eu",
+  "fach": "Recht",
+  "gebiet": "Rechtsordnung und Staat",
+  "klasse": "EU-Recht",
+  "titel": "Brüssel ist näher, als du denkst",
+  "quelle_justizia": "Akte 09 „Brüssel ist näher als du denkst“",
+  "vorab_hinweis": "Fiktiver Lernfall. Personen und Geschehen sind erfunden. Es gilt österreichisches Recht.",
+  "einleitung": "Jonas ist 19 und hat gerade maturiert. Er will drei Monate in einer Bar in Rotterdam in den Niederlanden arbeiten. Seine Tante sagt: „Dafür brauchst du ein Visum. Und überhaupt entscheidet die EU eh alles.“",
+  "figur": {
+    "name": "Justizia",
+    "rolle": "Rechtsberatung",
+    "emoji": "⚖️",
+    "farbe": "#2f4f7f"
+  },
+  "stand": "2026-11-24",
+  "rechtsstand": "November 2026",
+  "hauptnormen": [
+    "Art 45 AEUV",
+    "Art 288 AEUV",
+    "Art 5 EUV",
+    "Art 17 EUV"
+  ],
+  "quellen": [
+    "Art 5 EUV (begrenzte Einzelermächtigung)",
+    "Art 13 EUV (Organe)",
+    "Art 17 Abs 2 EUV (Vorschlagsrecht der Kommission)",
+    "Art 21 AEUV (Freizügigkeit)",
+    "Art 45 AEUV (Arbeitnehmerfreizügigkeit)",
+    "Art 267 AEUV (Vorabentscheidung)",
+    "Art 288 AEUV (Verordnung, Richtlinie)",
+    "Art 294 AEUV (ordentliches Gesetzgebungsverfahren)",
+    "EuGH Rs 6/64 Costa/ENEL (Vorrang)",
+    "VO (EG) 883/2004 (Sozialversicherung)"
+  ],
+  "schritte": [
+    {
+      "abschnitt": "Teil 1 – Der Fall",
+      "text": "Braucht Jonas als Österreicher ein Visum oder eine Arbeitserlaubnis für den Job in den Niederlanden?",
+      "optionen": [
+        {
+          "text": "Nein. Als EU-Bürger darf er in einem anderen EU-Land arbeiten.",
+          "richtig": true,
+          "feedback": "Richtig. Die Arbeitnehmerfreizügigkeit erlaubt es, in jedem EU-Land zu arbeiten (Art 45 AEUV)."
+        },
+        {
+          "text": "Ja, wie in jedem anderen Land der Welt",
+          "richtig": false,
+          "feedback": "Nein. Innerhalb der EU braucht Jonas als Unionsbürger weder Visum noch Arbeitserlaubnis."
+        },
+        {
+          "text": "Nur mit einem Studienabschluss",
+          "richtig": false,
+          "feedback": "Nein. Die Freizügigkeit gilt für alle Arbeitnehmerinnen und Arbeitnehmer, nicht nur mit Studium."
+        }
+      ],
+      "theorie": "Der Binnenmarkt beruht auf vier Grundfreiheiten: freier Warenverkehr, Personenfreizügigkeit, Dienstleistungsfreiheit und freier Kapitalverkehr. Unionsbürger dürfen sich in anderen EU-Staaten aufhalten (Art 21 AEUV) und dort arbeiten (Art 45 AEUV). Bei längeren Aufenthalten kann es Meldepflichten geben.",
+      "wiederholung": {
+        "frage": "Wie viele Grundfreiheiten hat der Binnenmarkt?",
+        "optionen": [
+          {
+            "text": "Vier",
+            "richtig": true
+          },
+          {
+            "text": "Zwei",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 1 – Der Fall",
+      "text": "Jonas will verstehen, wer in der EU Gesetze macht. Wer schlägt neue EU-Gesetze in der Regel vor?",
+      "hinweis": "Kommission und Rat werden oft verwechselt.",
+      "optionen": [
+        {
+          "text": "Die Europäische Kommission",
+          "richtig": true,
+          "feedback": "Richtig. Die Kommission hat das Vorschlagsrecht (Art 17 Abs 2 EUV). Beschließen müssen Parlament und Rat."
+        },
+        {
+          "text": "Der Gerichtshof der EU",
+          "richtig": false,
+          "feedback": "Nein. Der Gerichtshof legt das Unionsrecht aus. Gesetze schlägt er nicht vor."
+        },
+        {
+          "text": "Der Nationalrat in Wien",
+          "richtig": false,
+          "feedback": "Nein. Der Nationalrat macht österreichische Gesetze. EU-Gesetze schlägt die Kommission vor."
+        }
+      ],
+      "theorie": "Wichtige EU-Organe: Das Europäische Parlament wird direkt gewählt. Im Rat der EU sitzen Ministerinnen und Minister der Mitgliedstaaten. Die Europäische Kommission schlägt Gesetze vor und wacht über ihre Einhaltung. Der Europäische Rat (Staats- und Regierungschefs) gibt die politische Richtung vor. Im ordentlichen Gesetzgebungsverfahren beschließen Parlament und Rat gemeinsam (Art 294 AEUV).",
+      "wiederholung": {
+        "frage": "Wer wird von den EU-Bürgerinnen und EU-Bürgern direkt gewählt?",
+        "optionen": [
+          {
+            "text": "Das Europäische Parlament",
+            "richtig": true
+          },
+          {
+            "text": "Die Kommission",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 2 – Weiterdenken",
+      "text": "In Rotterdam telefoniert Jonas mit seinem österreichischen Handy. Die Roaming-Regeln stehen in einer EU-Verordnung. Gilt sie direkt, auch in Österreich?",
+      "optionen": [
+        {
+          "text": "Ja. Eine Verordnung gilt unmittelbar in jedem EU-Staat.",
+          "richtig": true,
+          "feedback": "Richtig. Verordnungen gelten unmittelbar in allen Mitgliedstaaten (Art 288 AEUV)."
+        },
+        {
+          "text": "Nein. Erst muss der Nationalrat sie als Gesetz beschließen.",
+          "richtig": false,
+          "feedback": "Nein. Das gilt für Richtlinien. Eine Verordnung braucht kein eigenes österreichisches Gesetz."
+        },
+        {
+          "text": "Nur, wenn der Bundespräsident zustimmt.",
+          "richtig": false,
+          "feedback": "Nein. Eine EU-Verordnung braucht keine Zustimmung des Bundespräsidenten."
+        }
+      ],
+      "theorie": "Art 288 AEUV: Eine Verordnung gilt unmittelbar in jedem Mitgliedstaat, ähnlich wie ein Gesetz. Eine Richtlinie gibt nur ein Ziel vor. Jeder Staat muss sie mit einem eigenen Gesetz umsetzen. Ein Beispiel ist das FAGG: Es setzt eine EU-Richtlinie zu Verbraucherrechten beim Online-Kauf um.",
+      "wiederholung": {
+        "frage": "Was muss mit einer Richtlinie passieren?",
+        "optionen": [
+          {
+            "text": "Sie muss in nationales Recht umgesetzt werden",
+            "richtig": true
+          },
+          {
+            "text": "Nichts, sie gilt sofort",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 2 – Weiterdenken",
+      "text": "Angenommen, ein österreichisches Gesetz widerspricht dieser EU-Verordnung. Was gilt?",
+      "optionen": [
+        {
+          "text": "Die EU-Verordnung. Das österreichische Gesetz wird insoweit nicht angewendet.",
+          "richtig": true,
+          "feedback": "Richtig. Unionsrecht hat Anwendungsvorrang vor nationalem Recht. Das hat der Gerichtshof der EU schon 1964 entschieden."
+        },
+        {
+          "text": "Immer das österreichische Gesetz",
+          "richtig": false,
+          "feedback": "Nein. In den Bereichen, die die EU regeln darf, geht das Unionsrecht vor."
+        },
+        {
+          "text": "Der Bundespräsident entscheidet.",
+          "richtig": false,
+          "feedback": "Nein. Der Bundespräsident entscheidet nicht über Konflikte zwischen EU-Recht und österreichischem Recht."
+        }
+      ],
+      "theorie": "Unionsrecht hat Anwendungsvorrang: Widerspricht ein nationales Gesetz dem EU-Recht, wird es im Einzelfall nicht angewendet (EuGH, Costa/ENEL, 1964). Das nationale Gesetz bleibt bestehen, gilt aber insoweit nicht. Wie Unionsrecht auszulegen ist, entscheidet am Ende der Gerichtshof der EU in Luxemburg (Art 267 AEUV).",
+      "wiederholung": {
+        "frage": "Wo hat der Gerichtshof der EU seinen Sitz?",
+        "optionen": [
+          {
+            "text": "In Luxemburg",
+            "richtig": true
+          },
+          {
+            "text": "In Wien",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 2 – Weiterdenken",
+      "text": "Die Tante sagt: „Die EU entscheidet eh alles. Der Nationalrat ist nur Theater.“ Stimmt das?",
+      "optionen": [
+        {
+          "text": "Nein. Die EU darf nur dort handeln, wo die Mitgliedstaaten ihr Zuständigkeiten übertragen haben.",
+          "richtig": true,
+          "feedback": "Richtig. Das ist das Prinzip der begrenzten Einzelermächtigung (Art 5 EUV). Vieles bleibt national, zum Beispiel das Schulwesen."
+        },
+        {
+          "text": "Ja. Seit dem EU-Beitritt hat Österreich nichts mehr zu sagen.",
+          "richtig": false,
+          "feedback": "Nein. Österreich entscheidet weiter vieles selbst und sitzt im Rat der EU mit am Tisch."
+        },
+        {
+          "text": "Ja. Der Nationalrat wurde mit dem EU-Beitritt abgeschafft.",
+          "richtig": false,
+          "feedback": "Nein. Den Nationalrat gibt es weiter. Er macht österreichische Gesetze und setzt Richtlinien um."
+        }
+      ],
+      "theorie": "Die EU hat nur die Zuständigkeiten, die ihr die Mitgliedstaaten in den Verträgen übertragen haben (Art 5 EUV). Österreich ist seit 1995 EU-Mitglied. Weil der Beitritt eine Gesamtänderung der Bundesverfassung war, gab es 1994 eine Volksabstimmung. Viele Bereiche bleiben national, zum Beispiel das Schulwesen.",
+      "wiederholung": {
+        "frage": "Seit wann ist Österreich EU-Mitglied?",
+        "optionen": [
+          {
+            "text": "Seit 1995",
+            "richtig": true
+          },
+          {
+            "text": "Seit 2004",
+            "richtig": false
+          }
+        ]
+      }
+    }
+  ],
+  "ergebnis": {
+    "art": "Freie Fahrt nach Rotterdam",
+    "inhalt": "Jonas darf ohne Visum und ohne Arbeitserlaubnis in den Niederlanden arbeiten. EU-Recht und österreichisches Recht greifen ineinander.",
+    "begruendung": [
+      "Als Unionsbürger hat Jonas Arbeitnehmerfreizügigkeit (Art 45 AEUV).",
+      "Arbeitet er in den Niederlanden, ist er in der Regel dort sozialversichert (VO (EG) 883/2004).",
+      "Die EU handelt nur in übertragenen Bereichen, dort hat ihr Recht aber Vorrang (Art 5 EUV, Costa/ENEL)."
+    ]
+  },
+  "reflexion": {
+    "optional": true,
+    "titel": "Reflexion (optional, zum Diskutieren)",
+    "fragen": [
+      "Nenne zwei Dinge aus deinem Alltag, die durch EU-Recht geregelt sind.",
+      "Soll die EU mehr oder weniger entscheiden dürfen? Begründe kurz."
+    ]
+  },
+  "belohnung": {
+    "xp": 50,
+    "abzeichen": {
+      "name": "EU-Durchblick",
+      "emoji": "🌍"
+    }
+  },
+  "abschluss": "Super! Freizügigkeit, Verordnung und Richtlinie, Vorrang des Unionsrechts: Du weißt jetzt, warum Brüssel näher ist, als viele denken."
+}

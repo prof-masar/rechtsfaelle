@@ -1,0 +1,242 @@
+/* Fall 13 unverändert aus recht_fall13.json (Inhalt nach JUSTIZIA Akte 08 „Oma Hilde und das Haus“) */
+window.FALL13 = {
+ "id": "recht-fall13-erbe",
+ "fach": "Recht",
+ "gebiet": "Familie und Erbe",
+ "klasse": "Erbrecht · Obsorge",
+ "titel": "Oma Hilde und das Haus",
+ "quelle_justizia": "Akte 08 „Oma Hilde und das Haus“",
+ "vorab_hinweis": "Fiktiver Lernfall. Personen und Geschehen sind erfunden. Es gilt österreichisches Recht.",
+ "einleitung": "Franz ist gestorben. Er war 52 Jahre mit Hilde verheiratet. Das Haus gehörte ihm allein. Ein Testament gibt es nicht. Sein Sohn Werner sagt: „Das Haus gehört mir, ich habe immer den Garten gemacht.“ Franz' Tochter Petra ist schon vor Jahren gestorben. Sie hat eine Tochter, Sophie (16).",
+ "figur": {
+  "name": "Justizia",
+  "rolle": "Rechtsberatung",
+  "emoji": "⚖️",
+  "farbe": "#2f4f7f"
+ },
+ "stand": "2026-11-24",
+ "rechtsstand": "November 2026",
+ "hauptnormen": [
+  "§ 732 ABGB",
+  "§ 744 ABGB",
+  "§ 759 ABGB",
+  "§ 578 ABGB"
+ ],
+ "quellen": [
+  "§ 158 ABGB (Obsorge)",
+  "§ 578 ABGB (eigenhändiges Testament)",
+  "§ 579 ABGB (fremdhändiges Testament)",
+  "§ 677 ABGB (Pflegevermächtnis)",
+  "§ 732 ABGB (Erbrecht der Kinder und Enkel)",
+  "§ 744 ABGB (Erbrecht des Ehegatten)",
+  "§ 745 ABGB (gesetzliches Vorausvermächtnis)",
+  "§ 757 ABGB (Pflichtteilsberechtigte)",
+  "§ 759 ABGB (Höhe des Pflichtteils)",
+  "§ 770 ABGB (Enterbung)"
+ ],
+ "schritte": [
+  {
+   "abschnitt": "Teil 1 – Der Fall",
+   "text": "Es gibt kein Testament. Wer erbt nach dem Gesetz?",
+   "optionen": [
+    {
+     "text": "Hilde, Werner und Sophie",
+     "richtig": true,
+     "feedback": "Richtig. Neben der Ehefrau erben die Kinder. Für die verstorbene Petra tritt ihre Tochter Sophie ein (§ 732, § 744 ABGB)."
+    },
+    {
+     "text": "Nur Werner, weil er der einzige lebende Sohn ist",
+     "richtig": false,
+     "feedback": "Nein. Für eine verstorbene Tochter treten deren Kinder ein. Und auch die Ehefrau erbt."
+    },
+    {
+     "text": "Nur Hilde als Ehefrau",
+     "richtig": false,
+     "feedback": "Nein. Die Ehefrau erbt neben den Kindern nur einen Teil, nicht alles."
+    }
+   ],
+   "theorie": "Gibt es kein Testament, gilt die gesetzliche Erbfolge. Zuerst erben die Kinder. Ist ein Kind schon gestorben, treten dessen Kinder an seine Stelle (§ 732 ABGB). Der Ehepartner erbt neben den Kindern ein Drittel (§ 744 Abs 1 ABGB). Der Staat bekommt den Nachlass nur, wenn es gar keine Erben gibt.",
+   "wiederholung": {
+    "frage": "Wer tritt an die Stelle eines verstorbenen Kindes?",
+    "optionen": [
+     {
+      "text": "Dessen Kinder",
+      "richtig": true
+     },
+     {
+      "text": "Der Staat",
+      "richtig": false
+     }
+    ]
+   }
+  },
+  {
+   "abschnitt": "Teil 1 – Der Fall",
+   "text": "Wie viel vom Nachlass bekommt jede Person?",
+   "hinweis": "Zuerst den Anteil der Ehefrau abziehen, dann den Rest aufteilen.",
+   "optionen": [
+    {
+     "text": "Hilde ein Drittel, Werner ein Drittel, Sophie ein Drittel",
+     "richtig": true,
+     "feedback": "Richtig. Hilde bekommt ein Drittel. Die übrigen zwei Drittel teilen sich Werner und Sophie, die für Petra eintritt."
+    },
+    {
+     "text": "Hilde die Hälfte, Werner und Sophie je ein Viertel",
+     "richtig": false,
+     "feedback": "Nein. Neben Kindern bekommt der Ehepartner ein Drittel, nicht die Hälfte (§ 744 ABGB)."
+    },
+    {
+     "text": "Hilde ein Drittel, Werner zwei Drittel, Sophie nichts",
+     "richtig": false,
+     "feedback": "Nein. Sophie erbt den Teil, den ihre Mutter Petra bekommen hätte."
+    }
+   ],
+   "theorie": "Der Ehepartner erbt neben Kindern ein Drittel. Die übrigen zwei Drittel teilen die Kinder zu gleichen Teilen (§ 732 ABGB). Hier gibt es zwei Kinder: Werner und die verstorbene Petra. Petras Anteil geht an Sophie. Außerdem darf Hilde in der Ehewohnung weiter wohnen (gesetzliches Vorausvermächtnis, § 745 ABGB).",
+   "wiederholung": {
+    "frage": "Wie viel erbt der Ehepartner neben Kindern?",
+    "optionen": [
+     {
+      "text": "Ein Drittel",
+      "richtig": true
+     },
+     {
+      "text": "Alles",
+      "richtig": false
+     }
+    ]
+   }
+  },
+  {
+   "abschnitt": "Teil 1 – Der Fall",
+   "text": "Werner hat jahrelang den Garten gemacht. Bekommt er deshalb das Haus?",
+   "optionen": [
+    {
+     "text": "Nein. Gartenarbeit ändert die gesetzliche Erbfolge nicht.",
+     "richtig": true,
+     "feedback": "Richtig. Wer was erbt, regeln Testament oder Gesetz. Gartenarbeit ist auch keine Pflege im Sinn des Pflegevermächtnisses (§ 677 ABGB)."
+    },
+    {
+     "text": "Ja. Wer hilft, bekommt das Haus.",
+     "richtig": false,
+     "feedback": "Nein. Hilfe im Garten macht niemanden zum Alleinerben."
+    },
+    {
+     "text": "Ja, wenn die anderen nicht widersprechen.",
+     "richtig": false,
+     "feedback": "Nein. Ohne Testament gilt die gesetzliche Erbfolge. Andere Lösungen gibt es nur, wenn sich alle Erben darauf einigen."
+    }
+   ],
+   "theorie": "Erbrecht folgt festen Regeln: Testament oder Gesetz. Ein Pflegevermächtnis gibt es nur für nahestehende Personen, die den Verstorbenen in den letzten drei Jahren vor dem Tod mindestens sechs Monate lang gepflegt haben, in der Regel mehr als 20 Stunden im Monat (§ 677 ABGB). Gartenarbeit gehört nicht dazu. Ein Haus können die Erben gemeinsam behalten, verkaufen, oder eine Person übernimmt es und zahlt die anderen aus.",
+   "wiederholung": {
+    "frage": "Macht Gartenarbeit zum Alleinerben?",
+    "optionen": [
+     {
+      "text": "Nein",
+      "richtig": true
+     },
+     {
+      "text": "Ja",
+      "richtig": false
+     }
+    ]
+   }
+  },
+  {
+   "abschnitt": "Teil 2 – Weiterdenken",
+   "text": "Angenommen, Franz hätte ein gültiges Testament geschrieben: „Werner bekommt alles.“ Was hätte Sophie dann?",
+   "optionen": [
+    {
+     "text": "Ihren Pflichtteil, also die Hälfte ihres gesetzlichen Erbteils",
+     "richtig": true,
+     "feedback": "Richtig. Nachkommen und Ehepartner haben einen Pflichtteil. Er ist die Hälfte des gesetzlichen Erbteils (§ 757, § 759 ABGB)."
+    },
+    {
+     "text": "Gar nichts",
+     "richtig": false,
+     "feedback": "Nein. Nachkommen kann man nicht einfach auf null setzen. Enterben geht nur aus schweren Gründen (§ 770 ABGB)."
+    },
+    {
+     "text": "Trotzdem ihren vollen gesetzlichen Erbteil",
+     "richtig": false,
+     "feedback": "Nein. Ein Testament kann die Verteilung ändern. Gesichert ist nur der Pflichtteil."
+    }
+   ],
+   "theorie": "Mit einem Testament kann man selbst bestimmen, wer erbt. Die Nachkommen und der Ehepartner haben aber einen Pflichtteil (§ 757 ABGB). Er ist die Hälfte des gesetzlichen Erbteils (§ 759 ABGB) und ein Anspruch auf Geld. Enterben kann man nur aus schweren Gründen (§ 770 ABGB).",
+   "wiederholung": {
+    "frage": "Wie hoch ist der Pflichtteil?",
+    "optionen": [
+     {
+      "text": "Die Hälfte des gesetzlichen Erbteils",
+      "richtig": true
+     },
+     {
+      "text": "Das Doppelte des gesetzlichen Erbteils",
+      "richtig": false
+     }
+    ]
+   }
+  },
+  {
+   "abschnitt": "Teil 2 – Weiterdenken",
+   "text": "Werner taucht mit einem Testament auf. Es ist am Computer geschrieben und nur von Franz unterschrieben. Zeugen gab es keine. Ist es gültig?",
+   "optionen": [
+    {
+     "text": "Nein. Ohne Zeugen muss ein Testament ganz mit der Hand geschrieben und unterschrieben sein.",
+     "richtig": true,
+     "feedback": "Richtig. Ein eigenhändiges Testament muss der Verstorbene selbst mit der Hand schreiben und unterschreiben (§ 578 ABGB)."
+    },
+    {
+     "text": "Ja. Die Unterschrift reicht.",
+     "richtig": false,
+     "feedback": "Nein. Bei einem getippten Testament braucht es drei Zeugen und einen eigenhändigen Zusatz (§ 579 ABGB)."
+    },
+    {
+     "text": "Ja, wenn ein Datum darauf steht.",
+     "richtig": false,
+     "feedback": "Nein. Ein Datum ist ratsam, macht ein getipptes Testament ohne Zeugen aber nicht gültig."
+    }
+   ],
+   "theorie": "Ein eigenhändiges Testament muss ganz mit der Hand geschrieben und unterschrieben sein (§ 578 ABGB). Ort und Datum sind nicht Pflicht, aber ratsam. Ein fremdhändiges Testament, zum Beispiel am Computer geschrieben, braucht drei gleichzeitig anwesende Zeugen und einen eigenhändigen Zusatz, dass es der eigene letzte Wille ist (§ 579 ABGB). Man kann ein Testament auch bei einer Notarin oder einem Notar errichten.",
+   "wiederholung": {
+    "frage": "Ist ein Datum auf dem eigenhändigen Testament Pflicht?",
+    "optionen": [
+     {
+      "text": "Nein, aber ratsam",
+      "richtig": true
+     },
+     {
+      "text": "Ja, sonst ist es ungültig",
+      "richtig": false
+     }
+    ]
+   }
+  }
+ ],
+ "ergebnis": {
+  "art": "Gesetzliche Erbfolge",
+  "inhalt": "Hilde, Werner und Sophie erben je ein Drittel. Hilde darf im Haus wohnen bleiben. Das getippte Testament ohne Zeugen ist ungültig.",
+  "begruendung": [
+   "Ohne gültiges Testament erben Ehepartnerin und Kinder, für Petra tritt Sophie ein (§ 732, § 744 ABGB).",
+   "Gartenarbeit begründet weder ein Erbrecht noch ein Pflegevermächtnis (§ 677 ABGB).",
+   "Sophie ist minderjährig. Im Verlassenschaftsverfahren vertritt sie der Elternteil mit der Obsorge (§ 158 ABGB)."
+  ]
+ },
+ "reflexion": {
+  "optional": true,
+  "titel": "Reflexion (optional, zum Diskutieren)",
+  "fragen": [
+   "Warum verlangt das Gesetz so strenge Formen für ein Testament?",
+   "Sollte der Pflichtteil abgeschafft werden? Sammle Argumente dafür und dagegen."
+  ]
+ },
+ "belohnung": {
+  "xp": 50,
+  "abzeichen": {
+   "name": "Erbrecht-Kenner",
+   "emoji": "📜"
+  }
+ },
+ "abschluss": "Sehr gut! Ohne Testament entscheidet das Gesetz, nicht die Lautstärke. Ehepartner und Kinder sind durch Erbquote und Pflichtteil geschützt."
+};
+window.FAELLE = window.FAELLE || [];
+window.FAELLE.push(window.FALL13);

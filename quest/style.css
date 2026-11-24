@@ -285,3 +285,8 @@ footer { margin-top: 24px; text-align: center; }
 .fortschritt-card { cursor: default; }
 .fortschritt-card:hover { border-color: transparent; }
 .fortschritt-card:active { transform: none; }
+
+/* Übersicht nach Rechtsgebieten */
+.gebiet { margin: 0 0 8px; }
+.gebiet-titel { font-size: 1.05rem; margin: 18px 0 10px; color: var(--ink); }
+.rechtsstand { margin: -6px 0 12px; }

@@ -1,0 +1,241 @@
+{
+  "id": "recht-fall12-gewerbe",
+  "fach": "Recht",
+  "gebiet": "Arbeit und Unternehmen",
+  "klasse": "Gewerberecht · Rechtsformen",
+  "titel": "Leyla macht auf",
+  "quelle_justizia": "Akte 07 „Leyla macht auf“",
+  "vorab_hinweis": "Fiktiver Lernfall. Personen und Geschehen sind erfunden. Es gilt österreichisches Recht.",
+  "einleitung": "Leyla ist 22. Sie will Kunstnägel modellieren und dazu Nagellack online verkaufen. Sie hat 2.400 Euro gespart und einen kleinen Raum gemietet. Ihre Cousine sagt: „Gründe eine GmbH, sonst haftest du mit allem.“",
+  "figur": {
+    "name": "Justizia",
+    "rolle": "Rechtsberatung",
+    "emoji": "⚖️",
+    "farbe": "#2f4f7f"
+  },
+  "stand": "2026-11-24",
+  "rechtsstand": "November 2026",
+  "hauptnormen": [
+    "§ 5 GewO",
+    "§ 339 GewO",
+    "§§ 105, 161 UGB",
+    "§ 6 GmbHG",
+    "§ 5 ECG"
+  ],
+  "quellen": [
+    "§ 1 GewO (Gewerbsmäßigkeit)",
+    "§ 5 GewO (Anmeldung, freie und reglementierte Gewerbe)",
+    "§ 94 GewO (reglementierte Gewerbe)",
+    "§ 339 GewO (Gewerbeanmeldung)",
+    "§ 366 GewO (Strafen)",
+    "§ 105 UGB (OG)",
+    "§ 128 UGB (Haftung in der OG)",
+    "§ 161 UGB (KG)",
+    "§ 6 und § 10 GmbHG (Stammkapital)",
+    "§ 5 ECG (Informationspflichten online)",
+    "§ 11 FAGG (Rücktrittsrecht)"
+  ],
+  "schritte": [
+    {
+      "abschnitt": "Teil 1 – Der Fall",
+      "text": "Darf Leyla einfach loslegen, sobald die ersten Kundinnen buchen?",
+      "optionen": [
+        {
+          "text": "Nein. Sie muss zuerst ein Gewerbe anmelden.",
+          "richtig": true,
+          "feedback": "Richtig. Wer gewerbsmäßig arbeitet, braucht eine Gewerbeberechtigung. Bei vollständiger Anmeldung darf sie meist sofort beginnen (§ 5 Abs 1 GewO)."
+        },
+        {
+          "text": "Ja. Anmelden kann sie später, wenn es gut läuft.",
+          "richtig": false,
+          "feedback": "Nein. Ohne Anmeldung ist das unbefugte Gewerbeausübung. Dafür gibt es Verwaltungsstrafen (§ 366 GewO)."
+        },
+        {
+          "text": "Ja, wenn sie ein Profil in sozialen Medien hat.",
+          "richtig": false,
+          "feedback": "Nein. Ein Profil ersetzt keine Gewerbeanmeldung."
+        }
+      ],
+      "theorie": "Eine Tätigkeit ist gewerbsmäßig, wenn sie selbständig, regelmäßig und mit Gewinnabsicht ausgeübt wird (§ 1 GewO). Dafür braucht man eine Gewerbeberechtigung. Angemeldet wird bei der Bezirksverwaltungsbehörde (§ 339 GewO), oft mit Hilfe der Wirtschaftskammer. Wer ohne Berechtigung arbeitet, begeht eine Verwaltungsübertretung (§ 366 Abs 1 Z 1 GewO).",
+      "wiederholung": {
+        "frage": "Wo meldet man ein Gewerbe an?",
+        "optionen": [
+          {
+            "text": "Bei der Bezirksverwaltungsbehörde",
+            "richtig": true
+          },
+          {
+            "text": "Beim Bezirksgericht",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 1 – Der Fall",
+      "text": "Leyla hat keine Ausbildung zur Kosmetikerin. Sie will nur Kunstnägel modellieren. Braucht sie dafür einen Befähigungsnachweis?",
+      "hinweis": "Kosmetik und Kunstnägel sind nicht dasselbe Gewerbe.",
+      "optionen": [
+        {
+          "text": "Nein. Das Modellieren von Fingernägeln ist ein freies Gewerbe.",
+          "richtig": true,
+          "feedback": "Richtig. Für freie Gewerbe reicht die Anmeldung. Ein Befähigungsnachweis ist nicht nötig."
+        },
+        {
+          "text": "Ja. Alles mit Nägeln ist Kosmetik und reglementiert.",
+          "richtig": false,
+          "feedback": "Nicht ganz. Kosmetik ist reglementiert. Nur Kunstnägel modellieren ist aber ein eigenes freies Gewerbe."
+        },
+        {
+          "text": "Ja, sie braucht ein Studium.",
+          "richtig": false,
+          "feedback": "Nein. Für ein freies Gewerbe braucht man keine bestimmte Ausbildung."
+        }
+      ],
+      "theorie": "Die Gewerbeordnung unterscheidet freie und reglementierte Gewerbe (§ 5 Abs 2 GewO). Für reglementierte Gewerbe braucht man einen Befähigungsnachweis, zum Beispiel eine Meisterprüfung. Kosmetik (Schönheitspflege) ist reglementiert (§ 94 Z 42 GewO). „Modellieren von Fingernägeln (Nagelstudio)“ ist ein freies Gewerbe, ebenso der Handel mit Waren.",
+      "wiederholung": {
+        "frage": "Was braucht man für ein reglementiertes Gewerbe zusätzlich?",
+        "optionen": [
+          {
+            "text": "Einen Befähigungsnachweis",
+            "richtig": true
+          },
+          {
+            "text": "Nur ein Firmenschild",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 2 – Weiterdenken",
+      "text": "Leyla startet allein, mit wenig Risiko und 2.400 Euro. Welche Rechtsform passt für den Start am besten?",
+      "optionen": [
+        {
+          "text": "Einzelunternehmen",
+          "richtig": true,
+          "feedback": "Richtig. Das Einzelunternehmen ist einfach und billig zu gründen. Leyla haftet aber mit ihrem ganzen Vermögen."
+        },
+        {
+          "text": "GmbH",
+          "richtig": false,
+          "feedback": "Für den Start kaum möglich. Eine GmbH braucht mindestens 10.000 Euro Stammkapital, davon 5.000 Euro bar (§ 6, § 10 GmbHG)."
+        },
+        {
+          "text": "Offene Gesellschaft (OG)",
+          "richtig": false,
+          "feedback": "Nein. Eine OG braucht mindestens zwei Gesellschafter. Leyla startet allein."
+        }
+      ],
+      "theorie": "Einzelunternehmen: eine Person, sie haftet unbeschränkt mit ihrem ganzen Vermögen. OG: mindestens zwei Gesellschafter, alle haften unbeschränkt (§ 105, § 128 UGB). KG: Komplementäre haften unbeschränkt, Kommanditisten nur bis zu ihrer Haftsumme (§ 161 UGB). GmbH: eigene juristische Person, die Gesellschafter haften grundsätzlich nicht persönlich. Sie braucht einen Notariatsakt, die Eintragung ins Firmenbuch und mindestens 10.000 Euro Stammkapital (§ 6 GmbHG).",
+      "wiederholung": {
+        "frage": "Wie viel Stammkapital braucht eine GmbH mindestens?",
+        "optionen": [
+          {
+            "text": "10.000 Euro",
+            "richtig": true
+          },
+          {
+            "text": "100 Euro",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 2 – Weiterdenken",
+      "text": "Das Studio läuft gut. Leyla will mit ihrer Freundin Jana weitermachen. Jana soll nur Geld einbringen und nicht unbeschränkt haften. Welche Personengesellschaft passt?",
+      "optionen": [
+        {
+          "text": "Eine KG mit Jana als Kommanditistin",
+          "richtig": true,
+          "feedback": "Richtig. Als Kommanditistin haftet Jana nur bis zu ihrer Haftsumme (§ 161 UGB). Leyla haftet als Komplementärin unbeschränkt."
+        },
+        {
+          "text": "Eine OG",
+          "richtig": false,
+          "feedback": "Nein. In der OG haften alle Gesellschafter unbeschränkt, also auch Jana (§ 128 UGB)."
+        },
+        {
+          "text": "Ein Einzelunternehmen von Jana",
+          "richtig": false,
+          "feedback": "Nein. Dann wäre Jana allein Unternehmerin und würde unbeschränkt haften."
+        }
+      ],
+      "theorie": "Bei der KG gibt es zwei Arten von Gesellschaftern: Komplementäre haften unbeschränkt, Kommanditisten nur bis zu ihrer im Firmenbuch eingetragenen Haftsumme (§ 161 UGB). Auch mit einer GmbH könnte Jana ihr Risiko begrenzen. Die Gründung ist aber aufwendiger und teurer.",
+      "wiederholung": {
+        "frage": "Wie haftet eine Kommanditistin?",
+        "optionen": [
+          {
+            "text": "Nur bis zu ihrer Haftsumme",
+            "richtig": true
+          },
+          {
+            "text": "Unbeschränkt",
+            "richtig": false
+          }
+        ]
+      }
+    },
+    {
+      "abschnitt": "Teil 2 – Weiterdenken",
+      "text": "Leyla verkauft Nagellack auch über ihren Online-Shop an Privatkundinnen. Was muss sie beachten?",
+      "optionen": [
+        {
+          "text": "Sie braucht ein Impressum, und ihre Kundinnen haben 14 Tage Rücktrittsrecht.",
+          "richtig": true,
+          "feedback": "Richtig. Online-Anbieter müssen zum Beispiel Name, Anschrift und E-Mail angeben (§ 5 ECG). Verbraucher können binnen 14 Tagen zurücktreten (§ 11 FAGG)."
+        },
+        {
+          "text": "Nichts. Online gelten keine Verbraucherrechte.",
+          "richtig": false,
+          "feedback": "Nein. Gerade beim Online-Verkauf an Verbraucher gelten KSchG, FAGG und VGG."
+        },
+        {
+          "text": "Ein Impressum braucht sie erst ab einem hohen Umsatz.",
+          "richtig": false,
+          "feedback": "Nein. Die Informationspflichten nach § 5 ECG gelten unabhängig vom Umsatz."
+        }
+      ],
+      "theorie": "Wer online Waren oder Dienstleistungen anbietet, muss leicht auffindbar Name, Anschrift und E-Mail angeben, dazu falls vorhanden Firmenbuchnummer, UID-Nummer, Kammer und Aufsichtsbehörde (§ 5 ECG). Verkauft Leyla an Verbraucher, gelten zusätzlich das KSchG, das FAGG (zum Beispiel 14 Tage Rücktrittsrecht) und das VGG (Gewährleistung). Kundendaten muss sie nach der DSGVO schützen.",
+      "wiederholung": {
+        "frage": "Gilt die Impressumspflicht schon für kleine Online-Shops?",
+        "optionen": [
+          {
+            "text": "Ja",
+            "richtig": true
+          },
+          {
+            "text": "Nein",
+            "richtig": false
+          }
+        ]
+      }
+    }
+  ],
+  "ergebnis": {
+    "art": "Start als Einzelunternehmerin",
+    "inhalt": "Leyla meldet zwei freie Gewerbe an: Nagelstudio und Handel. Sie startet als Einzelunternehmerin und prüft später eine KG oder GmbH.",
+    "begruendung": [
+      "Für das Nagelstudio und den Handel reicht die Anmeldung freier Gewerbe (§ 5, § 339 GewO).",
+      "Eine GmbH scheitert am Start am Mindeststammkapital von 10.000 Euro (§ 6 GmbHG).",
+      "Im Online-Shop gelten Impressumspflicht und Verbraucherrechte (§ 5 ECG, § 11 FAGG)."
+    ]
+  },
+  "reflexion": {
+    "optional": true,
+    "titel": "Reflexion (optional, zum Diskutieren)",
+    "fragen": [
+      "Einzelunternehmen oder GmbH: Was wäre dir beim eigenen Start wichtiger, wenig Aufwand oder wenig Haftung?",
+      "Warum verlangt der Staat für manche Gewerbe einen Befähigungsnachweis?"
+    ]
+  },
+  "belohnung": {
+    "xp": 50,
+    "abzeichen": {
+      "name": "Gründungs-Profi",
+      "emoji": "🚀"
+    }
+  },
+  "abschluss": "Stark! Erst das Gewerbe klären, dann die Rechtsform wählen. Klein anfangen ist kein Makel, aber die Haftung muss man kennen."
+}
