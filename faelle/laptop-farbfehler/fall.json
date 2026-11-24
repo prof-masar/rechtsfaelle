@@ -4,15 +4,15 @@
   "gebiet": "Privatrecht",
   "thema": "Kaufvertrag",
   "rechtsgebiet": "Vertragsrecht / Gewährleistung",
-  "kurzbeschreibung": "Lena kauft im Geschäft einen Laptop. Monate später zeigt der Bildschirm einen Farbfehler. In vier Stationen entscheidest du, was rechtlich gilt.",
-  "einleitung": "Lena (22, Studentin) kauft am 3. März 2026 im Geschäft der Elektro Berger GmbH einen neuen Laptop um 799 Euro. Sie zahlt bar und nimmt das Gerät samt Kassabon mit. Einen schriftlichen Vertrag gibt es nicht. Am 20. Oktober 2026 – gut sieben Monate später – bekommt der Bildschirm einen dauerhaften Farbfehler.",
+  "kurzbeschreibung": "Thyra kauft im Geschäft einen Laptop. Monate später zeigt der Bildschirm einen Farbfehler. In vier Stationen entscheidest du, was rechtlich gilt.",
+  "einleitung": "Thyra (22, Studentin) kauft am 3. März 2026 im Geschäft der Elektro Berger GmbH einen neuen Laptop um 799 Euro. Sie zahlt bar und nimmt das Gerät samt Kassabon mit. Einen schriftlichen Vertrag gibt es nicht. Am 20. Oktober 2026 – gut sieben Monate später – bekommt der Bildschirm einen dauerhaften Farbfehler.",
   "hinweis": "Beispielfall zur Beurteilung von Bedienung und Optik. Keine Lieferung des Recht-Bots. Rechtsgrundlagen: ABGB, KSchG, VGG.",
   "stationen": [
     {
       "station": "Vertragsschluss",
       "kurzname": "Vertrag",
       "video": "videos/station1_vertrag.mp4",
-      "situationstext": "Lena, 22, Studentin, kauft am 3. März 2026 bei der Elektro Berger GmbH einen Laptop um 799 Euro bar und erhält einen Kassabon, aber keinen schriftlichen Vertrag.",
+      "situationstext": "Thyra, 22, Studentin, kauft am 3. März 2026 bei der Elektro Berger GmbH einen Laptop um 799 Euro bar und erhält einen Kassabon, aber keinen schriftlichen Vertrag.",
       "buttons": [
         {
           "id": "s1-richtig",
@@ -46,7 +46,7 @@
         },
         {
           "id": "s1-uebersehen",
-          "label": "Ein Vertrag liegt vor, aber nur als unverbindliche Reservierung, solange Lena den Laptop nicht zu Hause ausprobiert hat.",
+          "label": "Ein Vertrag liegt vor, aber nur als unverbindliche Reservierung, solange Thyra den Laptop nicht zu Hause ausprobiert hat.",
           "bewertung": "uebersehen",
           "konsequenz": "Den Vertragsschluss hast du erkannt, die Wirkung aber übersehen: Mit Zahlung und Übergabe ist der Kauf bereits vollständig und verbindlich."
         }
@@ -62,20 +62,20 @@
       "station": "Verbrauchergeschäft",
       "kurzname": "Verbraucher",
       "video": "videos/station2_verbraucher.mp4",
-      "situationstext": "Lena, 22, Studentin, kauft den Laptop bei der Elektro Berger GmbH im Geschäft für Studium und Freizeit, nicht im Internet.",
+      "situationstext": "Thyra, 22, Studentin, kauft den Laptop bei der Elektro Berger GmbH im Geschäft für Studium und Freizeit, nicht im Internet.",
       "buttons": [
         {
           "id": "s2-richtig",
           "label": "Ja, das ist ein Verbrauchergeschäft. Es gelten das KSchG und bei Mängeln das Verbrauchergewährleistungsgesetz (VGG).",
           "bewertung": "richtig",
-          "konsequenz": "Lena handelt als Verbraucherin, Elektro Berger als Unternehmerin; der Ort des Kaufs ändert daran nichts."
+          "konsequenz": "Thyra handelt als Verbraucherin, Elektro Berger als Unternehmerin; der Ort des Kaufs ändert daran nichts."
         },
         {
           "id": "s2-falsch",
-          "label": "Das KSchG gilt nicht, weil Lena nicht online, sondern im Geschäft gekauft hat.",
+          "label": "Das KSchG gilt nicht, weil Thyra nicht online, sondern im Geschäft gekauft hat.",
           "bewertung": "falsch",
           "konsequenz": "Das ist nicht richtig: Verbraucherrecht hängt nicht davon ab, ob der Kauf im Geschäft oder im Internet stattfindet.",
-          "theorie": "Ein Verbrauchergeschäft liegt vor, wenn eine Verbraucherin mit einem Unternehmer einen Vertrag schließt (§ 1 KSchG). Lena kauft privat, Elektro Berger handelt betrieblich – das gilt im Geschäft genauso wie im Internet. Zusätzliche Regeln für Fernabsatz, etwa das Rücktrittsrecht nach dem FAGG, gelten nur bei Online- oder Haustürgeschäften, nicht bei diesem Ladenkauf.",
+          "theorie": "Ein Verbrauchergeschäft liegt vor, wenn eine Verbraucherin mit einem Unternehmer einen Vertrag schließt (§ 1 KSchG). Thyra kauft privat, Elektro Berger handelt betrieblich – das gilt im Geschäft genauso wie im Internet. Zusätzliche Regeln für Fernabsatz, etwa das Rücktrittsrecht nach dem FAGG, gelten nur bei Online- oder Haustürgeschäften, nicht bei diesem Ladenkauf.",
           "wiederholung": {
             "frage": "Wann gilt das Konsumentenschutzgesetz (KSchG)?",
             "buttons": [
@@ -96,15 +96,15 @@
         },
         {
           "id": "s2-uebersehen",
-          "label": "Das KSchG gilt nicht, weil Lena den Laptop auch fürs Studium verwendet und deshalb wie eine Unternehmerin behandelt wird.",
+          "label": "Das KSchG gilt nicht, weil Thyra den Laptop auch fürs Studium verwendet und deshalb wie eine Unternehmerin behandelt wird.",
           "bewertung": "uebersehen",
-          "konsequenz": "Die Nutzung hast du bedacht, aber übersehen: Studium und Freizeit sind keine unternehmerische Tätigkeit, Lena bleibt Verbraucherin."
+          "konsequenz": "Die Nutzung hast du bedacht, aber übersehen: Studium und Freizeit sind keine unternehmerische Tätigkeit, Thyra bleibt Verbraucherin."
         }
       ],
       "dashboard_zeile": {
         "thema": "Verbrauchergeschäft?",
         "richtig": "Private Käuferin, Unternehmerin als Verkäuferin, unabhängig vom Ladenkauf.",
-        "uebersehen": "Studium und Freizeit machen Lena nicht zur Unternehmerin.",
+        "uebersehen": "Studium und Freizeit machen Thyra nicht zur Unternehmerin.",
         "falsch": "Das KSchG gilt auch im Geschäft, nicht nur online."
       }
     },
@@ -112,7 +112,7 @@
       "station": "Gewährleistung",
       "kurzname": "Gewährleistung",
       "video": "videos/station3_mangel.mp4",
-      "situationstext": "Am 20. Oktober 2026 – gut sieben Monate nach dem Kauf am 3. März 2026 – bekommt Lenas Bildschirm einen dauerhaften Farbfehler. Elektro Berger verweist auf eine Garantie von sechs Monaten und sagt, danach sei nichts mehr zu machen.",
+      "situationstext": "Am 20. Oktober 2026 – gut sieben Monate nach dem Kauf am 3. März 2026 – bekommt Thyras Bildschirm einen dauerhaften Farbfehler. Elektro Berger verweist auf eine Garantie von sechs Monaten und sagt, danach sei nichts mehr zu machen.",
       "buttons": [
         {
           "id": "s3-richtig",
@@ -127,7 +127,7 @@
           "konsequenz": "Das vermischt Garantie und Gewährleistung: Die freiwillige Garantie endet nach sechs Monaten, die gesetzliche Gewährleistung aber nicht.",
           "theorie": "Garantie und Gewährleistung darf man nicht verwechseln. Eine Garantie ist ein freiwilliges Zusatzversprechen und beträgt hier sechs Monate. Die gesetzliche Gewährleistung gilt zwei Jahre (§ 933 ABGB, beim Verbraucherkauf über Waren auch nach dem VGG) und darf nicht zum Nachteil der Verbraucherin verkürzt werden. Tritt ein Mangel im ersten Jahr auf, wird vermutet, dass er schon bei der Übergabe vorlag (§ 11 VGG); dann muss das Geschäft das Gegenteil beweisen.",
           "wiederholung": {
-            "frage": "Wie lange hat Lena beim neuen Laptop gesetzliche Gewährleistung?",
+            "frage": "Wie lange hat Thyra beim neuen Laptop gesetzliche Gewährleistung?",
             "buttons": [
               {
                 "id": "s3-w-falsch",
@@ -146,7 +146,7 @@
         },
         {
           "id": "s3-uebersehen",
-          "label": "Ja, die gesetzliche Gewährleistung gilt zwei Jahre. Lena muss aber selbst beweisen, dass der Farbfehler schon beim Kauf da war.",
+          "label": "Ja, die gesetzliche Gewährleistung gilt zwei Jahre. Thyra muss aber selbst beweisen, dass der Farbfehler schon beim Kauf da war.",
           "bewertung": "uebersehen",
           "konsequenz": "Die Frist hast du richtig erkannt, die Beweislast aber übersehen: Im ersten Jahr muss grundsätzlich das Geschäft beweisen, dass der Mangel bei der Übergabe noch nicht da war."
         }
@@ -162,20 +162,20 @@
       "station": "Gewährleistungsbehelfe",
       "kurzname": "Behelfe",
       "video": "videos/station4_behelfe.mp4",
-      "situationstext": "Elektro Berger bleibt dabei: „Nach sechs Monaten machen wir nichts mehr.“ Lena solle sich an den Hersteller wenden. Den Laptop braucht sie zum Lernen.",
+      "situationstext": "Elektro Berger bleibt dabei: „Nach sechs Monaten machen wir nichts mehr.“ Thyra solle sich an den Hersteller wenden. Den Laptop braucht sie zum Lernen.",
       "buttons": [
         {
           "id": "s4-richtig",
-          "label": "Der Satz des Geschäfts ist falsch. Lena kann von Elektro Berger Verbesserung (Reparatur) oder Austausch verlangen. Weil das Geschäft das verweigert, kann sie auch den Preis mindern oder den Vertrag auflösen.",
+          "label": "Der Satz des Geschäfts ist falsch. Thyra kann von Elektro Berger Verbesserung (Reparatur) oder Austausch verlangen. Weil das Geschäft das verweigert, kann sie auch den Preis mindern oder den Vertrag auflösen.",
           "bewertung": "richtig",
-          "konsequenz": "Genau: „Nach sechs Monaten machen wir nichts mehr“ ist rechtlich falsch. Die gesetzliche Gewährleistung läuft zwei Jahre; Elektro Berger muss trotzdem verbessern oder austauschen. Nach der Weigerung stehen Lena auch Preisminderung oder Vertragsauflösung zu."
+          "konsequenz": "Genau: „Nach sechs Monaten machen wir nichts mehr“ ist rechtlich falsch. Die gesetzliche Gewährleistung läuft zwei Jahre; Elektro Berger muss trotzdem verbessern oder austauschen. Nach der Weigerung stehen Thyra auch Preisminderung oder Vertragsauflösung zu."
         },
         {
           "id": "s4-falsch",
-          "label": "Elektro Berger hat recht: Nach sechs Monaten muss das Geschäft nichts mehr machen, Lena soll sich an den Hersteller wenden.",
+          "label": "Elektro Berger hat recht: Nach sechs Monaten muss das Geschäft nichts mehr machen, Thyra soll sich an den Hersteller wenden.",
           "bewertung": "falsch",
           "konsequenz": "Das trifft nicht zu: Der Satz des Geschäfts ist falsch. Die gesetzliche Gewährleistung läuft noch und richtet sich gegen die Verkäuferin, nicht gegen den Hersteller.",
-          "theorie": "Garantie und Gewährleistung darf man nicht verwechseln. Eine Garantie ist freiwillig und beträgt hier sechs Monate. Die gesetzliche Gewährleistung dauert zwei Jahre (§ 933 ABGB, VGG) und darf nicht zum Nachteil der Verbraucherin verkürzt werden. Deshalb ist der Satz „Nach sechs Monaten machen wir nichts mehr“ falsch: Elektro Berger muss den Laptop trotzdem verbessern (reparieren) oder austauschen. Ansprechpartnerin ist die Verkäuferin, nicht der Hersteller; der Hersteller haftet nur aus einer allfälligen eigenen Garantie. Lena kann zuerst zwischen Verbesserung und Austausch wählen. Verweigert das Geschäft beides, darf sie den Preis mindern oder den Vertrag auflösen – außer der Mangel wäre nur geringfügig, was ein dauerhafter Bildschirmfehler nicht ist.",
+          "theorie": "Garantie und Gewährleistung darf man nicht verwechseln. Eine Garantie ist freiwillig und beträgt hier sechs Monate. Die gesetzliche Gewährleistung dauert zwei Jahre (§ 933 ABGB, VGG) und darf nicht zum Nachteil der Verbraucherin verkürzt werden. Deshalb ist der Satz „Nach sechs Monaten machen wir nichts mehr“ falsch: Elektro Berger muss den Laptop trotzdem verbessern (reparieren) oder austauschen. Ansprechpartnerin ist die Verkäuferin, nicht der Hersteller; der Hersteller haftet nur aus einer allfälligen eigenen Garantie. Thyra kann zuerst zwischen Verbesserung und Austausch wählen. Verweigert das Geschäft beides, darf sie den Preis mindern oder den Vertrag auflösen – außer der Mangel wäre nur geringfügig, was ein dauerhafter Bildschirmfehler nicht ist.",
           "wiederholung": {
             "frage": "Muss Elektro Berger den Laptop trotz des Satzes „Nach sechs Monaten machen wir nichts mehr“ verbessern oder austauschen?",
             "buttons": [
@@ -196,13 +196,13 @@
         },
         {
           "id": "s4-uebersehen",
-          "label": "Lena kann nur eine Reparatur verlangen, mehr steht ihr nicht zu.",
+          "label": "Thyra kann nur eine Reparatur verlangen, mehr steht ihr nicht zu.",
           "bewertung": "uebersehen",
-          "konsequenz": "Die Pflicht des Geschäfts hast du erkannt, zwei Punkte aber übersehen: Lena darf zwischen Verbesserung und Austausch wählen, und nach der Weigerung auch den Preis mindern oder den Vertrag auflösen. Der Satz „Nach sechs Monaten machen wir nichts mehr“ ist jedenfalls falsch."
+          "konsequenz": "Die Pflicht des Geschäfts hast du erkannt, zwei Punkte aber übersehen: Thyra darf zwischen Verbesserung und Austausch wählen, und nach der Weigerung auch den Preis mindern oder den Vertrag auflösen. Der Satz „Nach sechs Monaten machen wir nichts mehr“ ist jedenfalls falsch."
         }
       ],
       "dashboard_zeile": {
-        "thema": "Was kann Lena verlangen – und von wem?",
+        "thema": "Was kann Thyra verlangen – und von wem?",
         "richtig": "Der Satz des Geschäfts ist falsch. Elektro Berger muss verbessern oder austauschen; nach der Weigerung auch Preisminderung oder Auflösung.",
         "uebersehen": "Wahlrecht und sekundäre Behelfe nach der Weigerung fehlen. Der Satz „Nach sechs Monaten machen wir nichts mehr“ ist falsch.",
         "falsch": "Gewährleistung läuft zwei Jahre und richtet sich gegen das Geschäft. Der Satz „Nach sechs Monaten machen wir nichts mehr“ ist falsch."
