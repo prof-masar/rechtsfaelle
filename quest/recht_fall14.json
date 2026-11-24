@@ -30,8 +30,10 @@
     "Art 267 AEUV (Vorabentscheidung)",
     "Art 288 AEUV (Verordnung, Richtlinie)",
     "Art 294 AEUV (ordentliches Gesetzgebungsverfahren)",
+    "Art 6 lit e, Art 165 AEUV (Bildung: nur unterstützende Zuständigkeit der EU)",
     "EuGH Rs 6/64 Costa/ENEL (Vorrang)",
-    "VO (EG) 883/2004 (Sozialversicherung)"
+    "VO (EG) 883/2004 (Sozialversicherung)",
+    "VO (EU) 2022/612 (Roaming)"
   ],
   "schritte": [
     {
@@ -112,7 +114,7 @@
         {
           "text": "Ja. Eine Verordnung gilt unmittelbar in jedem EU-Staat.",
           "richtig": true,
-          "feedback": "Richtig. Verordnungen gelten unmittelbar in allen Mitgliedstaaten (Art 288 AEUV)."
+          "feedback": "Richtig. Verordnungen gelten unmittelbar in allen Mitgliedstaaten (Art 288 AEUV). Roaming regelt die VO (EU) 2022/612."
         },
         {
           "text": "Nein. Erst muss der Nationalrat sie als Gesetz beschließen.",
@@ -125,7 +127,7 @@
           "feedback": "Nein. Eine EU-Verordnung braucht keine Zustimmung des Bundespräsidenten."
         }
       ],
-      "theorie": "Art 288 AEUV: Eine Verordnung gilt unmittelbar in jedem Mitgliedstaat, ähnlich wie ein Gesetz. Eine Richtlinie gibt nur ein Ziel vor. Jeder Staat muss sie mit einem eigenen Gesetz umsetzen. Ein Beispiel ist das FAGG: Es setzt eine EU-Richtlinie zu Verbraucherrechten beim Online-Kauf um.",
+      "theorie": "Art 288 AEUV: Eine Verordnung gilt unmittelbar in jedem Mitgliedstaat, ähnlich wie ein Gesetz. Eine Richtlinie gibt nur ein Ziel vor. Jeder Staat muss sie mit einem eigenen Gesetz umsetzen. Ein Beispiel für eine Verordnung ist die Roaming-Verordnung (VO (EU) 2022/612). Ein Beispiel für die Umsetzung einer Richtlinie ist das FAGG: Es setzt eine EU-Richtlinie zu Verbraucherrechten beim Online-Kauf um.",
       "wiederholung": {
         "frage": "Was muss mit einer Richtlinie passieren?",
         "optionen": [
@@ -182,7 +184,7 @@
         {
           "text": "Nein. Die EU darf nur dort handeln, wo die Mitgliedstaaten ihr Zuständigkeiten übertragen haben.",
           "richtig": true,
-          "feedback": "Richtig. Das ist das Prinzip der begrenzten Einzelermächtigung (Art 5 EUV). Vieles bleibt national, zum Beispiel das Schulwesen."
+          "feedback": "Richtig. Das ist das Prinzip der begrenzten Einzelermächtigung (Art 5 EUV). Vieles bleibt national, zum Beispiel das Schulwesen: Dort darf die EU nur unterstützen (Art 6 lit e, Art 165 AEUV)."
         },
         {
           "text": "Ja. Seit dem EU-Beitritt hat Österreich nichts mehr zu sagen.",
@@ -195,7 +197,7 @@
           "feedback": "Nein. Den Nationalrat gibt es weiter. Er macht österreichische Gesetze und setzt Richtlinien um."
         }
       ],
-      "theorie": "Die EU hat nur die Zuständigkeiten, die ihr die Mitgliedstaaten in den Verträgen übertragen haben (Art 5 EUV). Österreich ist seit 1995 EU-Mitglied. Weil der Beitritt eine Gesamtänderung der Bundesverfassung war, gab es 1994 eine Volksabstimmung. Viele Bereiche bleiben national, zum Beispiel das Schulwesen.",
+      "theorie": "Die EU hat nur die Zuständigkeiten, die ihr die Mitgliedstaaten in den Verträgen übertragen haben (Art 5 EUV). Österreich ist seit 1995 EU-Mitglied. Weil der Beitritt eine Gesamtänderung der Bundesverfassung war, gab es 1994 eine Volksabstimmung. Viele Bereiche bleiben national, zum Beispiel das Schulwesen. Bei der Bildung hat die EU nur eine unterstützende Zuständigkeit (Art 6 lit e, Art 165 AEUV).",
       "wiederholung": {
         "frage": "Seit wann ist Österreich EU-Mitglied?",
         "optionen": [

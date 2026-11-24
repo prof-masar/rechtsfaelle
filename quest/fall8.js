@@ -27,12 +27,14 @@ window.FALL8 = {
   "§ 883 ABGB (Formfreiheit)",
   "§ 1 KSchG (Verbraucher, Unternehmer)",
   "§ 11 FAGG (Rücktrittsrecht 14 Tage)",
-  "§ 13a FAGG (Rücktrittsfunktion online)",
+  "§ 13a FAGG (Rücktrittsfunktion online, für Verträge nach dem 30.9.2026: § 20 Abs 5 FAGG, BGBl I 59/2026)",
   "§ 18 FAGG (Ausnahmen)",
+  "§ 9a KSchG (Garantie)",
   "§ 3 VGG (zwingendes Recht)",
-  "§ 10 VGG (Gewährleistungsfrist)",
+  "§ 10 VGG (Gewährleistungsfrist, Abs 2a Verlängerung)",
   "§ 11 VGG (Vermutung)",
-  "§ 12 VGG (Abhilfen)",
+  "§ 12 VGG (Abhilfen, Abs 2a Information)",
+  "§ 29 Abs 4 VGG (Inkrafttreten Abs 2a: Verträge nach dem 30.9.2026, BGBl I 60/2026)",
   "§ 864a ABGB (überraschende Klauseln)",
   "§ 879 Abs 3 ABGB (gröblich benachteiligende Klauseln)"
  ],
@@ -93,7 +95,7 @@ window.FALL8 = {
      "feedback": "Nicht ganz. Der Rücktritt nach dem FAGG braucht keinen Grund. Ein Mangel ist eine eigene Frage: die Gewährleistung."
     }
    ],
-   "theorie": "Das FAGG schützt Verbraucher, die bei Unternehmern im Fernabsatz kaufen, zum Beispiel im Online-Shop. Sie können binnen 14 Tagen ohne Grund zurücktreten (§ 11 Abs 1 FAGG). Bei Waren beginnt die Frist, wenn man die Ware erhält. Online-Shops müssen dafür eine Schaltfläche wie „Vertrag widerrufen“ anbieten (§ 13a FAGG). Ausnahmen gibt es zum Beispiel für Maßanfertigungen oder entsiegelte Hygieneartikel (§ 18 FAGG).",
+   "theorie": "Das FAGG schützt Verbraucher, die bei Unternehmern im Fernabsatz kaufen, zum Beispiel im Online-Shop. Sie können binnen 14 Tagen ohne Grund zurücktreten (§ 11 Abs 1 FAGG). Bei Waren beginnt die Frist, wenn man die Ware erhält. Bei Verträgen, die nach dem 30. September 2026 geschlossen wurden, muss der Online-Shop dafür eine Rücktrittsfunktion wie „Vertrag widerrufen“ anbieten (§ 13a FAGG; § 20 Abs 5 FAGG, BGBl I 59/2026). Ausnahmen gibt es zum Beispiel für Maßanfertigungen oder entsiegelte Hygieneartikel (§ 18 FAGG).",
    "wiederholung": {
     "frage": "Wie lange dauert das Rücktrittsrecht beim Online-Kauf grundsätzlich?",
     "optionen": [
@@ -128,7 +130,7 @@ window.FALL8 = {
      "feedback": "Nein. Die 14 Tage gelten nur für den Rücktritt. Gewährleistung gibt es zwei Jahre lang (§ 10 VGG)."
     }
    ],
-   "theorie": "Gewährleistung heißt: Der Unternehmer haftet dafür, dass die Ware bei der Übergabe mangelfrei ist. Bei Verbrauchern gilt das VGG: Die Frist beträgt zwei Jahre ab Übergabe (§ 10 VGG). Zeigt sich ein Mangel im ersten Jahr, wird vermutet, dass er schon bei der Übergabe da war (§ 11 VGG). Zuerst gibt es Verbesserung oder Austausch, erst danach Preisminderung oder Auflösung des Vertrags (§ 12 VGG).",
+   "theorie": "Gewährleistung heißt: Der Unternehmer haftet dafür, dass die Ware bei der Übergabe mangelfrei ist. Bei Verbrauchern gilt das VGG: Die Frist beträgt zwei Jahre ab Übergabe (§ 10 VGG). Zeigt sich ein Mangel im ersten Jahr, wird vermutet, dass er schon bei der Übergabe da war (§ 11 VGG). Zuerst gibt es Verbesserung oder Austausch, erst danach Preisminderung oder Auflösung des Vertrags (§ 12 VGG). Neu für Verträge nach dem 30. September 2026: Wird der Mangel durch Verbesserung behoben, verlängert sich die Gewährleistungsfrist einmal um ein Jahr (§ 10 Abs 2a VGG). Vorher muss der Unternehmer über das Wahlrecht und diese Verlängerung informieren (§ 12 Abs 2a VGG; § 29 Abs 4 VGG, BGBl I 60/2026).",
    "wiederholung": {
     "frage": "Wie lange dauert die Gewährleistung beim Kauf von einem Unternehmer?",
     "optionen": [
@@ -150,7 +152,7 @@ window.FALL8 = {
     {
      "text": "Nein. Der Shop als Verkäufer muss Gewähr leisten. Die Garantie ist nur ein Extra.",
      "richtig": true,
-     "feedback": "Richtig. Gewährleistung schuldet der Vertragspartner, also der Shop. Eine Garantie des Herstellers kommt freiwillig dazu."
+     "feedback": "Richtig. Gewährleistung schuldet der Vertragspartner, also der Shop. Eine Garantie des Herstellers kommt freiwillig dazu (§ 9a Abs 2 KSchG)."
     },
     {
      "text": "Ja. Gibt es eine Garantie, fällt die Gewährleistung weg.",
@@ -163,7 +165,7 @@ window.FALL8 = {
      "feedback": "Nein. Max hat keinen Vertrag mit dem Hersteller. Gewähr leistet der Shop, bei dem er gekauft hat."
     }
    ],
-   "theorie": "Gewährleistung steht im Gesetz. Sie trifft den Verkäufer, mit dem man den Vertrag hat. Eine Garantie ist ein freiwilliges Versprechen, oft vom Hersteller. Sie kommt zur Gewährleistung dazu und nimmt Max keine Rechte weg.",
+   "theorie": "Gewährleistung steht im Gesetz. Sie trifft den Verkäufer, mit dem man den Vertrag hat. Eine Garantie ist ein freiwilliges Versprechen, oft vom Hersteller (§ 9a KSchG, Herstellergarantie § 9a Abs 2 KSchG). Sie kommt zur Gewährleistung dazu und nimmt Max keine Rechte weg.",
    "wiederholung": {
     "frage": "Wer muss Gewähr leisten?",
     "optionen": [
@@ -185,7 +187,7 @@ window.FALL8 = {
     {
      "text": "Nein. Gegenüber Verbrauchern kann man die Gewährleistung vorher nicht ausschließen.",
      "richtig": true,
-     "feedback": "Richtig. Die Rechte nach dem VGG können vor der Mängelanzeige nicht zum Nachteil des Verbrauchers ausgeschlossen werden (§ 3 VGG)."
+     "feedback": "Richtig. Die Rechte nach dem VGG kann man nicht zum Nachteil von Verbrauchern ausschließen, außer man vereinbart das erst nach der Meldung des Mangels (§ 3 VGG)."
     },
     {
      "text": "Ja. Max hat die AGB beim Bestellen akzeptiert.",
@@ -198,7 +200,7 @@ window.FALL8 = {
      "feedback": "Nein. Auch fett gedruckt bleibt der Ausschluss gegenüber Verbrauchern unwirksam."
     }
    ],
-   "theorie": "AGB sind vorformulierte Vertragsbedingungen. Ungewöhnliche, nachteilige Klauseln, mit denen man nicht rechnen musste, werden nicht Vertragsinhalt (§ 864a ABGB). Gröblich benachteiligende Klauseln sind nichtig (§ 879 Abs 3 ABGB). Die Gewährleistungsrechte von Verbrauchern sind zwingend (§ 3 VGG).",
+   "theorie": "AGB sind vorformulierte Vertragsbedingungen. Ungewöhnliche, nachteilige Klauseln, mit denen man nicht rechnen musste, werden nicht Vertragsinhalt (§ 864a ABGB). Gröblich benachteiligende Klauseln sind nichtig (§ 879 Abs 3 ABGB). Die Gewährleistungsrechte von Verbrauchern sind zwingend: Sie können nicht zum Nachteil des Verbrauchers ausgeschlossen oder eingeschränkt werden, es sei denn, die Vereinbarung wird erst geschlossen, nachdem der Verbraucher den Unternehmer vom Mangel verständigt hat (§ 3 VGG).",
    "wiederholung": {
     "frage": "Kann ein Shop in den AGB die Gewährleistung für Verbraucher ausschließen?",
     "optionen": [

@@ -24,7 +24,7 @@ window.FALL10 = {
  ],
  "quellen": [
   "§ 1151 ABGB (Arbeitsvertrag)",
-  "§ 2 AVRAG (Dienstzettel)",
+  "§ 2 Abs 1 AVRAG (Dienstzettel)",
   "§ 33 ASVG (Anmeldung)",
   "§ 111 ASVG (Strafen)",
   "§ 3 AZG (Normalarbeitszeit)",
@@ -32,7 +32,9 @@ window.FALL10 = {
   "§ 10 AZG (Überstundenzuschlag)",
   "§ 4 EFZG (Meldung des Krankenstands)",
   "§ 2 UrlG (Urlaub)",
-  "§ 1162b ABGB und § 29 AngG (Kündigungsentschädigung)"
+  "§ 1162b ABGB (Kündigungsentschädigung, Arbeiter)",
+  "§ 29 AngG (Kündigungsentschädigung, Angestellte)",
+  "Kollektivvertrag Hotel- und Gastgewerbe"
  ],
  "schritte": [
   {
@@ -55,7 +57,7 @@ window.FALL10 = {
      "feedback": "Nein. Die Anmeldung ist eine Pflicht des Chefs. Der Vertrag besteht aber auch ohne sie."
     }
    ],
-   "theorie": "Ein Arbeitsvertrag entsteht durch Einigung, auch mündlich oder durch tatsächliches Arbeiten (§ 1151 ABGB). Typisch ist persönliche Abhängigkeit: Man arbeitet nach Weisungen, zu festen Zeiten und im Betrieb des Arbeitgebers. Der Arbeitgeber muss einen Dienstzettel mit den wichtigsten Daten ausstellen (§ 2 AVRAG). Fehlt er, gilt der Vertrag trotzdem.",
+   "theorie": "Ein Arbeitsvertrag entsteht durch Einigung, auch mündlich oder durch tatsächliches Arbeiten (§ 1151 ABGB). Typisch ist persönliche Abhängigkeit: Man arbeitet nach Weisungen, zu festen Zeiten und im Betrieb des Arbeitgebers. Der Arbeitgeber muss unverzüglich nach Beginn einen Dienstzettel mit den wichtigsten Daten ausstellen, auf Wunsch auch elektronisch (§ 2 Abs 1 AVRAG). Fehlt er, gilt der Vertrag trotzdem.",
    "wiederholung": {
     "frage": "Gilt ein Arbeitsvertrag auch ohne Dienstzettel?",
     "optionen": [
@@ -126,7 +128,7 @@ window.FALL10 = {
      "feedback": "Zu streng. Überstunden sind erlaubt, aber nur bis zu Höchstgrenzen und mit Zuschlag."
     }
    ],
-   "theorie": "Die Normalarbeitszeit beträgt 8 Stunden am Tag und 40 Stunden pro Woche (§ 3 AZG). Der Kollektivvertrag kann eigene Regeln haben. Arbeit darüber sind Überstunden, mit 50 Prozent Zuschlag oder Zeitausgleich (§ 10 AZG). Erlaubt sind höchstens 12 Stunden am Tag und 60 Stunden pro Woche, im Durchschnitt höchstens 48 Stunden (§ 9 AZG).",
+   "theorie": "Die Normalarbeitszeit beträgt 8 Stunden am Tag und 40 Stunden pro Woche (§ 3 AZG). Zusätzlich gilt der Kollektivvertrag Hotel- und Gastgewerbe (z. B. 40-Stunden-Woche). Arbeit darüber sind Überstunden, mit 50 Prozent Zuschlag oder Zeitausgleich (§ 10 AZG). Erlaubt sind höchstens 12 Stunden am Tag und 60 Stunden pro Woche, im Durchschnitt höchstens 48 Stunden (§ 9 AZG).",
    "wiederholung": {
     "frage": "Wie hoch ist der gesetzliche Überstundenzuschlag?",
     "optionen": [
@@ -183,7 +185,7 @@ window.FALL10 = {
     {
      "text": "Eine Entlassung ohne Grund. Samira bekommt Kündigungsentschädigung.",
      "richtig": true,
-     "feedback": "Richtig. Ohne wichtigen Grund darf er sie nicht sofort hinauswerfen. Samira bekommt ihr Entgelt bis zum Ende der Kündigungsfrist (§ 1162b ABGB)."
+     "feedback": "Richtig. Ohne wichtigen Grund darf er sie nicht sofort hinauswerfen. Samira bekommt ihr Entgelt bis zum Ende der Kündigungsfrist (§ 1162b ABGB, für Angestellte § 29 AngG)."
     },
     {
      "text": "Eine wirksame Kündigung ohne weitere Folgen",
@@ -196,7 +198,7 @@ window.FALL10 = {
      "feedback": "Nein. Ein Austritt ist, wenn die Arbeitnehmerin selbst sofort geht. Hier will der Chef sie loswerden."
     }
    ],
-   "theorie": "Kündigung: Das Arbeitsverhältnis endet nach einer Frist, ein Grund ist meist nicht nötig. Entlassung: sofortiges Ende durch den Arbeitgeber, nur aus wichtigem Grund. Austritt: sofortiges Ende durch die Arbeitnehmerin, nur aus wichtigem Grund. Wer ohne Grund sofort hinausgeworfen wird, bekommt Kündigungsentschädigung (§ 1162b ABGB, § 29 AngG). Kostenlose Hilfe gibt es bei der Arbeiterkammer.",
+   "theorie": "Kündigung: Das Arbeitsverhältnis endet nach einer Frist, ein Grund ist meist nicht nötig. Entlassung: sofortiges Ende durch den Arbeitgeber, nur aus wichtigem Grund. Austritt: sofortiges Ende durch die Arbeitnehmerin, nur aus wichtigem Grund. Wer ohne Grund sofort hinausgeworfen wird, bekommt Kündigungsentschädigung: als Arbeiterin oder Arbeiter nach § 1162b ABGB, als Angestellte oder Angestellter nach § 29 AngG. Kostenlose Hilfe gibt es bei der Arbeiterkammer.",
    "wiederholung": {
     "frage": "Was unterscheidet Kündigung und Entlassung?",
     "optionen": [
@@ -216,9 +218,9 @@ window.FALL10 = {
   "art": "Arbeitsverhältnis mit allen Rechten",
   "inhalt": "Samira hat einen gültigen Arbeitsvertrag. Ihr stehen Anmeldung, Überstundenzuschläge, Entgeltfortzahlung und Kündigungsentschädigung zu.",
   "begruendung": [
-   "Der Arbeitsvertrag ist formfrei, der fehlende Dienstzettel ändert daran nichts (§ 1151 ABGB, § 2 AVRAG).",
+   "Der Arbeitsvertrag ist formfrei, der fehlende Dienstzettel ändert daran nichts (§ 1151 ABGB, § 2 Abs 1 AVRAG).",
    "Überstunden über 40 Wochenstunden sind mit 50 Prozent Zuschlag abzugelten (§ 3, § 10 AZG). Urlaub: fünf Wochen pro Jahr (§ 2 UrlG).",
-   "Die Entlassung ohne wichtigen Grund löst Kündigungsentschädigung aus (§ 1162b ABGB)."
+   "Die Entlassung ohne wichtigen Grund löst Kündigungsentschädigung aus (§ 1162b ABGB; für Angestellte § 29 AngG)."
   ]
  },
  "reflexion": {

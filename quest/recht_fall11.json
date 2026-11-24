@@ -24,15 +24,18 @@
   "quellen": [
     "§ 4 StVO (Pflichten nach einem Unfall)",
     "§ 99 StVO (Strafen)",
+    "§ 176 ABGB (Deliktsfähigkeit ab Mündigkeit)",
     "§ 1293 ABGB (Schaden)",
     "§ 1294 ABGB (Verschulden)",
     "§ 1295 ABGB (Schadenersatz)",
     "§ 26 KHVG (Direktanspruch gegen die Versicherung)",
+    "§ 5 Abs 1 Z 5 und § 7 Abs 1 KHVG (Regress bei Alkohol)",
     "§ 7 Abs 1 StGB (Vorsatz als Regel)",
     "§ 125 StGB (Sachbeschädigung)",
     "§ 88 StGB (fahrlässige Körperverletzung)",
     "§ 4 JGG (Strafmündigkeit)",
-    "FSG (Alkoholgrenze 0,1 Promille für Klasse AM bis 20)"
+    "§ 18 Abs 5 FSG (0,1 Promille)",
+    "§ 37 Abs 1 FSG (Strafe 36 bis 2.180 Euro)"
   ],
   "schritte": [
     {
@@ -88,10 +91,10 @@
         {
           "text": "Nein. Mit 17 haftet man nie selbst.",
           "richtig": false,
-          "feedback": "Nein. Wer 14 oder älter ist, haftet in der Regel selbst für Schäden, die er schuldhaft verursacht."
+          "feedback": "Nein. Ab 14 (Mündigkeit) haftet man selbst für Schäden, die man schuldhaft verursacht (§ 176 ABGB)."
         }
       ],
-      "theorie": "Schadenersatz braucht vier Voraussetzungen: einen Schaden, die Verursachung, Rechtswidrigkeit und Verschulden (§§ 1293 ff ABGB). Verschulden heißt Vorsatz oder Fahrlässigkeit (§ 1294 ABGB). Fahrlässig handelt, wer die nötige Sorgfalt nicht einhält. Ab 14 Jahren haftet man in der Regel selbst.",
+      "theorie": "Schadenersatz braucht vier Voraussetzungen: einen Schaden, die Verursachung, Rechtswidrigkeit und Verschulden (§§ 1293 ff ABGB). Verschulden heißt Vorsatz oder Fahrlässigkeit (§ 1294 ABGB). Fahrlässig handelt, wer die nötige Sorgfalt nicht einhält. Ab der Mündigkeit, also ab 14, haftet man selbst (§ 176 ABGB).",
       "wiederholung": {
         "frage": "Reicht Fahrlässigkeit für Schadenersatz?",
         "optionen": [
@@ -111,9 +114,9 @@
       "text": "Felix fragt: „Zahlt das wirklich die Versicherung?“",
       "optionen": [
         {
-          "text": "Ja, die Haftpflichtversicherung zahlt Frau Novak. Wegen des Alkohols kann sie sich aber Geld von Felix zurückholen.",
+          "text": "Ja, die Haftpflichtversicherung zahlt Frau Novak. Wegen des Alkohols kann sie sich unter Umständen Geld von Felix zurückholen.",
           "richtig": true,
-          "feedback": "Richtig. Frau Novak kann sich direkt an die Haftpflichtversicherung wenden (§ 26 KHVG). Bei Alkohol kann die Versicherung einen Teil von Felix zurückfordern."
+          "feedback": "Richtig. Frau Novak kann sich direkt an die Haftpflichtversicherung wenden (§ 26 KHVG). Bei Alkohol kann sich die Versicherung unter Umständen bis zu 11.000 € von Felix zurückholen."
         },
         {
           "text": "Nein. Für Mopeds gibt es keine Versicherung.",
@@ -123,10 +126,10 @@
         {
           "text": "Ja, und Felix hat danach nichts mehr damit zu tun.",
           "richtig": false,
-          "feedback": "Nicht ganz. Wegen des Biers kann die Versicherung Geld von Felix zurückverlangen."
+          "feedback": "Nicht ganz. Wegen des Biers kann die Versicherung unter Umständen Geld von Felix zurückverlangen."
         }
       ],
-      "theorie": "Jedes Moped braucht eine Kfz-Haftpflichtversicherung. Die Geschädigte kann ihren Anspruch direkt gegen die Versicherung richten (§ 26 KHVG). Hat der Lenker Pflichten verletzt, zum Beispiel durch Alkohol am Steuer, kann die Versicherung bis zu einem gesetzlichen Höchstbetrag Geld von ihm zurückverlangen (Regress).",
+      "theorie": "Jedes Moped braucht eine Kfz-Haftpflichtversicherung. Die Geschädigte kann ihren Anspruch direkt gegen die Versicherung richten (§ 26 KHVG). Bei Alkohol kann sich die Versicherung unter Umständen bis zu 11.000 € von Felix zurückholen (§ 5 Abs 1 Z 5, § 7 Abs 1 KHVG).",
       "wiederholung": {
         "frage": "An wen kann sich Frau Novak direkt wenden?",
         "optionen": [
@@ -183,7 +186,7 @@
         {
           "text": "Er lag über der Grenze. Für Mopedlenker unter 20 gilt 0,1 Promille. Ihm droht eine Verwaltungsstrafe.",
           "richtig": true,
-          "feedback": "Richtig. Für die Klasse AM gilt bis zum 20. Geburtstag eine Grenze von 0,1 Promille. Ein Verstoß ist eine Verwaltungsübertretung."
+          "feedback": "Richtig. Für die Klasse AM gilt bis zum 20. Geburtstag eine Grenze von 0,1 Promille (§ 18 Abs 5 FSG). Die Strafe beträgt 36 bis 2.180 Euro (§ 37 Abs 1 FSG)."
         },
         {
           "text": "Alles in Ordnung, die Grenze liegt bei 0,5 Promille.",
@@ -196,7 +199,7 @@
           "feedback": "Nein. Mit Alkohol zu fahren ist hier, ohne Verletzte, eine Verwaltungsübertretung, keine Straftat nach dem StGB."
         }
       ],
-      "theorie": "Neben Zivilrecht und Strafrecht gibt es das Verwaltungsrecht. Für Mopedlenker mit Klasse AM gilt bis zum 20. Geburtstag eine Alkoholgrenze von 0,1 Promille, sonst meist 0,5 Promille. Wer darüber fährt, bekommt eine Verwaltungsstrafe. Bei höheren Werten droht auch der Entzug der Lenkberechtigung.",
+      "theorie": "Neben Zivilrecht und Strafrecht gibt es das Verwaltungsrecht. Für Mopedlenker mit Klasse AM gilt bis zum 20. Geburtstag eine Alkoholgrenze von 0,1 Promille (§ 18 Abs 5 FSG), sonst meist 0,5 Promille. Wer darüber fährt, bekommt eine Verwaltungsstrafe von 36 bis 2.180 Euro (§ 37 Abs 1 FSG). Bei höheren Werten droht auch der Entzug der Lenkberechtigung.",
       "wiederholung": {
         "frage": "Welche Alkoholgrenze gilt für Mopedlenker unter 20?",
         "optionen": [
@@ -218,7 +221,7 @@
     "begruendung": [
       "Zivilrecht: Felix hat den Schaden fahrlässig verursacht und muss ihn ersetzen (§ 1295 ABGB, § 26 KHVG).",
       "Strafrecht: Fahrlässige Sachbeschädigung ist nicht strafbar (§ 7 Abs 1, § 125 StGB).",
-      "Verwaltungsrecht: Weil er angehalten und die Polizei verständigt hat, gibt es keine Strafe wegen Fahrerflucht. Die Alkoholgrenze von 0,1 Promille hat er aber überschritten."
+      "Verwaltungsrecht: Weil er angehalten und die Polizei verständigt hat, gibt es keine Strafe wegen Fahrerflucht. Die Alkoholgrenze von 0,1 Promille hat er aber überschritten (§ 18 Abs 5, § 37 Abs 1 FSG)."
     ]
   },
   "reflexion": {

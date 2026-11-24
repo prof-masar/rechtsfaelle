@@ -19,19 +19,22 @@ window.FALL9 = {
  "hauptnormen": [
   "§ 8 Abs 2 MRG",
   "§ 16b MRG",
-  "§ 1109 ABGB",
-  "§ 339 ABGB"
+  "§ 1111 ABGB",
+  "§ 37 MRG"
  ],
  "quellen": [
   "§ 19 ABGB (keine eigenmächtige Selbsthilfe)",
   "§ 339 ABGB (Besitzschutz)",
   "§ 354 ABGB (Eigentum)",
   "§ 431 ABGB (Eintragung im Grundbuch)",
+  "§ 879 ABGB (Sittenwidrigkeit)",
   "§ 1090 ABGB (Bestandvertrag)",
-  "§ 1109 ABGB (Rückstellung, gewöhnliche Abnützung)",
+  "§ 1109 ABGB (Rückstellung)",
+  "§ 1111 ABGB (Haftung für Beschädigung, nicht für gewöhnliche Abnützung)",
   "§ 8 Abs 2 MRG (Betreten der Wohnung)",
-  "§ 16b MRG (Kaution)",
-  "§ 37 MRG (wohnrechtliches Verfahren)"
+  "§ 16b Abs 2 MRG (Rückzahlung der Kaution)",
+  "§ 37 Abs 1 Z 8b MRG (Kaution im wohnrechtlichen Verfahren)",
+  "§§ 39, 40 MRG (Schlichtungsstelle, Anrufung des Gerichts)"
  ],
  "schritte": [
   {
@@ -75,9 +78,9 @@ window.FALL9 = {
    "hinweis": "Ist eine Kontrolle ohne Anlass ein wichtiger Grund?",
    "optionen": [
     {
-     "text": "Nein. Er darf nur aus wichtigem Grund und nach Ankündigung in die Wohnung.",
+     "text": "Nein. Er darf nur aus wichtigem Grund in die Wohnung und muss den Besuch grundsätzlich vorher ankündigen.",
      "richtig": true,
-     "feedback": "Richtig. Die Mieterin muss das Betreten nur aus wichtigen Gründen dulden, zum Beispiel für nötige Arbeiten (§ 8 Abs 2 MRG)."
+     "feedback": "Richtig. Er darf nur aus wichtigem Grund in die Wohnung und muss auf Leylas Interessen Rücksicht nehmen, also den Besuch grundsätzlich vorher ankündigen (§ 8 Abs 2 MRG)."
     },
     {
      "text": "Ja. Er ist ja der Eigentümer.",
@@ -90,12 +93,12 @@ window.FALL9 = {
      "feedback": "Nein. Der Wochentag spielt keine Rolle. Es braucht einen wichtigen Grund und eine Ankündigung."
     }
    ],
-   "theorie": "Nach § 8 Abs 2 MRG muss die Mieterin das Betreten der Wohnung nur aus wichtigen Gründen erlauben, etwa für notwendige Arbeiten oder um die Wohnung Kauf- oder Mietinteressierten zu zeigen. Der Besuch muss vorher angekündigt werden. Gegen eigenmächtige Eingriffe schützt der Besitzschutz (§ 339 ABGB), zum Beispiel mit einer Besitzstörungsklage.",
+   "theorie": "Nach § 8 Abs 2 MRG muss die Mieterin das Betreten der Wohnung nur aus wichtigen Gründen erlauben, etwa für notwendige Arbeiten oder um die Wohnung Kauf- oder Mietinteressierten zu zeigen. Der Vermieter muss dabei auf die Interessen der Mieterin Rücksicht nehmen, also den Besuch grundsätzlich vorher ankündigen. Gegen eigenmächtige Eingriffe schützt der Besitzschutz (§ 339 ABGB), zum Beispiel mit einer Besitzstörungsklage.",
    "wiederholung": {
     "frage": "Wann darf der Vermieter in die Wohnung?",
     "optionen": [
      {
-      "text": "Aus wichtigem Grund und nach Ankündigung",
+      "text": "Aus wichtigem Grund, grundsätzlich nach Ankündigung",
       "richtig": true
      },
      {
@@ -112,7 +115,7 @@ window.FALL9 = {
     {
      "text": "Er muss sie samt Zinsen zurückzahlen, abzüglich berechtigter Forderungen.",
      "richtig": true,
-     "feedback": "Richtig. Die Kaution ist verzinst anzulegen und nach dem Ende samt Zinsen zurückzuzahlen (§ 16b MRG)."
+     "feedback": "Richtig. Die Kaution ist verzinst anzulegen und nach dem Ende unverzüglich samt Zinsen zurückzuzahlen (§ 16b Abs 2 MRG)."
     },
     {
      "text": "Er darf sie behalten. Das ist seine Sicherheit für immer.",
@@ -125,7 +128,7 @@ window.FALL9 = {
      "feedback": "Nein. Eine solche Regel gibt es nicht. Abziehen darf er nur, was er wirklich fordern kann."
     }
    ],
-   "theorie": "Die Kaution sichert offene Forderungen des Vermieters, zum Beispiel fehlende Miete oder echte Schäden. Der Vermieter muss sie getrennt und verzinst anlegen. Nach dem Ende der Miete muss er sie unverzüglich samt Zinsen zurückzahlen, soweit er keine berechtigten Forderungen hat (§ 16b MRG). Die Höhe steht nicht im Gesetz. Üblich sind drei Monatsmieten, mehr als sechs sehen die Gerichte meist als zu hoch an.",
+   "theorie": "Die Kaution sichert offene Forderungen des Vermieters, zum Beispiel fehlende Miete oder echte Schäden. Der Vermieter muss sie getrennt und verzinst anlegen. Nach dem Ende der Miete muss er sie unverzüglich samt Zinsen zurückzahlen, soweit er keine berechtigten Forderungen hat (§ 16b Abs 2 MRG). Die Höhe ist gesetzlich nicht geregelt; üblich sind drei Monatsmieten; eine unangemessen hohe Kaution kann sittenwidrig sein (§ 879 ABGB).",
    "wiederholung": {
     "frage": "Was bekommt Leyla zur Kaution dazu zurück?",
     "optionen": [
@@ -147,7 +150,7 @@ window.FALL9 = {
     {
      "text": "Nein. Normale Abnützung durch Wohnen muss Leyla nicht ersetzen.",
      "richtig": true,
-     "feedback": "Richtig. Die Wohnung ist so zurückzugeben, wie sie übernommen wurde, abgesehen von der gewöhnlichen Abnützung (§ 1109 ABGB)."
+     "feedback": "Richtig. Die Mieterin haftet nur für Beschädigung oder Missbrauch, nicht für gewöhnliche Abnützung (§ 1111 ABGB)."
     },
     {
      "text": "Ja. Die Wohnung muss wie neu sein.",
@@ -160,7 +163,7 @@ window.FALL9 = {
      "feedback": "Nein. Für normale Abnützung darf er gar nichts abziehen, schon gar nicht die ganze Kaution."
     }
    ],
-   "theorie": "§ 1109 ABGB: Die Mieterin gibt die Wohnung in dem Zustand zurück, in dem sie sie übernommen hat. Gewöhnliche Abnützung, zum Beispiel leicht vergilbte Wände oder Gebrauchsspuren am Boden, ist kein Schaden. Ersetzen muss sie nur Schäden, die über den normalen Gebrauch hinausgehen. Ein Übergabeprotokoll mit Fotos hilft beim Beweis.",
+   "theorie": "Am Ende gibt die Mieterin die Wohnung zurück (§ 1109 ABGB). Sie haftet nur für Beschädigung oder Missbrauch, nicht für gewöhnliche Abnützung (§ 1111 ABGB). Gewöhnliche Abnützung sind zum Beispiel leicht vergilbte Wände oder Gebrauchsspuren am Boden. Ein Übergabeprotokoll mit Fotos hilft beim Beweis.",
    "wiederholung": {
     "frage": "Muss Leyla gewöhnliche Abnützung ersetzen?",
     "optionen": [
@@ -177,12 +180,17 @@ window.FALL9 = {
   },
   {
    "abschnitt": "Teil 2 – Weiterdenken",
-   "text": "Herr Gruber zahlt trotzdem nicht. Was kann Leyla tun?",
+   "text": "Herr Gruber zahlt trotzdem nicht. Leyla wohnte in Wien. Was kann sie tun?",
    "optionen": [
     {
-     "text": "Die Rückzahlung bei der Schlichtungsstelle oder beim Bezirksgericht verlangen",
+     "text": "Einen Antrag bei der Schlichtungsstelle stellen, danach kann sie zum Bezirksgericht",
      "richtig": true,
-     "feedback": "Richtig. Über die Kaution kann sie die Schlichtungsstelle (in Wien gibt es eine) oder das Bezirksgericht entscheiden lassen."
+     "feedback": "Richtig. Sie stellt einen Antrag bei der Schlichtungsstelle; in Wien muss sie zuerst dorthin. Danach kann sie die Sache zum Bezirksgericht bringen (§ 37 Abs 1 Z 8b, §§ 39, 40 MRG)."
+    },
+    {
+     "text": "Sofort beim Bezirksgericht klagen",
+     "richtig": false,
+     "feedback": "Nicht in Wien. Dort gibt es eine Schlichtungsstelle, und Leyla muss zuerst dorthin (§ 39 MRG)."
     },
     {
      "text": "Selbst Möbel von Herrn Gruber mitnehmen, bis er zahlt",
@@ -195,16 +203,16 @@ window.FALL9 = {
      "feedback": "Nein. Auch Vermieter müssen sich an das Gesetz halten. Leyla kann ihr Geld einfordern."
     }
    ],
-   "theorie": "Wer sich im Recht fühlt, muss sich an Behörden oder Gerichte wenden. Eigenmächtige Selbsthilfe ist grundsätzlich verboten (§ 19 ABGB). Streit über die Kaution wird im wohnrechtlichen Verfahren geklärt: in Gemeinden mit Schlichtungsstelle zuerst dort, sonst beim Bezirksgericht (§ 37 MRG). Beraten können zum Beispiel Mieterorganisationen oder die Arbeiterkammer.",
+   "theorie": "Wer sich im Recht fühlt, muss sich an Behörden oder Gerichte wenden. Eigenmächtige Selbsthilfe ist grundsätzlich verboten (§ 19 ABGB). Über die Rückzahlung der Kaution wird im wohnrechtlichen Verfahren entschieden (§ 37 Abs 1 Z 8b MRG). Gibt es in der Gemeinde eine Schlichtungsstelle, wie in Wien, muss der Antrag zuerst dort gestellt werden (§ 39 MRG). Ist man mit der Entscheidung nicht einverstanden, kann man die Sache zum Bezirksgericht bringen (§ 40 MRG). Beraten können zum Beispiel Mieterorganisationen oder die Arbeiterkammer.",
    "wiederholung": {
-    "frage": "Darf sich Leyla ihr Geld selbst holen?",
+    "frage": "Wohin muss Leyla in Wien zuerst?",
     "optionen": [
      {
-      "text": "Nein, sie muss zu Schlichtungsstelle oder Gericht",
+      "text": "Zur Schlichtungsstelle",
       "richtig": true
      },
      {
-      "text": "Ja, das ist erlaubt",
+      "text": "Gleich zum Bezirksgericht",
       "richtig": false
      }
     ]
@@ -216,8 +224,8 @@ window.FALL9 = {
   "inhalt": "Herr Gruber muss Leyla die drei Monatsmieten samt Zinsen zurückzahlen. Für normale Abnützung darf er nichts abziehen.",
   "begruendung": [
    "Herr Gruber ist Eigentümer, Leyla war berechtigte Mieterin (§ 354, § 1090 ABGB).",
-   "Ohne wichtigen Grund und Ankündigung durfte er die Wohnung nicht betreten (§ 8 Abs 2 MRG).",
-   "Die Kaution ist samt Zinsen zurückzuzahlen, gewöhnliche Abnützung ist kein Schaden (§ 16b MRG, § 1109 ABGB)."
+   "Ohne wichtigen Grund durfte er die Wohnung nicht betreten, und er hätte den Besuch grundsätzlich ankündigen müssen (§ 8 Abs 2 MRG).",
+   "Die Kaution ist unverzüglich samt Zinsen zurückzuzahlen, für gewöhnliche Abnützung haftet Leyla nicht (§ 16b Abs 2 MRG, § 1111 ABGB)."
   ]
  },
  "reflexion": {

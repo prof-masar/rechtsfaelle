@@ -6,7 +6,7 @@
   "titel": "Du wirst 18",
   "quelle_justizia": "Akte 01 „Du wirst 18“",
   "vorab_hinweis": "Fiktiver Lernfall. Personen und Geschehen sind erfunden. Es gilt österreichisches Recht.",
-  "einleitung": "Lena wird morgen 18. Ihre Schwester Mia ist 16, ihr Bruder Ben ist 9. Alle drei wollen etwas kaufen. Justizia erklärt, was in welchem Alter gilt und wie die Rechtsordnung aufgebaut ist.",
+  "einleitung": "Smilla wird morgen 18. Ihre Schwester Mia ist 16, ihr Bruder Ben ist 9. Alle drei wollen etwas kaufen. Justizia erklärt, was in welchem Alter gilt und wie die Rechtsordnung aufgebaut ist.",
   "figur": {
     "name": "Justizia",
     "rolle": "Rechtsberatung",
@@ -19,14 +19,14 @@
     "§ 16 ABGB",
     "§ 21 ABGB",
     "§ 170 ABGB",
-    "§ 865 ABGB",
+    "§ 865 Abs 4 ABGB",
     "Art 18 B-VG"
   ],
   "quellen": [
     "§ 16 ABGB (Rechtsfähigkeit)",
     "§ 21 Abs 2 ABGB (Volljährigkeit)",
     "§ 170 ABGB (Rechtsgeschäfte Minderjähriger)",
-    "§ 865 ABGB (Geschäftsfähigkeit, schwebende Unwirksamkeit)",
+    "§ 865 Abs 4 ABGB (schwebende Unwirksamkeit)",
     "Art 18 B-VG (Bindung an die Gesetze)",
     "Art 49 B-VG (Kundmachung)",
     "Art 139 B-VG (Prüfung von Verordnungen)"
@@ -34,7 +34,7 @@
   "schritte": [
     {
       "abschnitt": "Teil 1 – Der Fall",
-      "text": "Lena fragt: „Habe ich erst ab 18 Rechte?“ Was stimmt?",
+      "text": "Smilla fragt: „Habe ich erst ab 18 Rechte?“ Was stimmt?",
       "optionen": [
         {
           "text": "Rechte hat man ab der Geburt. Ab 18 kann man Verträge voll selbst schließen.",
@@ -75,12 +75,12 @@
         {
           "text": "Der Vertrag gilt erst, wenn die Eltern zustimmen.",
           "richtig": true,
-          "feedback": "Richtig. Ohne Zustimmung der Eltern ist der Vertrag schwebend unwirksam (§ 865 Abs 3 ABGB)."
+          "feedback": "Richtig. Ohne Zustimmung der Eltern ist der Vertrag schwebend unwirksam (§ 170 Abs 1, § 865 Abs 4 ABGB)."
         },
         {
           "text": "Der Vertrag gilt, sie hat ja Taschengeld.",
           "richtig": false,
-          "feedback": "Nein. 24 Raten gehen weit über ihr Taschengeld hinaus. Dafür braucht sie die Zustimmung der Eltern."
+          "feedback": "Nein. 1.200 Euro in 24 Raten gehen weit über ihr Taschengeld hinaus (§ 170 Abs 2 ABGB). Dafür braucht sie die Zustimmung der Eltern."
         },
         {
           "text": "Mit 16 kann sie gar keinen Vertrag schließen.",
@@ -88,7 +88,7 @@
           "feedback": "Zu streng. Mit 16 kann sie über ihr Taschengeld selbst verfügen und kleine Alltagsgeschäfte machen."
         }
       ],
-      "theorie": "Minderjährige brauchen für Verträge grundsätzlich die Zustimmung der Eltern als gesetzliche Vertreter (§ 170 Abs 1 ABGB). Ab 14 dürfen sie über Taschengeld und eigenes Einkommen selbst verfügen, solange ihr Lebensunterhalt nicht gefährdet ist (§ 170 Abs 2 ABGB). Fehlt die Zustimmung, ist der Vertrag schwebend unwirksam: Er gilt erst, wenn die Eltern zustimmen (§ 865 Abs 3 ABGB).",
+      "theorie": "Minderjährige brauchen für Verträge grundsätzlich die Zustimmung der Eltern als gesetzliche Vertreter (§ 170 Abs 1 ABGB). Ab 14 dürfen sie über Sachen, die ihnen zur freien Verfügung überlassen wurden (zum Beispiel Taschengeld), und über eigenes Einkommen selbst verfügen, solange ihr Lebensunterhalt nicht gefährdet ist (§ 170 Abs 2 ABGB). Eine Ratenschuld von 1.200 Euro geht darüber weit hinaus. Fehlt die Zustimmung, ist der Vertrag schwebend unwirksam: Er gilt erst, wenn die Eltern zustimmen (§ 865 Abs 4 ABGB).",
       "wiederholung": {
         "frage": "Was heißt „schwebend unwirksam“?",
         "optionen": [
@@ -140,7 +140,7 @@
     },
     {
       "abschnitt": "Teil 2 – Weiterdenken",
-      "text": "Lena bekommt zwei Briefe: einen Kaufvertrag für ihr neues Fahrrad und eine Strafverfügung der Behörde, weil sie bei Rot gefahren ist. Welcher Brief gehört zum öffentlichen Recht?",
+      "text": "Smilla bekommt zwei Briefe: einen Kaufvertrag für ihr neues Fahrrad und eine Strafverfügung der Behörde, weil sie bei Rot gefahren ist. Welcher Brief gehört zum öffentlichen Recht?",
       "optionen": [
         {
           "text": "Die Strafverfügung. Hier tritt der Staat mit Befehlsgewalt auf.",
@@ -175,7 +175,7 @@
     },
     {
       "abschnitt": "Teil 2 – Weiterdenken",
-      "text": "Lena liest: Eine Verordnung einer Ministerin widerspricht einem Gesetz. Was gilt nach dem Stufenbau der Rechtsordnung?",
+      "text": "Smilla liest: Eine Verordnung einer Ministerin widerspricht einem Gesetz. Was gilt nach dem Stufenbau der Rechtsordnung?",
       "optionen": [
         {
           "text": "Das Gesetz geht vor. Die Verordnung ist gesetzwidrig.",
@@ -211,10 +211,10 @@
   ],
   "ergebnis": {
     "art": "Mias Ratenkauf braucht die Zustimmung der Eltern",
-    "inhalt": "Lena ist ab 18 voll geschäftsfähig. Mias Ratenkauf gilt erst, wenn die Eltern zustimmen. Bens Eis ist gültig gekauft.",
+    "inhalt": "Smilla ist ab 18 voll geschäftsfähig. Bens Eis ist gültig gekauft.",
     "begruendung": [
       "Rechtsfähig ist jeder Mensch ab der Geburt, voll geschäftsfähig ab 18 (§ 16, § 21 Abs 2 ABGB).",
-      "Ohne Zustimmung der Eltern ist Mias Ratenkauf schwebend unwirksam (§ 170 Abs 1, § 865 Abs 3 ABGB).",
+      "Ohne Zustimmung der Eltern ist Mias Ratenkauf schwebend unwirksam (§ 170 Abs 1, § 865 Abs 4 ABGB).",
       "Kleine Alltagsgeschäfte werden mit dem Bezahlen wirksam (§ 170 Abs 3 ABGB)."
     ]
   },

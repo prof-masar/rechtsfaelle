@@ -23,11 +23,16 @@ window.FALL13 = {
   "§ 578 ABGB"
  ],
  "quellen": [
-  "§ 158 ABGB (Obsorge)",
+  "§ 158 Abs 1 ABGB (Obsorge umfasst Vertretung)",
+  "§ 167 Abs 3 ABGB (gerichtliche Genehmigung)",
+  "§ 178 Abs 1 ABGB (Obsorge nach Tod eines Elternteils)",
+  "§ 204 ABGB (Betrauung einer anderen Person)",
+  "§ 277 Abs 2 ABGB (Kollisionskurator)",
   "§ 578 ABGB (eigenhändiges Testament)",
   "§ 579 ABGB (fremdhändiges Testament)",
   "§ 677 ABGB (Pflegevermächtnis)",
-  "§ 732 ABGB (Erbrecht der Kinder und Enkel)",
+  "§ 732 ABGB (Erbrecht der Kinder)",
+  "§ 733 ABGB (Eintritt der Enkel)",
   "§ 744 ABGB (Erbrecht des Ehegatten)",
   "§ 745 ABGB (gesetzliches Vorausvermächtnis)",
   "§ 757 ABGB (Pflichtteilsberechtigte)",
@@ -42,7 +47,7 @@ window.FALL13 = {
     {
      "text": "Hilde, Werner und Sophie",
      "richtig": true,
-     "feedback": "Richtig. Neben der Ehefrau erben die Kinder. Für die verstorbene Petra tritt ihre Tochter Sophie ein (§ 732, § 744 ABGB)."
+     "feedback": "Richtig. Neben der Ehefrau erben die Kinder. Für die verstorbene Petra tritt ihre Tochter Sophie ein (§§ 732, 733, 744 Abs 1 ABGB)."
     },
     {
      "text": "Nur Werner, weil er der einzige lebende Sohn ist",
@@ -55,7 +60,7 @@ window.FALL13 = {
      "feedback": "Nein. Die Ehefrau erbt neben den Kindern nur einen Teil, nicht alles."
     }
    ],
-   "theorie": "Gibt es kein Testament, gilt die gesetzliche Erbfolge. Zuerst erben die Kinder. Ist ein Kind schon gestorben, treten dessen Kinder an seine Stelle (§ 732 ABGB). Der Ehepartner erbt neben den Kindern ein Drittel (§ 744 Abs 1 ABGB). Der Staat bekommt den Nachlass nur, wenn es gar keine Erben gibt.",
+   "theorie": "Gibt es kein Testament, gilt die gesetzliche Erbfolge. Zuerst erben die Kinder. Ist ein Kind schon gestorben, treten dessen Kinder an seine Stelle (§§ 732, 733 ABGB). Der Ehepartner erbt neben den Kindern ein Drittel (§ 744 Abs 1 ABGB). Der Staat bekommt den Nachlass nur, wenn es gar keine Erben gibt. Für Lehrkräfte – Vertretung der minderjährigen Sophie: (1) Mit Petras Tod hat der Vater die Obsorge allein, wenn sie gemeinsam war (§ 178 Abs 1 ABGB); sonst betraut das Gericht eine geeignete Person (§ 204 ABGB). Die Obsorge umfasst die Vertretung (§ 158 Abs 1 ABGB). (2) Unbedingte Erbantrittserklärung, Ausschlagung und Verfügungen über die Liegenschaft brauchen die Genehmigung des Pflegschaftsgerichts (§ 167 Abs 3 ABGB); die bedingte Erbantrittserklärung nicht. (3) Einen Kollisionskurator (§ 277 Abs 2 ABGB) braucht es nur, wenn die Vertreterin selbst Miterbin ist (zum Beispiel Oma Hilde), beim Vater nicht.",
    "wiederholung": {
     "frage": "Wer tritt an die Stelle eines verstorbenen Kindes?",
     "optionen": [
@@ -126,7 +131,7 @@ window.FALL13 = {
      "feedback": "Nein. Ohne Testament gilt die gesetzliche Erbfolge. Andere Lösungen gibt es nur, wenn sich alle Erben darauf einigen."
     }
    ],
-   "theorie": "Erbrecht folgt festen Regeln: Testament oder Gesetz. Ein Pflegevermächtnis gibt es nur für nahestehende Personen, die den Verstorbenen in den letzten drei Jahren vor dem Tod mindestens sechs Monate lang gepflegt haben, in der Regel mehr als 20 Stunden im Monat (§ 677 ABGB). Gartenarbeit gehört nicht dazu. Ein Haus können die Erben gemeinsam behalten, verkaufen, oder eine Person übernimmt es und zahlt die anderen aus.",
+   "theorie": "Erbrecht folgt festen Regeln: Testament oder Gesetz. Ein Pflegevermächtnis gibt es nur für nahestehende Personen, die den Verstorbenen in den letzten drei Jahren vor dem Tod mindestens sechs Monate lang in nicht bloß geringfügigem Ausmaß gepflegt haben (§ 677 ABGB). Als Faustregel gelten mehr als 20 Stunden im Monat; diese Zahl steht nicht im Gesetz. Gartenarbeit gehört nicht dazu. Ein Haus können die Erben gemeinsam behalten, verkaufen, oder eine Person übernimmt es und zahlt die anderen aus.",
    "wiederholung": {
     "frage": "Macht Gartenarbeit zum Alleinerben?",
     "optionen": [
@@ -181,7 +186,7 @@ window.FALL13 = {
    "text": "Werner taucht mit einem Testament auf. Es ist am Computer geschrieben und nur von Franz unterschrieben. Zeugen gab es keine. Ist es gültig?",
    "optionen": [
     {
-     "text": "Nein. Ohne Zeugen muss ein Testament ganz mit der Hand geschrieben und unterschrieben sein.",
+     "text": "Nein. Ein schriftliches Testament ohne Zeugen muss ganz mit der Hand geschrieben und unterschrieben sein.",
      "richtig": true,
      "feedback": "Richtig. Ein eigenhändiges Testament muss der Verstorbene selbst mit der Hand schreiben und unterschreiben (§ 578 ABGB)."
     },
@@ -216,9 +221,9 @@ window.FALL13 = {
   "art": "Gesetzliche Erbfolge",
   "inhalt": "Hilde, Werner und Sophie erben je ein Drittel. Hilde darf im Haus wohnen bleiben. Das getippte Testament ohne Zeugen ist ungültig.",
   "begruendung": [
-   "Ohne gültiges Testament erben Ehepartnerin und Kinder, für Petra tritt Sophie ein (§ 732, § 744 ABGB).",
+   "Ohne gültiges Testament erben Ehepartnerin und Kinder, für Petra tritt Sophie ein (§§ 732, 733, 744 Abs 1 ABGB).",
    "Gartenarbeit begründet weder ein Erbrecht noch ein Pflegevermächtnis (§ 677 ABGB).",
-   "Sophie ist minderjährig. Im Verlassenschaftsverfahren vertritt sie der Elternteil mit der Obsorge (§ 158 ABGB)."
+   "Sophie ist minderjährig. Sie wird von der Person mit der Obsorge vertreten. Wichtige Schritte braucht die Genehmigung des Gerichts (§ 158 Abs 1, § 167 Abs 3 ABGB)."
   ]
  },
  "reflexion": {

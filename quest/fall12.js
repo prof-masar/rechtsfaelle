@@ -26,12 +26,14 @@ window.FALL12 = {
  "quellen": [
   "§ 1 GewO (Gewerbsmäßigkeit)",
   "§ 5 GewO (Anmeldung, freie und reglementierte Gewerbe)",
+  "§ 162 Abs 1 Z 13 GewO (Nagelstudio, freies Gewerbe)",
   "§ 94 GewO (reglementierte Gewerbe)",
   "§ 339 GewO (Gewerbeanmeldung)",
   "§ 366 GewO (Strafen)",
   "§ 105 UGB (OG)",
   "§ 128 UGB (Haftung in der OG)",
   "§ 161 UGB (KG)",
+  "§ 171 Abs 1 UGB (Haftung der Kommanditistin)",
   "§ 6 und § 10 GmbHG (Stammkapital)",
   "§ 5 ECG (Informationspflichten online)",
   "§ 11 FAGG (Rücktrittsrecht)"
@@ -80,7 +82,7 @@ window.FALL12 = {
     {
      "text": "Nein. Das Modellieren von Fingernägeln ist ein freies Gewerbe.",
      "richtig": true,
-     "feedback": "Richtig. Für freie Gewerbe reicht die Anmeldung. Ein Befähigungsnachweis ist nicht nötig."
+     "feedback": "Richtig. Das Nagelstudio ist ein freies Gewerbe (§ 162 Abs 1 Z 13 GewO). Es reicht die Anmeldung, ein Befähigungsnachweis ist nicht nötig."
     },
     {
      "text": "Ja. Alles mit Nägeln ist Kosmetik und reglementiert.",
@@ -128,7 +130,7 @@ window.FALL12 = {
      "feedback": "Nein. Eine OG braucht mindestens zwei Gesellschafter. Leyla startet allein."
     }
    ],
-   "theorie": "Einzelunternehmen: eine Person, sie haftet unbeschränkt mit ihrem ganzen Vermögen. OG: mindestens zwei Gesellschafter, alle haften unbeschränkt (§ 105, § 128 UGB). KG: Komplementäre haften unbeschränkt, Kommanditisten nur bis zu ihrer Haftsumme (§ 161 UGB). GmbH: eigene juristische Person, die Gesellschafter haften grundsätzlich nicht persönlich. Sie braucht einen Notariatsakt, die Eintragung ins Firmenbuch und mindestens 10.000 Euro Stammkapital (§ 6 GmbHG).",
+   "theorie": "Einzelunternehmen: eine Person, sie haftet unbeschränkt mit ihrem ganzen Vermögen. OG: mindestens zwei Gesellschafter, alle haften unbeschränkt (§ 105, § 128 UGB). KG: Komplementäre haften unbeschränkt, Kommanditisten nur bis zu ihrer Haftsumme (§ 161, § 171 Abs 1 UGB). GmbH: eigene juristische Person, die Gesellschafter haften grundsätzlich nicht persönlich. Sie braucht einen Notariatsakt, die Eintragung ins Firmenbuch und mindestens 10.000 Euro Stammkapital (§ 6 GmbHG).",
    "wiederholung": {
     "frage": "Wie viel Stammkapital braucht eine GmbH mindestens?",
     "optionen": [
@@ -150,7 +152,7 @@ window.FALL12 = {
     {
      "text": "Eine KG mit Jana als Kommanditistin",
      "richtig": true,
-     "feedback": "Richtig. Als Kommanditistin haftet Jana nur bis zu ihrer Haftsumme (§ 161 UGB). Leyla haftet als Komplementärin unbeschränkt."
+     "feedback": "Richtig. Als Kommanditistin haftet Jana nur bis zu ihrer Haftsumme (§ 171 Abs 1 UGB). Leyla haftet als Komplementärin unbeschränkt."
     },
     {
      "text": "Eine OG",
@@ -163,7 +165,7 @@ window.FALL12 = {
      "feedback": "Nein. Dann wäre Jana allein Unternehmerin und würde unbeschränkt haften."
     }
    ],
-   "theorie": "Bei der KG gibt es zwei Arten von Gesellschaftern: Komplementäre haften unbeschränkt, Kommanditisten nur bis zu ihrer im Firmenbuch eingetragenen Haftsumme (§ 161 UGB). Auch mit einer GmbH könnte Jana ihr Risiko begrenzen. Die Gründung ist aber aufwendiger und teurer.",
+   "theorie": "Bei der KG gibt es zwei Arten von Gesellschaftern: Komplementäre haften unbeschränkt, Kommanditisten nur bis zu ihrer im Firmenbuch eingetragenen Haftsumme. Soweit sie ihre Einlage geleistet haben, haften sie nicht mehr (§ 171 Abs 1 UGB). Auch mit einer GmbH könnte Jana ihr Risiko begrenzen. Die Gründung ist aber aufwendiger und teurer.",
    "wiederholung": {
     "frage": "Wie haftet eine Kommanditistin?",
     "optionen": [
