@@ -30,10 +30,50 @@
   }
   function clear(n) { while (n.firstChild) n.removeChild(n.firstChild); }
   function setAppView() {
+    stopFloatWatch();
     app.classList.remove("view-urteil", "view-ergebnis", "view-step", "has-step-actions");
     for (var i = 0; i < arguments.length; i++) {
       if (arguments[i]) app.classList.add(arguments[i]);
     }
+  }
+  var floatCleanup = null;
+  function stopFloatWatch() {
+    if (floatCleanup) { floatCleanup(); floatCleanup = null; }
+  }
+  function isPhoneStep() {
+    try { return window.matchMedia && window.matchMedia("(max-width: 699px)").matches; } catch (e) { return false; }
+  }
+  function isAtPageBottom() {
+    var root = document.documentElement;
+    var viewH = window.innerHeight || root.clientHeight;
+    var remaining = root.scrollHeight - (window.pageYOffset || window.scrollY || 0) - viewH;
+    return remaining <= 12;
+  }
+  function watchNextFloat(btn) {
+    stopFloatWatch();
+    function update() {
+      if (!btn) return;
+      if (btn.hidden || !isPhoneStep() || !isAtPageBottom()) btn.classList.remove("is-at-bottom");
+      else btn.classList.add("is-at-bottom");
+    }
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    var vv = window.visualViewport;
+    if (vv) {
+      vv.addEventListener("resize", update);
+      vv.addEventListener("scroll", update);
+    }
+    update();
+    requestAnimationFrame(function () { requestAnimationFrame(update); });
+    floatCleanup = function () {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+      if (vv) {
+        vv.removeEventListener("resize", update);
+        vv.removeEventListener("scroll", update);
+      }
+      if (btn) btn.classList.remove("is-at-bottom");
+    };
   }
   function shuffle(arr) {
     var a = arr.slice();
@@ -458,7 +498,7 @@
       focusTop();
     }
     var nextBtn = el("button", { class: "btn", type: "button", hidden: true, text: nextLabel, onclick: goNext });
-    var nextInline = el("button", { class: "btn block next-inline", type: "button", hidden: true, text: nextLabel, onclick: goNext });
+    var nextFloat = el("button", { class: "btn next-float", type: "button", hidden: true, text: "Weiter →", "aria-label": nextLabel, onclick: goNext });
     var xpPill = el("span", { class: "xppill", "aria-hidden": "true", hidden: true });
     var hintBtn = s.hinweis ? el("button", { class: "btn secondary", type: "button", text: "💡 Hinweis",
       onclick: function () { hintBox.textContent = "💡 " + s.hinweis; hintBox.hidden = false; hintBtn.hidden = true; } }) : null;
@@ -466,15 +506,11 @@
     if (hintBtn) app.classList.add("has-step-actions");
     function revealNext() {
       nextBtn.hidden = false;
-      nextInline.hidden = false;
+      nextFloat.hidden = false;
       actions.classList.add("is-active");
       app.classList.add("has-step-actions");
-      var focusBtn = nextInline;
-      try {
-        if (window.matchMedia && window.matchMedia("(min-width: 700px)").matches) focusBtn = nextBtn;
-      } catch (e) {}
-      focusBtn.focus();
-      try { focusBtn.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e2) {}
+      watchNextFloat(nextFloat);
+      try { nextBtn.focus({ preventScroll: true }); } catch (e) { nextBtn.focus(); }
     }
 
     function setMainDisabled(dis) {
@@ -569,9 +605,9 @@
     app.appendChild(options);
     app.appendChild(hintBox);
     app.appendChild(feedback);
-    app.appendChild(nextInline);
     app.appendChild(theoryWrap);
     app.appendChild(actions);
+    app.appendChild(nextFloat);
   }
 
   function fitUrteil() {
