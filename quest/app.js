@@ -29,6 +29,12 @@
     return n;
   }
   function clear(n) { while (n.firstChild) n.removeChild(n.firstChild); }
+  function setAppView() {
+    app.classList.remove("view-urteil", "view-ergebnis", "view-step", "has-step-actions");
+    for (var i = 0; i < arguments.length; i++) {
+      if (arguments[i]) app.classList.add(arguments[i]);
+    }
+  }
   function shuffle(arr) {
     var a = arr.slice();
     for (var i = a.length - 1; i > 0; i--) {
@@ -262,7 +268,7 @@
     q = null;
     run = null;
     clear(app);
-    app.classList.remove("view-urteil");
+    setAppView();
     app.appendChild(el("header", { class: "top" }, [
       el("h1", {}, [el("span", { class: "logo", "aria-hidden": "true", text: "⚖️ " }), "Rechts-Quest"])
     ]));
@@ -320,8 +326,7 @@
     var pct = Math.round(info.inLevel / XP_PER_LEVEL * 100);
     var ordenItems = allOrdenItems();
     clear(app);
-    app.classList.remove("view-urteil");
-    app.classList.remove("view-ergebnis");
+    setAppView();
     app.appendChild(el("div", { class: "playhead" }, [
       el("button", { class: "btn ghost", type: "button", text: "← Übersicht", onclick: function () { renderAuswahl(); focusTop(); } })
     ]));
@@ -397,7 +402,7 @@
 
   function renderStart() {
     clear(app);
-    app.classList.remove("view-urteil");
+    setAppView();
     run.step = -1;
     run.view = "start";
     playHeader().forEach(function (n) { app.appendChild(n); });
@@ -429,7 +434,7 @@
     var s = q.schritte[run.step];
     var tries = 0, solved = false, reviewDone = !s.wiederholung;
     clear(app);
-    app.classList.remove("view-urteil");
+    setAppView("view-step");
     run.view = "step";
     playHeader().forEach(function (n) { app.appendChild(n); });
     if (s.abschnitt) app.appendChild(el("p", { class: "abschnitt", text: s.abschnitt }));
@@ -444,18 +449,33 @@
     var hintBox = el("div", { class: "hint", hidden: true });
     var options = el("div", { class: "options", role: "group", "aria-label": "Antworten" });
     var theoryWrap = el("div", { hidden: true });
-    var nextBtn = el("button", { class: "btn", type: "button", hidden: true,
-      text: run.step + 1 < q.schritte.length ? "Weiter →" : (isBaustein(q) ? "Zum Abschluss →" : (isZivilfall(q) ? "Zum Ergebnis →" : "Zum Urteil →")),
-      onclick: function () {
-        run.step++;
-        if (run.step < q.schritte.length) renderStep();
-        else if (isBaustein(q)) renderAbschluss();
-        else renderEndkarte();
-        focusTop();
-      } });
+    var nextLabel = run.step + 1 < q.schritte.length ? "Weiter →" : (isBaustein(q) ? "Zum Abschluss →" : (isZivilfall(q) ? "Zum Ergebnis →" : "Zum Urteil →"));
+    function goNext() {
+      run.step++;
+      if (run.step < q.schritte.length) renderStep();
+      else if (isBaustein(q)) renderAbschluss();
+      else renderEndkarte();
+      focusTop();
+    }
+    var nextBtn = el("button", { class: "btn", type: "button", hidden: true, text: nextLabel, onclick: goNext });
+    var nextInline = el("button", { class: "btn block next-inline", type: "button", hidden: true, text: nextLabel, onclick: goNext });
     var xpPill = el("span", { class: "xppill", "aria-hidden": "true", hidden: true });
     var hintBtn = s.hinweis ? el("button", { class: "btn secondary", type: "button", text: "💡 Hinweis",
       onclick: function () { hintBox.textContent = "💡 " + s.hinweis; hintBox.hidden = false; hintBtn.hidden = true; } }) : null;
+    var actions = el("div", { class: "actions step-actions" + (hintBtn ? " is-active" : "") }, [hintBtn || el("span"), el("span", { class: "nextwrap" }, [xpPill, nextBtn])]);
+    if (hintBtn) app.classList.add("has-step-actions");
+    function revealNext() {
+      nextBtn.hidden = false;
+      nextInline.hidden = false;
+      actions.classList.add("is-active");
+      app.classList.add("has-step-actions");
+      var focusBtn = nextInline;
+      try {
+        if (window.matchMedia && window.matchMedia("(min-width: 700px)").matches) focusBtn = nextBtn;
+      } catch (e) {}
+      focusBtn.focus();
+      try { focusBtn.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e2) {}
+    }
 
     function setMainDisabled(dis) {
       Array.prototype.forEach.call(options.querySelectorAll("button"), function (x) {
@@ -533,8 +553,7 @@
           feedback.className = "feedback ok";
           feedback.textContent = "✓ " + (opt.feedback || "Richtig!") + " (+" + gained + " XP)";
           if (hintBtn) hintBtn.hidden = true;
-          nextBtn.hidden = false;
-          nextBtn.focus();
+          revealNext();
         } else {
           b.classList.add("wrong");
           b.disabled = true;
@@ -550,8 +569,9 @@
     app.appendChild(options);
     app.appendChild(hintBox);
     app.appendChild(feedback);
+    app.appendChild(nextInline);
     app.appendChild(theoryWrap);
-    app.appendChild(el("div", { class: "actions" }, [hintBtn || el("span"), el("span", { class: "nextwrap" }, [xpPill, nextBtn])]));
+    app.appendChild(actions);
   }
 
   function fitUrteil() {
@@ -591,8 +611,7 @@
     (u.begruendung || []).forEach(function (t) { reasons.appendChild(el("li", { text: t })); });
 
     clear(app);
-    app.classList.add("view-urteil");
-    app.classList.remove("view-ergebnis");
+    setAppView("view-urteil");
     run.step = q.schritte.length;
     if (run && q) recordProgress(q, run.xp);
     run.view = "urteil";
@@ -633,8 +652,7 @@
     (e.begruendung || []).forEach(function (t) { reasons.appendChild(el("li", { text: t })); });
 
     clear(app);
-    app.classList.add("view-urteil");
-    app.classList.add("view-ergebnis");
+    setAppView("view-urteil", "view-ergebnis");
     run.step = q.schritte.length;
     if (run && q) recordProgress(q, run.xp);
     run.view = "ergebnis";
@@ -663,8 +681,7 @@
 
     if (run && q) recordProgress(q, run.xp);
     clear(app);
-    app.classList.remove("view-urteil");
-    app.classList.remove("view-ergebnis");
+    setAppView();
     run.view = "abschluss";
     playHeader().forEach(function (n) { app.appendChild(n); });
 
@@ -689,7 +706,7 @@
     var list = el("ol", { class: "reflexion-fragen" });
     (r.fragen || []).forEach(function (f) { list.appendChild(el("li", { text: f })); });
     clear(app);
-    app.classList.remove("view-urteil");
+    setAppView();
     run.view = "reflexion";
     playHeader().forEach(function (n) { app.appendChild(n); });
     app.appendChild(el("section", { class: "fade" }, [
