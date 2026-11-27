@@ -483,7 +483,9 @@
       if (vImg) app.appendChild(vImg);
     }
     app.appendChild(el("p", { class: "muted small", style: "margin:0 0 6px", text: "Schritt " + (run.step + 1) + " von " + q.schritte.length }));
-    app.appendChild(figureBlock(s.text));
+    var frageBlock = figureBlock(s.text);
+    frageBlock.id = "ausgangsfrage";
+    app.appendChild(frageBlock);
 
     var feedback = el("div", { class: "feedback", role: "status", "aria-live": "polite" });
     var hintBox = el("div", { class: "hint", hidden: true });
@@ -497,8 +499,15 @@
       else renderEndkarte();
       focusTop();
     }
-    var nextBtn = el("button", { class: "btn", type: "button", hidden: true, text: nextLabel, onclick: goNext });
-    var nextFloat = el("button", { class: "btn next-float", type: "button", hidden: true, text: "Weiter →", "aria-label": nextLabel, onclick: goNext });
+    function proceedNext() {
+      if (!solved) {
+        solved = true;
+        setMainDisabled(true);
+      }
+      goNext();
+    }
+    var nextBtn = el("button", { class: "btn", type: "button", hidden: true, text: nextLabel, onclick: proceedNext });
+    var nextFloat = el("button", { class: "btn next-float", type: "button", hidden: true, text: "Weiter →", "aria-label": nextLabel, onclick: proceedNext });
     var xpPill = el("span", { class: "xppill", "aria-hidden": "true", hidden: true });
     var hintBtn = s.hinweis ? el("button", { class: "btn secondary", type: "button", text: "💡 Hinweis",
       onclick: function () { hintBox.textContent = "💡 " + s.hinweis; hintBox.hidden = false; hintBtn.hidden = true; } }) : null;
@@ -552,8 +561,19 @@
               b.insertBefore(el("span", { class: "mark", "aria-hidden": "true", text: "✓" }), b.firstChild);
               Array.prototype.forEach.call(wOpts.querySelectorAll("button"), function (x) { x.disabled = true; });
               wFb.className = "feedback ok";
-              wFb.textContent = "✓ Richtig. Versuch die Ausgangsfrage noch einmal.";
+              wFb.textContent = "✓ Richtig. Versuch die Ausgangsfrage noch einmal, um Erfahrungspunkte zu sammeln, oder geh gleich weiter.";
+              var reviewNav = el("div", { class: "review-actions" }, [
+                el("button", { class: "btn secondary", type: "button", text: "Ausgangsfrage nochmal", onclick: function () {
+                  var target = document.getElementById("ausgangsfrage");
+                  if (!target) return;
+                  try { target.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) { target.scrollIntoView(); }
+                } }),
+                el("button", { class: "btn", type: "button", text: "Weiter →", "aria-label": nextLabel, onclick: proceedNext })
+              ]);
+              wFb.parentNode.appendChild(reviewNav);
               setMainDisabled(false);
+              revealNext();
+              try { reviewNav.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e3) {}
             } else {
               b.classList.add("wrong");
               b.disabled = true;
